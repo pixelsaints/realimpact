@@ -8,6 +8,8 @@
   background-size: cover;
   position: relative;
   opacity: 0;
+  position: relative;
+  z-index: 2;
 
   .text-sticker{
     font-family: $font-display;
@@ -63,20 +65,47 @@
     overflow: hidden;
 
     .front, .back{
-      perspective: 1800px;
+      perspective: 1200px;
       transform-style: preserve-3d;
       will-change: transform;
-    }
-
-    .front{
       backface-visibility: hidden;
-      transform-origin: 50% 100%;
     }
 
     .back{
       position: absolute;
-      transform-origin: 50% 0;
       inset: 0;
     }
+  }
+}
+
+.text-marquee{
+  position: relative;
+  z-index: 5;
+  background: transparent;
+  padding: 0;
+  margin-top: -24px;
+
+  h3{
+    font-family: $font-mono;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .running-text{
+    padding: 24px 0;
+    position: relative;
+    z-index: 6;
+    background: $black-900;
+  }
+
+  .running-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: $pri-300;
+    z-index: 5;
+    transform: rotate(0.5deg);
   }
 }

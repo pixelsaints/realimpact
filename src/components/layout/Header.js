@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import TransitionLink from "../transitions/TransitionLink";
 import { nav } from "@/data/menu";
+import { gsap } from "gsap/gsap-core";
 
 export default function Header() {
   const pathname = usePathname();
@@ -29,7 +30,6 @@ export default function Header() {
                     className="menu-link"
                     onClick={() => {
                       setMenuActive(false);
-                      gsap.set(menuRef.current, { x: "100%" });
                     }}
                   >
                     <span data-title={item.name}>
