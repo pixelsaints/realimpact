@@ -42,8 +42,6 @@ export default function FrontPage() {
 
     const tl = gsap.timeline();
 
-
-
     tl.to(hero, {
       opacity: 1,
       ease: "power3.in",
@@ -55,15 +53,13 @@ export default function FrontPage() {
       rotationX: 0,
       yPercent: 0,
       duration: 1.4,
-      ease: "back.inOut(1)",
-    }, 0)
-
-      .to(".wrap-heading-3d:not(.alt) .back", {
-        rotationX: 90,
-        yPercent: 100,
-        duration: 1.4,
-        ease: "back.inOut(1)",
-      }, 0);
+      ease: "back.inOut(1.4)",
+    }, 0).to(".wrap-heading-3d:not(.alt) .back", {
+      rotationX: 90,
+      yPercent: 100,
+      duration: 1.4,
+      ease: "back.inOut(1.4)",
+    }, 0);
 
     // ALT
     tl.to(".wrap-heading-3d.alt .front", {
@@ -71,14 +67,27 @@ export default function FrontPage() {
       yPercent: 0,
       duration: 1.4,
       ease: "back.inOut(1.4)",
-    }, 0)
+    }, 0).to(".wrap-heading-3d.alt .back", {
+      rotationX: -90,
+      yPercent: -100,
+      duration: 1.4,
+      ease: "back.inOut(1.4)",
+    }, 0);
 
-      .to(".wrap-heading-3d.alt .back", {
-        rotationX: -90,
-        yPercent: -100,
-        duration: 1.4,
-        ease: "back.inOut(1.4)",
-      }, 0);
+    gsap.from(".text-sticker", {
+      y: 80,
+      rotate: 20,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 1.4,
+      ease: "back.out(1.7)",
+    }, 0.5);
+
+    // gsap.from(".hero img", {
+    //   scale: 1.3,
+    //   duration: 2,
+    //   ease: "power3.out",
+    // }, 0);
 
   }, []);
 
