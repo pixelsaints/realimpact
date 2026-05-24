@@ -1,22 +1,60 @@
 "use client";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { useState, useRef, useLayoutEffect, useEffect } from "react";
-import gsap from "gsap";
-import { useDrawer } from "@/context/DrawerContext";
-import TransitionLink from "@/components/transitions/TransitionLink";
+import TransitionLink from "../transitions/TransitionLink";
 import { nav } from "@/data/menu";
 
 export default function Header() {
+  const pathname = usePathname();
+  const [menuActive, setMenuActive] = useState(false);
+
+  useEffect(() => {
+    setMenuActive(false);
+  }, [pathname]);
 
   return (
-    <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-sm shadow-sm">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <TransitionLink href="/" className="text-xl font-bold">
-            RealImpact
+    <header className="site-header">
+      <div className="container">
+        <div className="flex flex-row justify-between">
+          <TransitionLink href="/">
+            <img src="/logo.svg" alt="" />
           </TransitionLink>
+
+          <nav className="menu">
+            <ul className="flex flex-row">
+              {nav.map((item) => (
+                <li key={item.href} className={item.submenu ? "has-sub" : ""}>
+                  <TransitionLink
+                    href={item.href}
+                    className="menu-link"
+                    onClick={() => {
+                      setMenuActive(false);
+                      gsap.set(menuRef.current, { x: "100%" });
+                    }}
+                  >
+                    <span data-title={item.name}>
+                      {item.name}
+                    </span>
+                  </TransitionLink>
+                  {item.submenu && (
+                    <ul className="sub-menu">
+                      {item.submenu.map((sub) => (
+                        <li key={sub.name}>
+                          <TransitionLink href={sub.href} className="menu-link">
+                            <span data-title={sub.name} className="">
+                              {sub.name}
+                            </span>
+                          </TransitionLink>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
-      </header>
-    </>
-  );
+      </div>
+    </header>
+  )
 }

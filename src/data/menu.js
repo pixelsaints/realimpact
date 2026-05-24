@@ -8,49 +8,52 @@ export const nav = [
     href: "/about"
   },
   {
-    name: "Products",
-    href: "/products",
+    name: "Our Services",
+    href: "/services",
     submenu: [
       {
-        name: "Pharmaceuticals",
-        href: "/products/pharmaceuticals",
+        name: "4k Solutions",
+        href: "/services/4k-solutions",
       },
       {
-        name: "Herbal & Natural Medicines",
-        href: "/products/herbal-natural-medicines",
+        name: "RF Solutions",
+        href: "/services/rf-solutions",
       },
       {
-        name: "Consumer Healthcare",
-        href: "/products/consumer-healthcare",
+        name: "Entertainment",
+        href: "/services/entertainment",
       },
       {
-        name: "API's & Excipients",
-        href: "/products/active-pharma-ingredients",
+        name: "Fly Pack",
+        href: "/services/fly-pack",
       },
       {
-        name: "Women's Healthare",
-        href: "/products/womens-healthcare"
+        name: "Sports Production",
+        href: "/services/sports-production"
       },
       {
-        name: "Men's Healthare",
-        href: "/products/mens-healthcare"
+        name: "Specialized Equipment",
+        href: "/services/specialized-equipment"
       },
       {
-        name: "Veterinary Feeds & Medicines",
-        href: "/products/veterinary-solutions",
+        name: "System Integration",
+        href: "/services/system-integration",
       },
     ],
   },
   {
-    name: "Quality",
-    href: "/quality"
+    name: "Equipment",
+    href: "/equipment"
   },
-  // {
-  //   name: "Why Choose Us",
-  //   href: "/why-choose-us"
-  // },
   {
-    name: "Global Presence",
-    href: "/global-presence"
+    name: "Projects",
+    href: "/projects"
+  },
+  {
+    name: "Gallery",
+    href: "/gallery"
+  }, {
+    name: "Contact Us",
+    href: "contact"
   }
 ];

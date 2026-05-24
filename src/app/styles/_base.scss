@@ -1,0 +1,25 @@
+@use './functions' as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-base;
+  font-size: 16px;
+  background: $black-900;
+}
+
+.container{
+  padding-inline: 16px;
+  width: 100%;
+  margin-inline: auto;
+
+  @include xl{
+    max-width: 1280px;
+  }
+
+  @include xxl{
+    max-width: 1520px;
+  }
+}

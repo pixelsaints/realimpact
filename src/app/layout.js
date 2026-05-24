@@ -1,22 +1,20 @@
-import "@/styles/tailwind.css";
-import "@/styles/style.scss";
+import "./styles/tailwind.css";
+import "./styles/style.scss";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import PageEnter from "@/components/transitions/PageEnter";
-import CatalogDrawer from "@/components/ui/CatalogDrawer";
-import { DrawerProvider } from "@/context/DrawerContext";
 
 export const metadata = {
-  metadataBase: new URL("https://realimpact.netlify.app/"),
+  metadataBase: new URL("https://realimpacttv.netlify.app/"),
 
-  title: "Cosmedd Healthcare | Global Pharmaceutical & Wellness Export Solutions",
-  description: "Cosmedd Healthcare is a global export-oriented company delivering pharmaceutical formulations, nutraceuticals, APIs, medical devices, and wellness solutions worldwide.",
+  title: "Real Impact - Broadcast Equipment Services & Production",
+  description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
+  icons: "/favicon.png",
 
   openGraph: {
-    title: "Cosmedd Healthcare | Global Healthcare Export Solutions",
-    description: "Trusted sourcing and export of pharmaceutical, nutraceutical, wellness, and healthcare products across global markets.",
-    url: "https://realimpact.netlify.app/",
-    siteName: "Cosmedd",
+    title: "Real Impact - Broadcast Equipment Services & Production",
+    description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
+    url: "https://realimpacttv.netlify.app/",
+    siteName: "Real Impact",
     images: [
       {
         url: "/images/ogg-image.png",
@@ -29,25 +27,26 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Cosmedd",
-    description: "Trusted sourcing and export of pharmaceutical, nutraceutical, wellness, and healthcare products across global markets.",
+    title: "Real Impact",
+    description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
     images: ["/images/ogg-image.png"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
-      <body >
-        <DrawerProvider>
-          <PageEnter />
-          <Header />
-          <main className="wrapper">
-            {children}
-            <Footer />
-          </main>
-          <CatalogDrawer />
-        </DrawerProvider>
+    <html lang="en" >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&family=Stick+No+Bills:wght@200..800&display=swap" rel="stylesheet" />
+      </head>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        <div className="main-wrapper">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );

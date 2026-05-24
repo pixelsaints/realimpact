@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --font-heading:
+    "Stack Sans Notch",
+    sans-serif;
+
+  --font-body:
+    "Stack Sans Text",
+    sans-serif;
+
+  --font-display:
+    "Stick No Bills",
+    sans-serif;
+}
+
+body {
+  font-family: var(
+    --font-body
+  );
+}
+
+@theme {
+  --color-pri-50: #fffbeb;
+  --color-pri-100: #fdf2c8;
+  --color-pri-200: #fce28b;
+  --color-pri-300: #face4f;
+  --color-pri-400: #f9b926;
+  --color-pri-500: #f3970d;
+  --color-pri-600: #d77208;
+  --color-pri-700: #b24f0b;
+  --color-pri-800: #913d0f;
+  --color-pri-900: #773310;
+  --color-pri-950: #441804;
+
+  --color-black-50: #f9fafb;
+  --color-black-100: #f3f4f6;
+  --color-black-200: #e5e7eb;
+  --color-black-300: #d1d5db;
+  --color-black-400: #9ca3af;
+  --color-black-500: #6b7280;
+  --color-black-600: #4b5563;
+  --color-black-700: #374151;
+  --color-black-800: #1f2937;
+  --color-black-900: #111827;
+  --color-black-950: #030712;
+}

@@ -1,0 +1,8 @@
+@use './functions' as *;
+
+h1{
+  font-family: $font-mono;
+  font-weight: normal;
+
+  @include fluid-type(40px, 120px)
+}
