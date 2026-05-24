@@ -83,12 +83,6 @@ export default function FrontPage() {
       ease: "back.out(1.7)",
     }, 0.5);
 
-    // gsap.from(".hero img", {
-    //   scale: 1.3,
-    //   duration: 2,
-    //   ease: "power3.out",
-    // }, 0);
-
   }, []);
 
   return (
@@ -108,7 +102,7 @@ export default function FrontPage() {
                   </div>
                   <div className="relative w-fit">
                     <div className="h1 text-white">IMPACT</div>
-                    <span className="text-sticker text-sticker-cyan bg-cyan-400 p-3 ">With Strategy</span>
+                    <span className="text-sticker absolute right-[5%] top-[35%] rotate-6 bg-cyan-400 p-3 ">With Strategy</span>
                   </div>
                 </div>
               </div>
@@ -123,7 +117,7 @@ export default function FrontPage() {
                   </div>
                   <div className="relative w-fit">
                     <div className="h1 text-white">IMPACT</div>
-                    <span className="text-sticker text-sticker-cyan bg-cyan-400 p-3 ">With Strategy</span>
+                    <span className="text-sticker absolute right-[5%] top-[35%] rotate-6 bg-cyan-400 p-3 ">With Strategy</span>
                   </div>
                 </div>
               </div>
@@ -133,12 +127,13 @@ export default function FrontPage() {
               <div className="front">
                 <div className="flex flex-row items-center gap-6">
                   <div className="relative w-[35%]">
+                    <span className="text-sticker absolute right-[-5%] top-[30%] rotate-4 bg-amber-300 p-3 ">In</span>
                     <img src="/images/hero-image-2.webp" className="w-full h-[15em] object-cover object-center" alt="" />
                   </div>
                   <div className="relative">
                     <div className="relative">
                       <div className="h1 text-white">Everything</div>
-                      <span className="text-sticker absolute right-0 top-[35%] rotate-8 bg-fuchsia-300 p-3 ">At Scale</span>
+                      <span className="text-sticker absolute right-[5%] top-[35%] -rotate-4 bg-fuchsia-300 p-3 ">At Scale</span>
                     </div>
                     <div className="grid grid-cols-4 items-center px-4">
                       <div className="hero-icons flex flex-row items-center">
@@ -164,12 +159,13 @@ export default function FrontPage() {
               <div className="back">
                 <div className="flex flex-row items-center gap-6">
                   <div className="relative w-[35%]">
+                    <span className="text-sticker absolute right-[-5%] top-[30%] rotate-4 bg-amber-300 p-3 ">In</span>
                     <img src="/images/hero-image-2.webp" className="w-full h-[15em] object-cover object-center" alt="" />
                   </div>
                   <div className="relative">
                     <div className="relative">
                       <div className="h1 text-white">Everything</div>
-                      <span className="text-sticker absolute right-0 top-[35%] rotate-8 bg-fuchsia-300 p-3 ">At Scale</span>
+                      <span className="text-sticker absolute right-[5%] top-[35%] -rotate-4 bg-fuchsia-300 p-3 ">At Scale</span>
                     </div>
                     <div className="grid grid-cols-4 items-center px-4">
                       <div className="hero-icons flex flex-row items-center">

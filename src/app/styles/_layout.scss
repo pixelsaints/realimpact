@@ -10,24 +10,11 @@
   opacity: 0;
 
   .text-sticker{
-    position: absolute;
     font-family: $font-display;
     font-size: 24px;
     padding: 8px 16px;
     width: fit-content;
     text-transform: uppercase;
-
-    &-cyan{
-      transform: rotate(-5deg);
-      top: 35%;
-      right: 0;
-    }
-
-    &-yellow{
-      top: 85%;
-      left: 15%;
-      transform: rotate(-5deg);
-    }
   }
 
   .h1{
