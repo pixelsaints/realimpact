@@ -52,11 +52,15 @@ export default function HeroSection() {
       rotationX: 0,
       yPercent: 0,
       duration: 1.4,
+      // transformPerspective: 800,
+      // force3D: true,
       ease: "back.inOut(1.4)",
     }, 0).to(".wrap-heading-3d:not(.alt) .back", {
       rotationX: 90,
       yPercent: 100,
       duration: 1.4,
+      // transformPerspective: 800,
+      // force3D: true,
       ease: "back.inOut(1.4)",
     }, 0);
 
@@ -65,6 +69,8 @@ export default function HeroSection() {
       rotationX: 0,
       yPercent: 0,
       duration: 1.4,
+      // transformPerspective: 800,
+      // force3D: true,
       ease: "back.inOut(1.4)",
     }, 0).to(".wrap-heading-3d.alt .back", {
       rotationX: -90,
@@ -79,6 +85,8 @@ export default function HeroSection() {
       opacity: 0,
       stagger: 0.1,
       duration: 1.4,
+      // transformPerspective: 800,
+      // force3D: true,
       ease: "back.out(1.7)",
     }, 0.5);
 

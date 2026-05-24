@@ -63,9 +63,11 @@
   .wrap-heading-3d{
     position: relative;
     overflow: hidden;
+    perspective: 1200px;
+    transform-style: preserve-3d;
 
     .front, .back{
-      perspective: 1200px;
+      // perspective: 1200px;
       transform-style: preserve-3d;
       will-change: transform;
       backface-visibility: hidden;
