@@ -90,7 +90,7 @@ export default function FrontPage() {
 
             <div className="wrap-heading-3d">
               <div className="front">
-                <div className="flex flew-row items-center justify-between gap-6">
+                <div className="flex flexrow items-center justify-between gap-6">
                   <div className="relative w-fit">
                     <div className="h1 text-white">Real</div>
                   </div>
@@ -105,7 +105,7 @@ export default function FrontPage() {
               </div>
 
               <div className="back">
-                <div className="flex flew-row items-center justify-between gap-6">
+                <div className="flex flex-row items-center justify-between gap-6">
                   <div className="relative w-fit">
                     <div className="h1 text-white">Real</div>
                   </div>
