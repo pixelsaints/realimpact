@@ -100,7 +100,7 @@ export default function HeroSection() {
                     {/* <img src="/images/hero-image-1.webp" className="w-full h-[12em] object-cover object-center" alt="" /> */}
 
                     <div className="bg-video">
-                      <video autoPlay loop muted playsInline className="w-full h-[12em] object-cover object-center">
+                      <video autoPlay loop muted playsInline className="w-full h-[12em] object-cover object-center" poster="/images/hero-image-1.webp">
                         <source src="/videos/video-1.mp4" type="video/mp4" />
                       </video>
                     </div>
