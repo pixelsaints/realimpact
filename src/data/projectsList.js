@@ -73,8 +73,7 @@ export const projectsList = [
   {
     name: "Corporate Town Hall Network",
     description: "Designed redundant transmission paths for corporate town halls, combining fiber, bonded cellular, and backup satellite uplinks.",
-    image: "https://images.unsplash.com/photo-1515169067865-5387ec356754?q=80&w=1600&auto=format&fit=crop",
-    link: "https://example.com/corporate-town-hall-network",
+    image: "https://images.unsplash.com/photo-1760344477116-6116c49eff1d?q=80&w=2121&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["Fiber Routing", "Bonded Cellular", "Satellite Backup"]
   },
   {
