@@ -44,4 +44,12 @@ body {
   --color-black-800: #1f2937;
   --color-black-900: #111827;
   --color-black-950: #030712;
+
+  --font-serif:
+    "Stack Sans Notch",
+    sans-serif;
+
+  --font-mono:
+    "Stick No Bills",
+    monospace;
 }
