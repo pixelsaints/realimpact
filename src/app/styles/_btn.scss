@@ -1,3 +1,44 @@
 // Scss Required
 @use './functions' as *;
 
+
+.btn{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  letter-spacing: 1px;
+
+  span.icon{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 24px;
+    overflow: hidden;
+
+    svg{
+      width: 20px;
+      height: auto;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .back{
+      position: absolute;
+      transform: translateX(-110%);
+    }
+  }
+
+  &:hover{
+
+    .icon{
+
+      .front{
+        transform: translateX(110%);
+      }
+
+      .back{
+        transform: translateX(0%);
+      }
+    }
+  }
+}

@@ -97,7 +97,13 @@ export default function HeroSection() {
                     <div className="h1 text-white">Real</div>
                   </div>
                   <div className="relative w-[45%]">
-                    <img src="/images/hero-image-1.webp" className="w-full h-[12em] object-cover object-center" alt="" />
+                    {/* <img src="/images/hero-image-1.webp" className="w-full h-[12em] object-cover object-center" alt="" /> */}
+
+                    <div className="bg-video">
+                      <video autoPlay loop muted playsInline className="w-full h-[12em] object-cover object-center">
+                        <source src="/videos/video-1.mp4" type="video/mp4" />
+                      </video>
+                    </div>
                   </div>
                   <div className="relative w-fit">
                     <div className="h1 text-white">IMPACT</div>
@@ -126,8 +132,10 @@ export default function HeroSection() {
               <div className="front">
                 <div className="flex flex-row items-center gap-6">
                   <div className="relative w-[35%]">
-                    <span className="text-sticker absolute right-[-5%] top-[30%] rotate-4 bg-amber-300 p-3 ">In</span>
-                    <img src="/images/hero-image-2.webp" className="w-full h-[15em] object-cover object-center" alt="" />
+                    <span className="text-sticker absolute right-[-5%] top-[30%] -rotate-4 bg-amber-300 p-3 ">In</span>
+                    <video autoPlay loop muted playsInline className="w-full h-[15em] object-cover object-center">
+                      <source src="/videos/video-2.mp4" type="video/mp4" />
+                    </video>
                   </div>
                   <div className="relative">
                     <div className="relative">

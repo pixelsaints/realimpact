@@ -8,6 +8,71 @@ export default function AboutSection() {
 
   // useEffect(() => {
   //   const ctx = gsap.context(() => {
+  //     const track = sectionRef.current.querySelector(".services-track");
+
+  //     if (!track) return;
+
+  //     const maxScroll =
+  //       track.scrollWidth - window.innerWidth;
+
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         start: "top top",
+  //         end: `+=${maxScroll}`,
+  //         scrub: 1,
+  //         pin: true,
+  //       }
+  //     });
+
+  //     // Horizontal movement
+  //     tl.to(track, {
+  //       x: -maxScroll,
+  //       ease: "none",
+  //     });
+
+  //     // Progress bar
+  //     tl.to(".services-progress-bar", {
+  //       width: "100%",
+  //       ease: "none",
+  //     }, 0);
+
+  //     // Image parallax
+  //     gsap.to(".service-image", {
+  //       scale: 1,
+  //       stagger: 0.2,
+
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         start: "top top",
+  //         end: `+=${maxScroll}`,
+  //         scrub: true,
+  //       }
+  //     });
+
+  //     // Active card depth
+  //     gsap.to(".service-card", {
+  //       rotateY: 0,
+  //       z: 0,
+
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         start: "top top",
+  //         end: `+=${maxScroll}`,
+  //         scrub: true,
+  //       }
+  //     });
+
+  //   }, sectionRef);
+
+  //   return () => {
+  //     ctx.revert();
+  //   };
+
+  // }, []);
+
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
   //     horizontalScroll(
   //       ".horizontal-section",
   //       ".horizontal-wrapper"

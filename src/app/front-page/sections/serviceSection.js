@@ -1,11 +1,14 @@
 "use client";
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useState } from "react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import TransitionLink from "@/components/transitions/TransitionLink";
+import "swiper/css";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 export default function ServiceSection() {
+  const [swiper, setSwiper] = useState(null);
+  const [progress, setProgress] = useState(0);
 
   const services = [
     {
@@ -79,104 +82,117 @@ export default function ServiceSection() {
     },
   ];
 
-  useEffect(() => {
+  const handleProgress = (currentSwiper) => {
+    const currentIndex = currentSwiper.realIndex ?? 0;
+    const progressStep = services.length > 1 ? currentIndex / (services.length - 1) : 0;
 
-    const ctx = gsap.context(() => {
-
-      const track = document.querySelector(".services-track");
-
-      const maxScroll =
-        track.scrollWidth - window.innerWidth;
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".services-section",
-          start: "top top",
-          end: `+=${maxScroll}`,
-          scrub: 1,
-          pin: true,
-        }
-      });
-
-      // Horizontal movement
-      tl.to(track, {
-        x: -maxScroll,
-        ease: "none",
-      });
-
-      // Progress bar
-      tl.to(".services-progress-bar", {
-        width: "100%",
-        ease: "none",
-      }, 0);
-
-      // Image parallax
-      gsap.to(".service-image", {
-        scale: 1,
-        stagger: 0.2,
-
-        scrollTrigger: {
-          trigger: ".services-section",
-          start: "top top",
-          end: `+=${maxScroll}`,
-          scrub: true,
-        }
-      });
-
-      // Active card depth
-      gsap.to(".service-card", {
-        rotateY: 0,
-        z: 0,
-
-        scrollTrigger: {
-          trigger: ".services-section",
-          start: "top top",
-          end: `+=${maxScroll}`,
-          scrub: true,
-        }
-      });
-
-    });
-
-    return () => ctx.revert();
-
-  }, []);
+    setProgress(progressStep * 100);
+  };
 
   return (
     <>
       <section className="services-section py-32">
 
-        <div className="services-sticky">
-          <div className="services-top text-center text-white">
-            <div className="mx-auto">
-              <span className="eyebrow mb-3">Our Services</span>
-              <h2 className="services-title">WHERE VISION MEETS CRAFT</h2>
+        <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center">
+          <div className="threed-intro w-full flex flex-col lg:w-[40%]">
+            <div className="front flex flex-col">
+              <span className="subtitle mb-4">Our Services</span>
+              <h2 className="services-title font-mono text-white">WHERE VISION MEETS CRAFT</h2>
+            </div>
+            {/* <div className="back flex flex-col">
+              <span className="subtitle mb-4">Our Services</span>
+              <h2 className="services-title font-mono text-white">WHERE VISION MEETS CRAFT</h2>
+            </div> */}
+          </div>
+          <div className="services-description mt-6 w-[55%]">
+            <p className="text-white/70 mb-4">
+              At Real Impact, we specialize in delivering world-class broadcast production services that bring your vision to life. With cutting-edge technology, expert engineering, and a passion for storytelling, we create unforgettable live experiences for sports, entertainment, and global events.
+            </p>
+
+            <TransitionLink href="/services" className="text-pri-400 btn btn-link">
+              Our Services
+              <span className="icon">
+                <IoArrowForward className="front" />
+                <IoArrowForward className="back" />
+              </span>
+            </TransitionLink>
+          </div>
+        </div>
+
+        <div className="services-slider-wrap pt-10">
+          <Swiper
+            className="services-slider"
+            slidesPerView={1.08}
+            spaceBetween={20}
+            speed={850}
+            loop
+            onSwiper={(currentSwiper) => {
+              setSwiper(currentSwiper);
+              handleProgress(currentSwiper);
+            }}
+            onProgress={handleProgress}
+            onSlideChange={(currentSwiper) => {
+              handleProgress(currentSwiper);
+            }}
+            breakpoints={{
+              768: {
+                slidesPerView: 1.45,
+                spaceBetween: 28,
+              },
+              1024: {
+                slidesPerView: 2.2,
+                spaceBetween: 32,
+              },
+              1440: {
+                slidesPerView: 2.75,
+                spaceBetween: 36,
+              },
+            }}
+          >
+            {services.map((service) => (
+              <SwiperSlide key={service.id}>
+                <article className="service-card">
+                  <div className="service-image-wrap">
+                    <img src={service.image} alt={service.title} />
+                  </div>
+                  <div className="service-content">
+                    <span className="service-number">{service.number}</span>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
+                </article>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="services-controls" aria-label="Services slider controls">
+
+
+            <div className="services-progress" aria-hidden="true">
+              <span className="services-progress-bar" style={{ width: `${progress}%` }} />
+            </div>
+
+            <div className="button-wrap">
+              <button
+                className="services-arrow"
+                type="button"
+                aria-label="Previous service"
+                onClick={() => swiper?.slidePrev()}
+              >
+                <IoArrowBack />
+              </button>
+              <button
+                className="services-arrow"
+                type="button"
+                aria-label="Next service"
+                onClick={() => swiper?.slideNext()}
+              >
+                <IoArrowForward />
+              </button>
             </div>
           </div>
-
-          <div className="services-track">
-
-            {services.map((service, index) => (
-              <article className="service-card" key={index}>
-                <div className="service-image-wrap">
-                  <img src={service.image} alt="" className="service-image" />
-                </div>
-
-                <div className="service-content">
-                  <span className="service-number">0{index + 1}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </div>
-              </article>
-            ))}
-
-          </div>
-
-          <div className="services-progress">
-            <div className="services-progress-bar" />
-          </div>
-
         </div>
+
 
       </section>
     </>

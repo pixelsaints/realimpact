@@ -112,85 +112,181 @@
   }
 }
 
-
-.services-section {
+.threed-intro{
   position: relative;
-  height: 100vh;
-  background: #020617;
   overflow: hidden;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+
+  h2{
+    @include xl{
+      font-size: 80px;
+      line-height: 1.1;
+    }
+  }
+
+  .front,
+  .back {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .back {
+    position: absolute;
+    inset: 0;
+  }
 }
 
-.services-sticky {
-  // position: sticky;
-  // top: 0;
-  height: 200vh;
-  display: flex;
-  flex-direction: column;
-  // justify-content: space-between;
-  overflow: hidden;
-  gap: 60px
-}
 
-.services-top {
-  display: flex;
-  justify-content: space-between;
-}
+.services{
 
-.services-title {
-  font-size: clamp(4rem, 3vw, 8rem);
-  font-family: $font-mono;
-  line-height: 0.9;
-}
+  &-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    padding-inline: 16px;
 
-.services-track {
-  display: flex;
-  gap: 3rem;
-  width: max-content;
-  padding-inline: 4rem;
-}
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: $black;
+    }
+  
+    .service-image {
+      height: 200px;
+      object-fit: cover;
+    }
+  
+    .service-content {
+      background: rgba($black-800, 0.8);
+      backdrop-filter: blur(16px);
+      position: relative;
+      z-index: 3;
 
-.service-card {
-  position: relative;
-  width: 42vw;
-  min-width: 42vw;
-  overflow: hidden;
-  flex-shrink: 0;
-}
+      @include lg{
+        padding: 32px;
+        margin-top: -80px;
+      }
 
-.service-image-wrap {
-  overflow: hidden;
-}
+      h3{
+        color: white;
+        font-family: $font-display;
+        font-size: 18px;
+        line-height: 1;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
 
-.service-image {
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-  transform: scale(1.2);
-}
+        @include lg{
+          font-size: 24px;
+        }
+      }
 
-.service-content {
-  position: absolute;
-  left: 2rem;
-  right: 2rem;
-  bottom: 2rem;
-  backdrop-filter: blur(24px);
-  background: rgba(0, 0, 0, 0.3);
-  padding: 2rem;
-}
+      p{
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 15px;
+        font-weight: 200;
+        line-height: 1.55;
+        max-width: 560px;
+      }
+    }
 
-.services-progress {
-  position: absolute;
+    .service-number{
+      color: $pri-400;
+      font-family: $font-display;
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-bottom: 28px;
+      display: block;
+    }
+  }
+  
 
-  left: 4rem;
-  right: 4rem;
-  bottom: 2rem;
+  &-slider-wrap {
+    position: relative;
+    margin-top: 56px;
+  }
 
-  height: 1px;
-  background: rgba(255, 255, 255, 0.2);
-}
+  &-slider {
+    overflow: visible;
+    padding-right: 16px;
+  }
 
-.services-progress-bar {
-  width: 0%;
-  height: 100%;
-  background: #facc15;
+  &-controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px auto 0;
+    max-width: 90%;
+    gap: 32px;
+
+    .button-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      width: 100px;
+    }
+  }
+
+  &-arrow {
+    width: 40px;
+    aspect-ratio: 1;
+    color: white;
+    background: rgba(255, 255, 255, 0.04);
+    transition: border-color 250ms ease, background 250ms ease, color 250ms ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span{
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    &:hover,
+    &:focus-visible {
+      border-color: $pri-400;
+      background: $pri-400;
+      color: $black;
+      outline: none;
+    }
+  }
+
+  &-progress {
+    height: 2px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.18);
+    width: calc( 100% - 100px);
+  }
+
+  &-progress-bar {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: $pri-400;
+    transition: width 250ms ease;
+  }
+
+  &-pagination {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding-top: 24px;
+    padding-right: 16px;
+    color: rgba(255, 255, 255, 0.42);
+    font-family: $font-display;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+
+    span:first-child {
+      color: $pri-400;
+    }
+  }
 }

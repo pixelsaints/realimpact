@@ -3,6 +3,8 @@ import { useRef, useEffect } from "react";
 import TextMarquee from "@/components/ui/text-marquee";
 import gsap from "@/lib/gsap";
 import SplitType from "split-type";
+import TransitionLink from "@/components/transitions/TransitionLink";
+import { IoArrowForward } from "react-icons/io5";
 
 export default function AboutSection() {
   const circleRef = useRef(null);
@@ -20,13 +22,13 @@ export default function AboutSection() {
 
       // Circle Rotate
       gsap.to(".circle-rotate", {
-        rotation: 360,
+        rotation: 45,
         ease: "none",
         scrollTrigger: {
           trigger: circleRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: 3,
+          scrub: 40,
         },
       });
 
@@ -86,8 +88,7 @@ export default function AboutSection() {
 
       // Subtitle
       gsap.from(subtitle.chars, {
-        // y: 40,
-        rotateY: 90,
+        y: 40,
         opacity: 0,
         duration: 0.9,
         ease: "power2.out",
@@ -95,7 +96,7 @@ export default function AboutSection() {
 
         scrollTrigger: {
           trigger: ".subtitle",
-          start: "top 85%",
+          start: "top 90%",
           toggleActions: "play none none reverse",
         },
       });
@@ -152,6 +153,22 @@ export default function AboutSection() {
         observer.observe(counter);
       });
 
+      gsap.from(circleRef.current.querySelectorAll(".counter-item"), {
+        y: 100,
+        rotateY: -90,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: 0.2,
+        transformOrigin: "bottom center",
+        perspective: 1000,
+        scrollTrigger: {
+          trigger: ".counter-grid",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
       // Cleanup SplitType
       return () => {
         subtitle.revert();
@@ -174,9 +191,16 @@ export default function AboutSection() {
         <img src="/svg/circle.svg" alt="about real impact" className="circle-rotate absolute inset-0 m-auto w-[70%] max-w-[50em] opacity-10 h-auto object-contain" />
         <div className="container relative">
           <div className="flex flex-col w-full lg:w-[90%] justify-center items-center text-center mx-auto">
-            <h5 className="subtitle text-pri-400 tracking-[3px] uppercase text-center mb-4">About Real Impact</h5>
+            <h5 className="subtitle mb-4">About Real Impact</h5>
             <h2 className="text-scrub font-serif leading-14 text-[40px] text-white mb-8">Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.</h2>
-            <p className="text-white/70 text-lg leading-relaxed w-[60%] mx-auto desc">Real Impact brings together decades of expertise in broadcast engineering, live production, and content execution, creating seamless experiences for sports, entertainment, and global television audiences.</p>
+            <p className="text-white/70 text-lg leading-relaxed w-[60%] mx-auto desc mb-8">Real Impact brings together decades of expertise in broadcast engineering, live production, and content execution, creating seamless experiences for sports, entertainment, and global television audiences.</p>
+            <TransitionLink href="/about" className="text-pri-400 btn btn-link">
+              About Us
+              <span className="icon">
+                <IoArrowForward className="front" />
+                <IoArrowForward className="back" />
+              </span>
+            </TransitionLink>
           </div>
         </div>
         <div className="counter-grid w-[80%] mx-auto grid grid-cols-2 lg:grid-cols-4 pt-24">

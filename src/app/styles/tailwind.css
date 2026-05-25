@@ -45,6 +45,10 @@ body {
   --color-black-900: #111827;
   --color-black-950: #030712;
 
+  --font-sans:
+    "Stack Sans Text",
+    sans-serif;
+
   --font-serif:
     "Stack Sans Notch",
     sans-serif;

@@ -3,13 +3,29 @@
 h1{
   font-family: $font-mono;
   font-weight: normal;
-
   @include fluid-type(40px, 120px)
+}
+
+h2{
+  font-weight: normal;
+
+  @include lg{
+    font-size: 40px;
+  }
 }
 
 p{
   font-weight: 200;
-  line-height: 1.6;
+  line-height: 1.8;
   font-size: 16px;
   letter-spacing: 0.04em;
+  color: $black-400;
+}
+
+.subtitle{
+  color: $pri-500;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
