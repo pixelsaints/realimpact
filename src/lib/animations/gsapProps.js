@@ -11,7 +11,6 @@ export const scaleUp = {
 export const fadeInUp = {
   y: 32,
   opacity: 0,
-  duration: 1.2,
   stagger: 0.1,
   ease: "power2.out",
 };

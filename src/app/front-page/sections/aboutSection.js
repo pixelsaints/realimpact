@@ -5,6 +5,7 @@ import gsap from "@/lib/gsap";
 import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import { IoArrowForward } from "react-icons/io5";
+import { scaleUp } from "@/lib/animations/gsapProps";
 
 export default function AboutSection() {
   const circleRef = useRef(null);
@@ -88,11 +89,7 @@ export default function AboutSection() {
 
       // Subtitle
       gsap.from(subtitle.chars, {
-        y: 40,
-        opacity: 0,
-        duration: 0.9,
-        ease: "power2.out",
-        stagger: 0.03,
+        ...scaleUp,
 
         scrollTrigger: {
           trigger: ".subtitle",

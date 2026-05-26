@@ -28,12 +28,14 @@ p{
   font-weight: 200;
   letter-spacing: 4px;
   text-transform: uppercase;
+  overflow: hidden;
 }
 
 .title{
   font-family: $font-mono;
-  font-size: 80px;
+  font-size: 64px;
   line-height: 1;
-  width: fit-content;
   text-transform: uppercase;
+  overflow: hidden;
 }
+
