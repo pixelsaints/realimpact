@@ -1,14 +1,23 @@
 "use client";
+import { useRef, useEffect } from "react";
 import { useState } from "react";
-import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TransitionLink from "@/components/transitions/TransitionLink";
-import "swiper/css";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import { scaleUp, fadeInUp } from "@/lib/animations/gsapProps";
+import "swiper/css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ServiceSection() {
   const [swiper, setSwiper] = useState(null);
   const [progress, setProgress] = useState(0);
+
+  const servicesRef = useRef(null);
+  const servicesSliderRef = useRef(null);
 
   const services = [
     {
@@ -85,24 +94,78 @@ export default function ServiceSection() {
   const handleProgress = (currentSwiper) => {
     const currentIndex = currentSwiper.realIndex ?? 0;
     const progressStep = services.length > 1 ? currentIndex / (services.length - 1) : 0;
-
     setProgress(progressStep * 100);
   };
+
+  useEffect(() => {
+
+
+    if (!servicesRef.current) return;
+
+    const ctx = gsap.context(() => {
+
+      const title = servicesRef.current.querySelector(".threed-intro");
+
+      const subtitle = new SplitType(servicesRef.current.querySelector(".subtitle"), {
+        types: "chars, lines",
+        lineClass: "line-child",
+      });
+      const titleSplit = new SplitType(servicesRef.current.querySelector("h2"), {
+        types: "chars, lines",
+        lineClass: "line-child",
+      });
+      const description = new SplitType(servicesRef.current.querySelector(".services-description p"), {
+        types: "lines",
+        lineClass: "line-child",
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      tl.from(subtitle.chars, {
+        ...scaleUp
+      }).from(titleSplit.chars, {
+        ...scaleUp
+      }, "-=1.6").from(description.lines, {
+        ...fadeInUp
+      }, "-=1.4").from(".services-description .btn-link", {
+        y: 30,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
+      }, "-=1.6")
+
+
+      gsap.from(servicesSliderRef.current, {
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: servicesSliderRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      })
+
+    }, servicesRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <>
       <section className="services-section py-32">
 
-        <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center">
-          <div className="threed-intro w-full flex flex-col lg:w-[40%]">
-            <div className="front flex flex-col">
-              <span className="subtitle mb-4">Our Services</span>
-              <h2 className="services-title font-mono text-white">WHERE VISION MEETS CRAFT</h2>
-            </div>
-            {/* <div className="back flex flex-col">
-              <span className="subtitle mb-4">Our Services</span>
-              <h2 className="services-title font-mono text-white">WHERE VISION MEETS CRAFT</h2>
-            </div> */}
+        <div className="container intro-section flex flex-col lg:flex-row lg:justify-between lg:items-center" ref={servicesRef}>
+          <div className="flex flex-col lg:w-[40%]">
+            <span className="subtitle mb-4">Our Services</span>
+            <h2 className="title font-mono text-white">WHERE VISION MEETS CRAFT</h2>
           </div>
           <div className="services-description mt-6 w-[55%]">
             <p className="text-white/70 mb-4">
@@ -119,7 +182,7 @@ export default function ServiceSection() {
           </div>
         </div>
 
-        <div className="services-slider-wrap pt-10">
+        <div className="services-slider-wrap pt-10" ref={servicesSliderRef}>
           <Swiper
             className="services-slider"
             slidesPerView={1.08}
@@ -166,8 +229,6 @@ export default function ServiceSection() {
           </Swiper>
 
           <div className="services-controls" aria-label="Services slider controls">
-
-
             <div className="services-progress" aria-hidden="true">
               <span className="services-progress-bar" style={{ width: `${progress}%` }} />
             </div>

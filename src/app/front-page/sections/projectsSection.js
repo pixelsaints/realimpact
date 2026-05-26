@@ -6,14 +6,43 @@ import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import { projectsList } from "@/data/projectsList";
 import { IoArrowForward } from "react-icons/io5";
+import { scaleUp, fadeInUp } from "@/lib/animations/gsapProps";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectsSection() {
 
+  const introRef = useRef(null);
+
   useEffect(() => {
 
+
+    const title = new SplitType(introRef.current.querySelector("h2"), {
+      types: "lines, chars",
+      lineClass: "line-child",
+    });
+
+    const desc = new SplitType(introRef.current.querySelector(".section-description"), {
+      types: "lines",
+      lineClass: "line-child",
+    });
+
     const ctx = gsap.context(() => {
+
+      const introTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: introRef.current,
+          start: "top 82%",
+          toggleActions: "play none none reverse",
+        }
+      });
+
+      introTl.from(title.chars, {
+        ...scaleUp
+      }).from(desc.lines, {
+        ...fadeInUp
+      }, "-=1.4");
+
 
       const cards = document.querySelectorAll(".project-card");
 
@@ -58,23 +87,14 @@ export default function ProjectsSection() {
             ease: "power2.out",
           }, "-=1.6")
 
-          // content-wrapper
-
-          .from(card.querySelector(".content-wrapper"), {
-            x: 100,
-            opacity: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          }, "-=1.4")
-
           // Title words
           .from(titleSplit.chars, {
-            rotationY: 90,
-            transformOrigin: "center bottom",
+            scaleY: 0,
+            transformOrigin: "bottom center",
             perspective: 1200,
             opacity: 0,
             stagger: 0.04,
-            duration: 1.2,
+            duration: 0.4,
             ease: "power2.out",
           }, "-=1.2")
 
@@ -85,11 +105,11 @@ export default function ProjectsSection() {
             stagger: 0.08,
             duration: 1.2,
             ease: "power2.out",
-          }, "-=1.8")
+          }, "-=1.4")
 
           // Tags
           .from(card.querySelectorAll(".project-tag"), {
-            rotationX: 90,
+            scaleY: 0,
             transformOrigin: "bottom center",
             perspective: 1200,
             opacity: 0,
@@ -110,8 +130,8 @@ export default function ProjectsSection() {
     <>
       <section className="projects-section pb-32">
         <div className="container">
-          <div className="w-[70%] mx-auto flex flex-col items-center justify-center text-center mb-20">
-            <div className="section-title text-white font-mono text-[5vw] uppercase">Recent Projects</div>
+          <div className="w-[70%] mx-auto flex flex-col items-center justify-center text-center mb-20" ref={introRef}>
+            <h2 className="title text-white font-mono uppercase mb-4">Recent Projects</h2>
             <p className="section-description text-gray-300 mb-6">
               Explore a selection of our recent projects showcasing our expertise in broadcast engineering, live production, and media technology solutions.
             </p>

@@ -29,3 +29,11 @@ p{
   letter-spacing: 4px;
   text-transform: uppercase;
 }
+
+.title{
+  font-family: $font-mono;
+  font-size: 80px;
+  line-height: 1;
+  width: fit-content;
+  text-transform: uppercase;
+}
