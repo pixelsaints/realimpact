@@ -7,7 +7,7 @@ export default function FrontPage() {
 
   return (
     <>
-      {/* <HeroSection /> */}
+      <HeroSection />
       <AboutSection />
       <ServiceSection />
       <ProjectsSection />
