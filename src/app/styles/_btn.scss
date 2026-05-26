@@ -25,6 +25,7 @@
     .back{
       position: absolute;
       transform: translateX(-110%);
+      opacity: 0;
     }
   }
 
@@ -34,10 +35,12 @@
 
       .front{
         transform: translateX(110%);
+        opacity: 0;
       }
 
       .back{
         transform: translateX(0%);
+        opacity: 1;
       }
     }
   }
