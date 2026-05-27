@@ -17,15 +17,15 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        titleFirst="Where Vision"
-        titleSecond="Becomes Experiences"
+        titleFirst="Where Precision "
+        titleSecond="Meets Production"
         desc="Real Impact delivers broadcast production, technical execution, and rental solutions for large-scale events, live transmissions, and mission-critical operations."
         image={heroImage}
       />
 
       <section className="overflow-hidden py-24 lg:py-32">
         <div className="container relative">
-          <img src="/svg/circle.svg" alt="about real impact" className="circle-rotate absolute inset-0 m-auto w-[70%] max-w-[50em] opacity-10 h-auto object-contain" />
+          {/* <img src="/svg/circle.svg" alt="about real impact" className="circle-rotate absolute inset-0 m-auto w-[70%] max-w-[50em] opacity-10 h-auto object-contain" /> */}
         </div>
       </section>
 

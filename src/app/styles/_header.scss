@@ -212,11 +212,27 @@
     display: block;
 
     &-subtitle{
-      color: #fff;
+      color: $pri-400;
+      margin-bottom: 24px;
+      overflow: hidden;
 
-      &::after{
-
+      span{
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
     }
+
+    &-heading{
+      color: $white;
+      line-height: 1;
+      @include fluid-type(56px, 100px);
+      margin-bottom: 24px;
+      mix-blend-mode: difference;
+    }
+  }
+
+  .video-player{
+    clip-path: inset(0 100% 0 0);
   }
 }
