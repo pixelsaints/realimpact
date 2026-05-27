@@ -33,9 +33,14 @@ p{
 
 .title{
   font-family: $font-mono;
-  font-size: 64px;
-  line-height: 1;
   text-transform: uppercase;
   overflow: hidden;
+  font-size: 48px;
+  line-height: 1.2;
+
+  @include lg{
+    font-size: 64px;
+    line-height: 1;
+  }
 }
 

@@ -88,53 +88,57 @@ export default function HeroSection() {
     <>
       <div className="hero flex flex-col items-center justify-center">
         <div className="container">
-          <div className="hero-title flex flex-col gap-6">
+          <div className="hero-title flex flex-col gap-4 lg:gap-6">
 
             <div className="wrap-heading-3d">
               <div className="front">
-                <div className="flex flexrow items-center justify-between gap-6">
-                  <div className="relative w-fit">
-                    <div className="h1 text-white">Real</div>
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                  <div className="flex flex-row items-center gap-4">
+                    <div className="relative w-fit">
+                      <div className="h1 text-white">Real</div>
+                    </div>
+                    <div className="relative w-[45%]">
+                      <img src="/images/hero-image-1.webp" className="w-full lg:h-[12em] object-cover object-center" alt="" />
+                    </div>
                   </div>
-                  <div className="relative w-[45%]">
-                    <img src="/images/hero-image-1.webp" className="w-full h-[12em] object-cover object-center" alt="" />
-                  </div>
                   <div className="relative w-fit">
-                    <div className="h1 text-white">IMPACT</div>
-                    <span className="text-sticker absolute right-[5%] top-[35%] rotate-6 bg-cyan-400 p-3 ">With Strategy</span>
+                    <div className="h1 alt text-white">IMPACT</div>
+                    <span className="text-sticker absolute right-[5%] top-[55%] lg:top-[35%] bg-cyan-400">With Strategy</span>
                   </div>
                 </div>
               </div>
 
               <div className="back">
-                <div className="flex flex-row items-center justify-between gap-6">
-                  <div className="relative w-fit">
-                    <div className="h1 text-white">Real</div>
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                  <div className="flex flex-row items-center gap-4">
+                    <div className="relative w-fit">
+                      <div className="h1 text-white">Real</div>
+                    </div>
+                    <div className="relative w-[45%]">
+                      <img src="/images/hero-image-1.webp" className="w-full lg:h-[12em] object-cover object-center" alt="" />
+                    </div>
                   </div>
-                  <div className="relative w-[45%]">
-                    <img src="/images/hero-image-1.webp" className="w-full h-[12em] object-cover object-center" alt="" />
-                  </div>
                   <div className="relative w-fit">
-                    <div className="h1 text-white">IMPACT</div>
-                    <span className="text-sticker absolute right-[5%] top-[35%] rotate-6 bg-cyan-400 p-3 ">With Strategy</span>
+                    <div className="h1 alt text-white">IMPACT</div>
+                    <span className="text-sticker absolute right-[5%] top-[55%] lg:top-[35%] bg-cyan-400">With Strategy</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="wrap-heading-3d alt">
-              <div className="front">
-                <div className="flex flex-row items-center gap-6">
-                  <div className="relative w-[35%]">
-                    <span className="text-sticker absolute right-[-5%] top-[30%] -rotate-4 bg-amber-300 p-3 ">In</span>
-                    <img src="/images/hero-image-2.webp" className="w-full h-[15em] object-cover object-center" alt="" />
+              <div className="front flex items-center justify-center">
+                <div className="flex flex-col lg:flex-row lg:items-center gap-6">
+                  <div className="relative lg:w-[35%]">
+                    <span className="text-sticker absolute right-[75%] lg:right-[-5%] bottom-[-5%] lg:bottom-auto lg:top-[30%] -rotate-4 bg-amber-300">In</span>
+                    <img src="/images/hero-image-2.webp" className="w-full lg:h-[15em] object-cover object-center" alt="" />
                   </div>
                   <div className="relative">
                     <div className="relative">
-                      <div className="h1 text-white">Everything</div>
-                      <span className="text-sticker absolute right-[5%] top-[35%] -rotate-4 bg-fuchsia-300 p-3 ">At Scale</span>
+                      <div className="h1 alt2 text-white">Everything</div>
+                      <span className="text-sticker absolute right-[5%] top-[35%] -rotate-4 bg-fuchsia-300">At Scale</span>
                     </div>
-                    <div className="grid grid-cols-4 items-center px-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 items-center px-4 gap-6 lg:gap-0 mt-6 lg:mt-0">
                       <div className="hero-icons flex flex-row items-center">
                         <img src="/icons/sports-icon.svg" alt="" />
                         <h4>Live Sports <br /> Production</h4>
@@ -155,18 +159,18 @@ export default function HeroSection() {
                   </div>
                 </div>
               </div>
-              <div className="back">
-                <div className="flex flex-row items-center gap-6">
-                  <div className="relative w-[35%]">
-                    <span className="text-sticker absolute right-[-5%] top-[30%] rotate-4 bg-amber-300 p-3 ">In</span>
-                    <img src="/images/hero-image-2.webp" className="w-full h-[15em] object-cover object-center" alt="" />
+              <div className="back flex items-center justify-center">
+                <div className="flex flex-col lg:flex-row lg:items-center gap-6">
+                  <div className="relative lg:w-[35%]">
+                    <span className="text-sticker absolute right-[75%] lg:right-[-5%] bottom-[-5%] lg:bottom-auto lg:top-[30%] -rotate-4 bg-amber-300">In</span>
+                    <img src="/images/hero-image-2.webp" className="w-full lg:h-[15em] object-cover object-center" alt="" />
                   </div>
                   <div className="relative">
                     <div className="relative">
-                      <div className="h1 text-white">Everything</div>
-                      <span className="text-sticker absolute right-[5%] top-[35%] -rotate-4 bg-fuchsia-300 p-3 ">At Scale</span>
+                      <div className="h1 alt2 text-white">Everything</div>
+                      <span className="text-sticker absolute right-[5%] top-[35%] -rotate-4 bg-fuchsia-300">At Scale</span>
                     </div>
-                    <div className="grid grid-cols-4 items-center px-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 items-center px-4 gap-6 lg:gap-0 mt-6 lg:mt-0">
                       <div className="hero-icons flex flex-row items-center">
                         <img src="/icons/sports-icon.svg" alt="" />
                         <h4>Live Sports <br /> Production</h4>

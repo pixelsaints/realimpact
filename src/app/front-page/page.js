@@ -1,3 +1,4 @@
+import Cta from "@/components/layout/cta"
 import AboutSection from "./sections/aboutSection"
 import ClientsSection from "./sections/clientsSection"
 import HeroSection from "./sections/heroSection"
@@ -15,6 +16,7 @@ export default function FrontPage() {
       <ProjectsSection />
       <WhyUs />
       <ClientsSection />
+      <Cta />
     </>
   )
 }

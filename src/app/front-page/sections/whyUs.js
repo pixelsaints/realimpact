@@ -157,10 +157,10 @@ export default function WhyUs() {
 
   return (
     <>
-      <section className="why-us py-32 bg-black-900">
+      <section className="why-us py-24 lg:py-32 bg-black-900">
         <div className="container">
           <div className="flex flex-col lg:flex-row">
-            <div className="intro w-[60%] mx-auto text-center flex flex-col items-center mb-16" ref={introRef}>
+            <div className="intro w-full lg:w-[60%] mx-auto text-center flex flex-col items-center mb-16" ref={introRef}>
               <div className="subtitle mb-6">Why Choose Us</div>
               <h2 className="title text-white mb-6">Experiences that leave a lasting impact</h2>
               <p className="title-description">We are committed to delivering exceptional results and exceeding our clients' expectations. Our team of experts is dedicated to providing innovative solutions that drive growth and success for your business.</p>
@@ -171,19 +171,18 @@ export default function WhyUs() {
             {
               whyUs.map((item) => {
                 return (
-                  <div key={item.number} className="flex flex-col lg:flex-row items-center lg:justify-between text-white wc-content-card">
-                    <div className="wc-content-number w-[20%]">
-
+                  <div key={item.number} className="flex flex-col lg:flex-row lg:items-center lg:justify-between text-white wc-content-card">
+                    <div className="wc-content-number lg:w-[20%] mb-6 lg:mb-0">
                       <span>
                         {item.number}
                       </span>
 
                       {item.image && <img src={item.image} className='wc-content-image' />}
                     </div>
-                    <div className="wc-content-title w-[30%] pl-4">
+                    <div className="wc-content-title lg:w-[30%] mb-4 lg:mb-0 lg:pl-4">
                       <h3>{item.title}</h3>
                     </div>
-                    <div className="wc-content-desc  w-[45%] pr-6">
+                    <div className="wc-content-desc  lg:w-[45%] lg:pr-6">
                       <p>{item.desc}</p>
                     </div>
                   </div>

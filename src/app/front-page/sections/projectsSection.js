@@ -128,18 +128,18 @@ export default function ProjectsSection() {
 
   return (
     <>
-      <section className="projects-section pb-32">
+      <section className="projects-section lg:pb-32">
         <div className="container">
-          <div className="w-[70%] mx-auto flex flex-col items-center justify-center text-center mb-20" ref={introRef}>
+          <div className="w-full lg:w-[70%] mx-auto flex flex-col items-center justify-center text-center mb-20" ref={introRef}>
             <h2 className="title text-white font-mono uppercase mb-4">Recent Projects</h2>
             <p className="section-description text-gray-300 mb-6">
               Explore a selection of our recent projects showcasing our expertise in broadcast engineering, live production, and media technology solutions.
             </p>
           </div>
-          <div className="projects-grid flex flex-col gap-20">
+          <div className="projects-grid flex flex-col gap-16 lg:gap-20">
             {/* Map through projectsList and render project cards */}
             {projectsList.slice(0, 6).map((project, index) => (
-              <div key={index} className="project-card flex flex-col lg:flex-row lg:items-stretch gap-16">
+              <div key={index} className="project-card flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-16">
                 <div className={`image-wrapper lg:w-1/2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                   <img src={project.image} alt={project.name} className="project-image" />
                 </div>

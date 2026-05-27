@@ -12,6 +12,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import SplitType from "split-type"
 import { fadeInUp, scaleUp } from "@/lib/animations/gsapProps"
+import ClientsCarosel from "@/components/ui/clients-carosel"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -103,11 +104,11 @@ export default function ClientsSection() {
   }
 
   return (
-    <section className="clients-section py-32 bg-black">
+    <section className="clients-section py-32 bg-black-800/50">
       <div className="container pb-24">
         <div className="flex flex-col items-center" ref={introRef}>
           <div className="subtitle mb-6">Testimonials</div>
-          <h2 className="title text-white w-[50%] mx-auto text-center">experiences that speak for themselves</h2>
+          <h2 className="title text-white lg:w-[50%] mx-auto text-center">experiences that speak for themselves</h2>
         </div>
       </div>
       <div className="clients-marquee" ref={clientSliderRef}>
@@ -129,6 +130,10 @@ export default function ClientsSection() {
             {secondRow.map(renderTestimonialSlide)}
           </Swiper>
         </div>
+      </div>
+
+      <div className="pt-24 lg:pt-32">
+        <ClientsCarosel />
       </div>
     </section>
   )
