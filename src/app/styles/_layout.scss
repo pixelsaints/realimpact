@@ -146,6 +146,12 @@
   overflow: hidden;
   perspective: 1200px;
   transform-style: preserve-3d;
+  will-change: transform;
+
+  h1 {
+    @include fluid-type(52px, 160px);
+    line-height: 1.1;
+  }
 
   h2{
     @include xl{
@@ -156,8 +162,6 @@
 
   .front,
   .back {
-    perspective: 1200px;
-    transform-style: preserve-3d;
     will-change: transform;
     backface-visibility: hidden;
   }
