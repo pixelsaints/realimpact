@@ -4,7 +4,7 @@ import { useRef, useEffect, useReducer } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-import { scaleUp } from "@/lib/animations/gsapProps";
+import { introScaleUp } from "@/lib/animations/gsapProps";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,16 +23,15 @@ export default function PageHeader({ titleFirst, titleSecond, desc, image }) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: heroRef.current,
-          start: "top top",
+          start: "top 80%",
           toggleActions: "play none none none"
         }
       })
 
       tl.from(
-        title.char, {
-        ...scaleUp
-      }
-      )
+        title.chars, {
+        ...introScaleUp
+      })
     })
 
     return () => ctx.revert();
@@ -47,9 +46,10 @@ export default function PageHeader({ titleFirst, titleSecond, desc, image }) {
       <div className="container relative">
         <div className="w-full flex flex-col item-start justify-start" >
           <div className="intro flex flex-col" ref={heroRef}>
-            <h1 className="text-white leading-none">{titleFirst} <br /> {titleSecond} </h1>
+            <div className="intro-subtitle">Live Production & Broadcast Specialists</div>
+            <h1 className="intro-heading">{titleFirst} <br /> {titleSecond} </h1>
           </div>
-          <p className="desc mt-4 lg:w-[70%] text-white/72">{desc}</p>
+          <p className="intro-desc mt-4 lg:w-[60%]">{desc}</p>
         </div>
       </div>
     </div>

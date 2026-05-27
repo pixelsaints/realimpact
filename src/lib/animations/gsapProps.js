@@ -8,6 +8,16 @@ export const scaleUp = {
   ease: "back.inOut(1.4)",
 };
 
+export const introScaleUp = {
+  scaleY: 0,
+  y: 50,
+  transformOrigin: "bottom center",
+  opacity: 0,
+  duration: 1.2,
+  stagger: 0.04,
+  ease: "back.inOut(1.4)",
+};
+
 export const fadeInUp = {
   y: 32,
   opacity: 0,

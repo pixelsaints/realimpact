@@ -107,7 +107,7 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <div ref={menuRef} className="mobile-menu-wrapper">
+      <div ref={menuRef} className={`mobile-menu-wrapper ${menuActive ? 'is-active' : ''}`}>
         <div className="mobile-menu-content">
           <ul className="mobile-menu flex flex-col">
             {nav.map((item) => (
