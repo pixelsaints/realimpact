@@ -12,12 +12,16 @@ export const nav = [
     href: "/services",
     submenu: [
       {
-        name: "4k Solutions",
-        href: "/services/4k-solutions",
+        name: "Remote Productions",
+        href: "/services/remote-productions"
       },
       {
         name: "RF Solutions",
         href: "/services/rf-solutions",
+      },
+      {
+        name: "4k Solutions",
+        href: "/services/4k-solutions",
       },
       {
         name: "Entertainment",

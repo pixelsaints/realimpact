@@ -9,7 +9,7 @@ import { BsStars } from "react-icons/bs";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function PageHeader({ titleFirst, titleSecond, desc, image }) {
+export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, video }) {
 
   const heroRef = useRef(null);
 
@@ -66,23 +66,23 @@ export default function PageHeader({ titleFirst, titleSecond, desc, image }) {
 
   return (
     <div className="page-header min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/70" />
-      <div className="absolute inset-0 bg-linear-to-t from-black-900 via-black-900/20 to-black/30" />
+      {/* <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-linear-to-b from-black-900 via-black-900/20 to-black/30" /> */}
       <div className="container relative" ref={heroRef}>
         <div className="w-full flex flex-col item-start justify-start" >
           <div className="intro flex flex-col relative z-20">
             <div className="intro-subtitle">
-              <span><BsStars /> Live Production & Broadcast Specialists</span>
+              <span><BsStars /> {subtitle}</span>
             </div>
             <h1 className="intro-heading">{titleFirst} <br /> {titleSecond} </h1>
             <p className="intro-desc mt-4 lg:w-[60%]">{desc}</p>
           </div>
 
           <div className="video-player lg:absolute lg:right-0 lg:top-[-25%] w-[50%] h-[60vh]">
-            <div className="absolute bg-black/70 w-full h-full inset-0 z-10"></div>
+            <div className="absolute bg-black/50 w-full h-full inset-0 z-10"></div>
             <video autoPlay muted loop playsInline className="absolute w-full h-full object-cover">
               {/* <source src="/videos/video-1.webm" /> */}
-              <source src="/videos/video-2.mp4" />
+              <source src={video} />
             </video>
           </div>
         </div>

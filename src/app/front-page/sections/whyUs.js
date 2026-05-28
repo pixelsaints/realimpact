@@ -160,7 +160,7 @@ export default function WhyUs() {
       <section className="why-us py-24 lg:py-32 bg-black-900">
         <div className="container">
           <div className="flex flex-col lg:flex-row">
-            <div className="intro w-full lg:w-[60%] mx-auto text-center flex flex-col items-center mb-16" ref={introRef}>
+            <div className="intro w-full lg:w-[70%] mx-auto text-center flex flex-col items-center mb-16" ref={introRef}>
               <div className="subtitle mb-6">Why Choose Us</div>
               <h2 className="title text-white mb-6">Experiences that leave a lasting impact</h2>
               <p className="title-description">We are committed to delivering exceptional results and exceeding our clients' expectations. Our team of experts is dedicated to providing innovative solutions that drive growth and success for your business.</p>

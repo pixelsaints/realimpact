@@ -53,13 +53,13 @@ export default function Footer() {
             <div className="lg:w-[28%]">
               <h4 className="mb-4">Contact</h4>
               <div className="flex flex-col divide-y divide-white/10 gap-3">
-                <a href="mailto:mail@realimpact.tv" className="text-white/70 hover:text-white transition pb-2">
+                <a href="mailto:mail@realimpact.tv" className="text-white/70 hover:text-white transition pb-3">
                   mail@realimpact.tv</a>
-                <a href="tel:+911141651334" className="text-white/70 hover:text-white transition pb-2">
+                <a href="tel:+911141651334" className="text-white/70 hover:text-white transition pb-3">
                   New Delhi - +91 11 41651334</a>
-                <a href="tel:+912240211332" className="text-white/70 hover:text-white transition pb-2">
+                <a href="tel:+912240211332" className="text-white/70 hover:text-white transition pb-3">
                   Mumbai - +91 22 40211332</a>
-                <p className="text-white/70">
+                <p className="text-white/70 pb-3">
                   <b>New Delhi</b> - A 2/38, 3rd Floor,Safdarjung Enclave, New Delhi-110 029, India
                 </p>
                 <p className="text-white/70">

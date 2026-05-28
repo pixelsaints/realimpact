@@ -722,3 +722,181 @@
 .line{
   overflow: hidden;
 }
+
+
+.list{
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.8;
+  color: $black-400;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+
+  @include lg {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    border: 1px solid $black-600;
+    border-radius: 8px;
+    background-color: $black-700;
+    transition: all 0.4s ease;
+    width: 40px;
+    height: 40px;
+
+    @include lg {
+      position: relative;
+      width: 60px;
+      height: 60px;
+    }
+
+    img {
+      transition: all 0.4s ease;
+      width:32px;
+      height:32px;
+      color: $white;
+
+      @include lg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  &-content {
+    margin: 0 0 32px;
+    padding-left: 24px;
+
+    @include lg {
+      text-align: center;
+      padding: 16px;
+      margin: 16px 0 0;
+    }
+
+    h4 {
+      color: $white;
+      font-size: 18px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+
+      @include lg {
+        margin-top: 24px;
+        margin-bottom: 12px;
+        font-size: 22px;
+      }
+    }
+  }
+
+  span {
+    left: 18px;
+    position: absolute;
+    background: $black-700;
+    width: 2px;
+    height: 100%;
+
+    @include lg {
+      height: 2px;
+      left: 0;
+      width: 100%;
+      top: 30px;
+    }
+  }
+
+  &:last-child span {
+    display: none;
+  }
+
+  @include lg {
+    &:first-child {
+      span {
+        left: auto;
+        right: 0;
+        width: 50%;
+      }
+    }
+
+    &:last-child {
+      span {
+        display: block;
+        right: auto;
+        left: 0;
+        width: 50%;
+      }
+    }
+  }
+
+  &:hover {
+
+    .step-icon {
+      border-color: $black-500;
+      background-color: $black-600;
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.why-card{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba($black-800, 0.5);
+
+  @include lg{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  &-title{
+    position: relative;
+    z-index: 5;
+
+    @include lg{
+      width: 35%;
+    }
+
+    .sub-title{
+      font-size: 16px;
+      color: $pri-400;
+      font-weight: 200;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+
+      @include lg{
+        margin-bottom: 32px;
+      }
+    }
+
+    h2{
+      color: $white;
+      font-family: $font-display;
+      @include fluid-type(24px, 32px)
+    }
+  }
+
+  &-image{
+    width: 25%;
+  }
+
+  &-content{
+    width: 50%;
+    position: relative;
+    z-index: 5;
+  }
+}

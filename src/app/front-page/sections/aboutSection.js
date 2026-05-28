@@ -6,16 +6,11 @@ import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import { IoArrowForward } from "react-icons/io5";
 import { scaleUp } from "@/lib/animations/gsapProps";
+import { counterStat } from "@/data/counterStat";
+import Counter from "@/components/ui/couner";
 
 export default function AboutSection() {
   const circleRef = useRef(null);
-
-  const counterStat = [
-    { label: "Years of Experience", value: 20, unit: "+" },
-    { label: "Clients worldwide", value: 85, unit: "+" },
-    { label: "Projects Delivered", value: 200, unit: "+" },
-    { label: "Client Satisfaction", value: 98, unit: "+" },
-  ];
 
   useEffect(() => {
 
@@ -200,7 +195,7 @@ export default function AboutSection() {
             </TransitionLink>
           </div>
         </div>
-        <div className="counter-grid w-full lg:w-[80%] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-y-0 pt-24">
+        {/* <div className="counter-grid w-full lg:w-[80%] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-y-0 pt-24">
           {counterStat.map((item, index) => (
             <div key={index} className="counter-item flex flex-col items-center justify-center gap-4">
               <div className="flex flex-row items-start gap-2 text-4xl font-bold text-white">
@@ -209,6 +204,17 @@ export default function AboutSection() {
               </div>
               <p className="text-white/70">{item.label}</p>
             </div>
+          ))}
+        </div> */}
+
+        <div className="counter-grid w-full mx-auto grid grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-y-0 pt-24">
+          {counterStat.map((item, index) => (
+            <Counter
+              key={index}
+              count={item.count}
+              suffix={item.suffix}
+              text={item.text}
+            />
           ))}
         </div>
       </div>

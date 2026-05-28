@@ -24,3 +24,52 @@ export const fadeInUp = {
   stagger: 0.1,
   ease: "power2.out",
 };
+
+export const fadeUp = {
+  y: 32,
+  opacity: 0,
+  ease: "expo.out"
+}
+
+export const counterUp = {
+  y: 100,
+  rotateY: -90,
+  opacity: 0,
+  duration: 0.5,
+  ease: "power2.out",
+  transformOrigin: "bottom center",
+  perspective: 1000,
+}
+
+export const revealLeftFrom = {
+  x: 100,
+  clipPath: "inset(0 100% 0 0)",
+};
+
+export const revealLeftTo = {
+  x: 0,
+  clipPath: "inset(0 0% 0 0)",
+  ease: "expo.out"
+};
+
+export const revealTopFrom = {
+  y: -100,
+  clipPath: "inset(100% 0 0 0)",
+};
+
+export const revealTopTo = {
+  y: 0,
+  clipPath: "inset(0% 0 0 0)",
+  ease: "expo.out"
+};
+
+export const revealBottomFrom = {
+  y: 100,
+  clipPath: "inset(0 0 100% 0)",
+};
+
+export const revealBottomTo = {
+  y: 0,
+  clipPath: "inset(0 0 0% 0)",
+  ease: "expo.out"
+};

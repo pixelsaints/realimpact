@@ -25,6 +25,7 @@
           font-weight: 200;
           letter-spacing: 0.04em;
           transition: all 0.5s ease;
+          font-size: 14px;
 
           &:hover {
             color: $pri-300;
@@ -230,6 +231,12 @@
       margin-bottom: 24px;
       mix-blend-mode: difference;
     }
+
+    &-desc{
+      color: #fff;
+    }
+
+
   }
 
   .video-player{
