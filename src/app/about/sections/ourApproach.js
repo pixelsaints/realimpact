@@ -94,7 +94,7 @@ export default function OurApproach() {
         <div className="container">
           <div className="flex flex-col justify-center items-center mb-24">
             <div className="subtitle mb-5">Our Approach</div>
-            <div className="w-[65%] text-center">
+            <div className="lg:w-[65%] text-center">
               <h3 className="title text-white">Structured Processes Behind Seamless Productions</h3>
             </div>
           </div>

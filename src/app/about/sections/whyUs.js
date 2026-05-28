@@ -153,59 +153,80 @@ export default function WhyUs() {
           },
         });
 
-        // Mouse move
-        const handleMouseMove = (e) => {
+        const isMobile = window.innerWidth < 768;
 
-          const cursorX =
-            e.clientX / window.innerWidth - 0.5;
+        if (isMobile) {
 
-          gsap.to(img, {
+          // Always visible on mobile
+          gsap.set(img, {
             autoAlpha: 1,
-            scale: 1.1,
-            x: cursorX * 100,
-            duration: 0.8,
-            ease: "power3.out",
+            scale: 1,
+            x: 0,
           });
 
-        };
+        } else {
 
-        // Mouse leave
-        const handleMouseLeave = () => {
-
-          gsap.to(img, {
+          // Desktop initial state
+          gsap.set(img, {
             autoAlpha: 0,
             scale: 0.5,
-            x: 0,
-            duration: 0.8,
-            ease: "power3.out",
           });
 
-        };
+          // Mouse move
+          const handleMouseMove = (e) => {
 
-        card.addEventListener(
-          "mousemove",
-          handleMouseMove
-        );
+            const cursorX =
+              e.clientX / window.innerWidth - 0.5;
 
-        card.addEventListener(
-          "mouseleave",
-          handleMouseLeave
-        );
+            gsap.to(img, {
+              autoAlpha: 1,
+              scale: 1.1,
+              x: cursorX * 100,
+              duration: 0.8,
+              ease: "power3.out",
+            });
 
-        // Proper cleanup
-        return () => {
+          };
 
-          card.removeEventListener(
+          // Mouse leave
+          const handleMouseLeave = () => {
+
+            gsap.to(img, {
+              autoAlpha: 0,
+              scale: 0.5,
+              x: 0,
+              duration: 0.8,
+              ease: "power3.out",
+            });
+
+          };
+
+          card.addEventListener(
             "mousemove",
             handleMouseMove
           );
 
-          card.removeEventListener(
+          card.addEventListener(
             "mouseleave",
             handleMouseLeave
           );
 
-        };
+          // Cleanup
+          return () => {
+
+            card.removeEventListener(
+              "mousemove",
+              handleMouseMove
+            );
+
+            card.removeEventListener(
+              "mouseleave",
+              handleMouseLeave
+            );
+
+          };
+
+        }
 
       });
 

@@ -51,7 +51,7 @@ export default function AboutIntro() {
   return (
     <>
       <section className="py-32 bg-[url(/images/bg-about.webp)] bg-center">
-        <div className="w-[90%] mx-auto wrapper">
+        <div className="lg:w-[90%] mx-auto wrapper">
           <div className="container">
             <div ref={sectionRef}>
               <h2 className="title alt text-white text-center">Real Impact is India's trusted broadcast equipment rental and production company, delivering world-class events through expert creative, technical, and production execution.</h2>

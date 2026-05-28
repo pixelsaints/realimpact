@@ -723,7 +723,6 @@
   overflow: hidden;
 }
 
-
 .list{
   font-size: 16px;
   font-weight: 200;
@@ -752,8 +751,8 @@
     border-radius: 8px;
     background-color: $black-700;
     transition: all 0.4s ease;
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
 
     @include lg {
       position: relative;
@@ -799,7 +798,7 @@
   }
 
   span {
-    left: 18px;
+    left: 32px;
     position: absolute;
     background: $black-700;
     width: 2px;
@@ -854,6 +853,8 @@
   flex-direction: column;
   gap: 16px;
   background: rgba($black-800, 0.5);
+  padding: 16px;
+  overflow: hidden;
 
   @include lg{
     flex-direction: row;
@@ -891,12 +892,19 @@
   }
 
   &-image{
-    width: 25%;
+    margin: 24px 0;
+    
+    @include lg{
+      width: 25%;
+    }
   }
 
   &-content{
-    width: 50%;
     position: relative;
     z-index: 5;
+
+    @include lg{
+      width: 50%;
+    }
   }
 }

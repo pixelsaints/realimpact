@@ -97,10 +97,10 @@ export default function OurStory() {
 
   return (
     <>
-      <section className="py-24 lg:py-32">
+      <section className="py-24 lg:py-32 overflow-hidden">
         <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center" ref={sectionRef}>
-          <div className="lg:w-[45%] image-left">
-            <img src="/images/55.jpg" alt="" className="w-full object-cover object-center h-[40em] lg:h-auto" />
+          <div className="lg:w-[45%] image-left mb-12">
+            <img src="/images/55.jpg" alt="" className="w-full object-cover object-center h-[24em] lg:h-auto" />
           </div>
           <div className="lg:w-[50%]" ref={contentRef}>
             <div className="subtitle mb-4">Our Story</div>
@@ -110,17 +110,17 @@ export default function OurStory() {
               <p className="mb-16">Over the years we've built a fine reputation for our cost-effective integrated engineering, turnkey system integration, custom made solutions & production services for Television Channels, Entertainment & Sports Event Organizers, Reality Shows, and Production Companies.</p>
             </div>
             <ul className="list flex flex-col divide-y divide-black-700 text-white/70">
-              <li className="flex flex-col lg:flex-row items-center gap-8 pb-6 mb-8">
-                <img src="/images/hero-image-1.webp" alt="" className="w-[30%] h-[6em] object-cover object-center" />
-                <div className="w-[80%]">
+              <li className="flex flex-col lg:flex-row lg:items-center gap-8 pb-6 mb-8">
+                <img src="/images/hero-image-1.webp" alt="" className="lg:w-[30%] h-[12em] lg:h-[6em] object-cover object-center" />
+                <div className="lg:w-[80%]">
                   Delivering seamless live broadcast experiences with precision engineering, technical expertise, and dependable production support.
                 </div>
               </li>
-              <li className="flex flex-col lg:flex-row items-center gap-8">
-                <div className="w-[80%]">
+              <li className="flex flex-col lg:flex-row lg:items-center gap-8">
+                <div className="lg:w-[80%]">
                   Trusted by broadcasters and event organizers for scalable production, seamless execution, and integrated broadcast technology solutions.
                 </div>
-                <img src="/images/about-image-2.webp" alt="" className="w-[30%] h-[6em] object-cover object-center" />
+                <img src="/images/about-image-2.webp" alt="" className="lg:w-[30%] h-[12em] lg:h-[6em] object-cover object-center" />
               </li>
             </ul>
           </div>

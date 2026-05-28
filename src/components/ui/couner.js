@@ -57,7 +57,7 @@ export default function Counter({
     >
       <div className="flex flex-row items-start gap-2 text-4xl font-bold text-white">
         <span
-          className="counter-value font-mono text-8xl font-normal"
+          className="counter-value font-mono text-[60px] lg:text-8xl font-normal"
           data-target={count}
         >
           {displayCount}
