@@ -227,9 +227,13 @@
     &-heading{
       color: $white;
       line-height: 1;
-      @include fluid-type(56px, 100px);
+      font-size: 56px;
       margin-bottom: 24px;
       mix-blend-mode: difference;
+
+      @include lg{
+        font-size: 100px;
+      }
     }
 
     &-desc{
