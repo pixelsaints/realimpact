@@ -887,7 +887,11 @@
     h2{
       color: $white;
       font-family: $font-display;
-      @include fluid-type(24px, 32px)
+      font-size: 24px;
+
+      @include lg{
+        font-size: 32px;
+      }
     }
   }
 

@@ -245,7 +245,7 @@ export default function WhyUs() {
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-24" ref={titleRef}>
             <div className="lg:w-[50%]">
               <div className="subtitle mb-5">Why Real Impact</div>
-              <h3 className="title text-white">Reliable Production for Complex Environments.</h3>
+              <h3 className="title text-white mb-5 lg:mb-0">Reliable Production for Complex Environments.</h3>
             </div>
             <div className="lg:w-[45%] pb-4">
               <p className="mb-4 desc">We combine technical expertise, reliable operations, and scalable systems for demanding live broadcast and production environments across industries.</p>
