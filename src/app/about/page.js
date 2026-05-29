@@ -22,7 +22,7 @@ export default function AboutPage() {
         titleFirst="Where Precision "
         titleSecond="Meets Production"
         desc="Real Impact delivers broadcast production, technical execution, and rental solutions for large-scale events, live transmissions, and mission-critical operations."
-        video="/videos/video-2.mp4"
+        video="/videos/bgmi-2024"
       />
       <AboutIntro />
       <OurStory />

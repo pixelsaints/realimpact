@@ -54,3 +54,26 @@
 .gallery-card:hover .gallery-card-overlay {
   opacity: 1;
 }
+
+.gallery-toolbar{
+  display: flex;
+  margin-bottom: 24px;
+  gap: 16px;
+
+  button{
+    color: $black-300;
+    letter-spacing: 0.06em;
+    font-weight: 300;
+    font-size: 14px;
+    background: $black-800;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: all 0.4s ease;
+
+    &:hover, &.is-active{
+      color: $black;
+      font-weight: 300;
+      background: $pri-400;
+    }
+  }
+}
