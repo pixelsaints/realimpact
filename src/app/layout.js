@@ -2,6 +2,7 @@ import "./styles/tailwind.css";
 import "./styles/style.scss";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import PageEnter from "@/components/transitions/PageEnter";
 
 export const metadata = {
   metadataBase: new URL("https://realimpacttv.netlify.app/"),
@@ -35,13 +36,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" >
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&family=Stick+No+Bills:wght@200..800&display=swap" rel="stylesheet" />
       </head>
       <body className="min-h-full flex flex-col">
+        <PageEnter />
         <Header />
         <div className="main-wrapper">
           {children}

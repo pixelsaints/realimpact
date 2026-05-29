@@ -72,7 +72,8 @@ export default function Header() {
                   <li key={item.href} className={item.submenu ? "has-sub" : ""}>
                     <TransitionLink
                       href={item.href}
-                      className="menu-link"
+                      className={`menu-link ${pathname === item.href ? "active" : ""}`}
+                      // "menu-link" 
                       onClick={() => {
                         setMenuActive(false);
                       }}
@@ -81,7 +82,7 @@ export default function Header() {
                         {item.name}
                       </span>
                     </TransitionLink>
-                    {item.submenu && (
+                    {/* {item.submenu && (
                       <ul className="sub-menu">
                         {item.submenu.map((sub) => (
                           <li key={sub.name}>
@@ -93,7 +94,7 @@ export default function Header() {
                           </li>
                         ))}
                       </ul>
-                    )}
+                    )} */}
                   </li>
                 ))}
               </ul>

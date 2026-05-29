@@ -47,7 +47,7 @@ export default function TransitionLink({
     //   ease: "power4.inOut",
     // });
 
-    tl.to("main", {
+    tl.to(".main-wrapper", {
       opacity: 0,
       y: 20,
       duration: 0.35,

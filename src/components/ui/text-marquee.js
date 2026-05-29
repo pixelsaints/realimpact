@@ -5,7 +5,7 @@ import gsap from "gsap";
 
 const marqueeItems = [
   "20+ Years of excellence",
-  "Trusted by the world’s biggest brands",
+  "Trusted by the world's biggest brands",
   "Powered by passion",
   "Delivered with precision",
 ];

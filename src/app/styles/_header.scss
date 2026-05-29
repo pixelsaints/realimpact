@@ -27,7 +27,7 @@
           transition: all 0.5s ease;
           font-size: 14px;
 
-          &:hover {
+          &:hover, &.active{
             color: $pri-300;
             opacity: 1;
           }
@@ -245,5 +245,60 @@
 
   .video-player{
     clip-path: inset(0 100% 0 0);
+  }
+}
+
+.footer {
+
+  .footer__top {
+    padding: 40px 0;
+    margin-bottom: 24px;
+    border-bottom: solid 1px $black-800;
+
+    .logo img {
+      width: 140px;
+      height: auto;
+
+      @include lg{
+        width: 200px;
+      }
+    }
+  }
+
+  .footer-links {
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: $white;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+    }
+
+    ul {
+      li {
+        padding-bottom: 8px;
+      }
+    }
+
+    a {
+      color: rgba($white, 0.5);
+      font-weight: 200;
+      letter-spacing: 0.08em;
+      font-size: 15px;
+      transition: all 0.4s ease;
+
+      &:hover {
+        color: rgba($white, 1);
+        opacity: 1;
+      }
+    }
+  }
+
+  .copy {
+
+    p {
+      font-size: 14px;
+    }
   }
 }

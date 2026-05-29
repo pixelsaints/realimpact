@@ -14,15 +14,14 @@ export default function PageEnter() {
     window.scrollTo(0, 0);
 
     gsap.fromTo(
-      "main",
+      ".main-wrapper",
       {
         opacity: 0,
-        y: 20,
       },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 4,
         ease: "power2.out",
       }
     );
