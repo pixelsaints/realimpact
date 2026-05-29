@@ -98,10 +98,14 @@ export default function HeroSection() {
                       <div className="h1 text-white">Real</div>
                     </div>
                     <div className="relative w-[45%]">
-                      <img src="/images/hero-image-1.webp" className="w-full lg:h-[12em] object-cover object-center" alt="" />
+                      {/* <img src="/images/hero-image-1.webp" className=" w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg" alt="" /> */}
+                      <video autoPlay muted loop playsInline poster="/images/hero-image-1.webp" className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg">
+                        <source src="/videos/video-03.webm" type="video/webm" />
+                        <source src="/videos/video-03.mp4" type="video/mp4" />
+                      </video>
                     </div>
                   </div>
-                  <div className="relative w-fit">
+                  <div className="relative w-fit h-full">
                     <div className="h1 alt text-white">IMPACT</div>
                     <span className="text-sticker absolute right-[5%] top-[55%] lg:top-[35%] bg-cyan-400">With Strategy</span>
                   </div>
@@ -114,8 +118,12 @@ export default function HeroSection() {
                     <div className="relative w-fit">
                       <div className="h1 text-white">Real</div>
                     </div>
-                    <div className="relative w-[45%]">
-                      <img src="/images/hero-image-1.webp" className="w-full lg:h-[12em] object-cover object-center" alt="" />
+                    <div className="relative w-[45%] lg:h-[12em]">
+                      {/* <img src="/images/hero-image-1.webp" className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg" alt="" /> */}
+                      <video autoPlay muted loop playsInline className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg" poster="/images/hero-image-1.webp">
+                        <source src="/videos/video-03.webm" type="video/webm" />
+                        <source src="/videos/video-03.mp4" type="video/mp4" />
+                      </video>
                     </div>
                   </div>
                   <div className="relative w-fit">
@@ -131,7 +139,11 @@ export default function HeroSection() {
                 <div className="flex flex-col lg:flex-row lg:items-center gap-6">
                   <div className="relative lg:w-[35%]">
                     <span className="text-sticker absolute right-[75%] lg:right-[-5%] bottom-[-5%] lg:bottom-auto lg:top-[30%] -rotate-4 bg-amber-300">In</span>
-                    <img src="/images/hero-image-2.webp" className="w-full lg:h-[15em] object-cover object-center" alt="" />
+                    {/* <img src="/images/hero-image-2.webp" className="w-full lg:h-[15em] object-cover object-center border border-white/30 rounded-lg" alt="" /> */}
+                    <video autoPlay muted loop playsInline className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg" poster="/images/hero-image-2.webp">
+                      <source src="/videos/video-04.webm" type="video/webm" />
+                      <source src="/videos/video-04.mp4" type="video/mp4" />
+                    </video>
                   </div>
                   <div className="relative">
                     <div className="relative">
@@ -141,7 +153,7 @@ export default function HeroSection() {
                     <div className="grid grid-cols-2 lg:grid-cols-4 items-center px-4 gap-6 lg:gap-0 mt-6 lg:mt-0">
                       <div className="hero-icons flex flex-row items-center">
                         <img src="/icons/sports-icon.svg" alt="" />
-                        <h4>Live Sports <br /> Production</h4>
+                        <h4>Live 4k <br /> Broadcast</h4>
                       </div>
                       <div className="hero-icons flex flex-row items-center">
                         <img src="/icons/entertainment-icon.svg" alt="" />
@@ -163,7 +175,11 @@ export default function HeroSection() {
                 <div className="flex flex-col lg:flex-row lg:items-center gap-6">
                   <div className="relative lg:w-[35%]">
                     <span className="text-sticker absolute right-[75%] lg:right-[-5%] bottom-[-5%] lg:bottom-auto lg:top-[30%] -rotate-4 bg-amber-300">In</span>
-                    <img src="/images/hero-image-2.webp" className="w-full lg:h-[15em] object-cover object-center" alt="" />
+                    {/* <img src="/images/hero-image-2.webp" className="w-full lg:h-[15em] object-cover object-center border border-white/30 rounded-lg" alt="" /> */}
+                    <video autoPlay muted loop playsInline className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg" poster="/images/hero-image-2.webp">
+                      <source src="/videos/video-04.webm" type="video/webm" />
+                      <source src="/videos/video-04.mp4" type="video/mp4" />
+                    </video>
                   </div>
                   <div className="relative">
                     <div className="relative">

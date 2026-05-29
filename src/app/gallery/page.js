@@ -1,8 +1,20 @@
 
+import Cta from "@/components/layout/cta";
+import PageHeader from "@/components/layout/page-header";
+import GalleryGrid from "./gallery";
+
 export default function GalleryPage() {
   return (
-    <div className="flex flex-col h-screen items-center justify-center">
-      <h1 className="text-center text-white">Gallery</h1>
-    </div>
-  )
+    <>
+      <PageHeader
+        subtitle="Selected Productions"
+        titleFirst="Gallery of"
+        titleSecond="Live Impact"
+        desc="A look at broadcast projects, technical deployments, live entertainment, and sports production environments supported by Real Impact."
+        video="/videos/video-2.mp4"
+      />
+      <GalleryGrid />
+      <Cta />
+    </>
+  );
 }

@@ -1,6 +1,6 @@
 import Cta from "@/components/layout/cta";
 import PageHeader from "@/components/layout/page-header";
-import ServicesList from "./servicesGrid";
+import ServicesList from "./services";
 
 
 export default function ServicesPage() {
@@ -11,9 +11,9 @@ export default function ServicesPage() {
         titleFirst="Services Engineered"
         titleSecond="for Live Productions"
         desc="Real Impact delivers broadcast production, technical execution, live streaming, and equipment rental solutions for high-stakes events, large-scale productions, and mission-critical operations."
-        video="/videos/video-2.mp4"
+        video="/videos/Video-2020-02"
       />
-      {/* <ServicesList /> */}
+      <ServicesList />
       <Cta />
     </>
   )

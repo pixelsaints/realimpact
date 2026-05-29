@@ -78,11 +78,11 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
             <p className="intro-desc mt-4 lg:w-[60%] mb-8">{desc}</p>
           </div>
 
-          <div className="video-player lg:absolute lg:right-0 lg:top-[-25%] lg:w-[50%] lg:h-[60vh]">
+          <div className="video-player lg:absolute lg:right-0 lg:top-[-25%] lg:w-[50%] lg:h-[60vh] rounded-2xl overflow-hidden">
             <div className="absolute bg-black/50 w-full h-full inset-0 z-10"></div>
             <video autoPlay muted loop playsInline className="lg:absolute w-full h-full object-cover">
-              {/* <source src="/videos/video-1.webm" /> */}
-              <source src={video} />
+              <source src={`${video}.webm`} type="video/webm" />
+              <source src={`${video}.mp4`} type="video/mp4" />
             </video>
           </div>
         </div>

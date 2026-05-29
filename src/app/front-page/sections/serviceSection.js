@@ -67,7 +67,7 @@ export default function ServiceSection() {
       description:
         "Scalable flypack systems and OB van solutions engineered for flexible deployment across regional and international productions.",
       image:
-        "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1600&auto=format&fit=crop",
+        "/images/ob-vans.png",
     },
 
     {
@@ -212,10 +212,10 @@ export default function ServiceSection() {
             }}
           >
             {services.map((service) => (
-              <SwiperSlide key={service.id}>
-                <article className="service-card">
+              <SwiperSlide key={service.id} className="h-full">
+                <article className="service-card rounded-2xl h-full">
                   <div className="service-image-wrap">
-                    <img src={service.image} alt={service.title} />
+                    <img src={service.image} alt={service.title} className="h-[20em] object-center object-cover" />
                   </div>
                   <div className="service-content">
                     <span className="service-number">{service.number}</span>
