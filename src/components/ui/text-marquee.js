@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const marqueeItems = [
-  "20+ Years of excellence",
+  "30+ Years of excellence",
   "Trusted by the world's biggest brands",
   "Powered by passion",
   "Delivered with precision",

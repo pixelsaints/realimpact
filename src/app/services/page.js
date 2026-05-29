@@ -13,7 +13,7 @@ export default function ServicesPage() {
         desc="Real Impact delivers broadcast production, technical execution, live streaming, and equipment rental solutions for high-stakes events, large-scale productions, and mission-critical operations."
         video="/videos/video-2.mp4"
       />
-      <ServicesList />
+      {/* <ServicesList /> */}
       <Cta />
     </>
   )
