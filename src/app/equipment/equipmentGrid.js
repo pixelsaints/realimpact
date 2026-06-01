@@ -20,15 +20,34 @@ export default function EquipmentGrid() {
       const grids = gsap.utils.toArray(".category-grid");
 
       grids.forEach((grid, index) => {
-        gsap.from(grid, {
-          x: index % 2 === 0 ? -100 : 100,
+        gsap.from(grid.querySelector(".category-grid-title"), {
+          // x: index % 2 === 0 ? -100 : 100,
+          y: 200,
           opacity: 0,
+          ease: "back.out(1)",
+          duration: 1,
           scrollTrigger: {
             trigger: grid,
             start: "top 85%",
             toggleActions: "play none none reverse",
           },
         });
+
+        gsap.from(grid.querySelector(".category-grid-items"), {
+          // x: index % 2 === 0 ? -100 : 100,
+          y: 200,
+          opacity: 0,
+          ease: "back.out(1)",
+          duration: 1,
+          stagger: 0.04,
+          scrollTrigger: {
+            trigger: grid,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+
       })
 
 

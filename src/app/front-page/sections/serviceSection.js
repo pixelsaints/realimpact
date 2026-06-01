@@ -9,6 +9,7 @@ import TransitionLink from "@/components/transitions/TransitionLink";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { scaleUp, fadeInUp } from "@/lib/animations/gsapProps";
 import "swiper/css";
+import { servicesData } from "@/data/servicesData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,81 +20,9 @@ export default function ServiceSection() {
   const servicesRef = useRef(null);
   const servicesSliderRef = useRef(null);
 
-  const services = [
-    {
-      id: 1,
-      number: "01",
-      title: "4K Broadcast Solutions",
-      description:
-        "Advanced multi-camera 4K workflows delivering cinematic live production experiences for sports, entertainment, and global broadcasts.",
-      image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
-    },
-
-    {
-      id: 2,
-      number: "02",
-      title: "RF Transmission Systems",
-      description:
-        "Reliable RF and wireless transmission infrastructure designed for large-scale events, stadiums, and dynamic outdoor productions.",
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
-    },
-
-    {
-      id: 3,
-      number: "03",
-      title: "Live Sports Production",
-      description:
-        "End-to-end live sports broadcasting with high-speed replay systems, multi-camera coverage, and immersive audience experiences.",
-      image:
-        "https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1600&auto=format&fit=crop",
-    },
-
-    {
-      id: 4,
-      number: "04",
-      title: "Entertainment & TV Shows",
-      description:
-        "Creative broadcast production solutions for concerts, reality shows, award ceremonies, and large entertainment properties.",
-      image:
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1600&auto=format&fit=crop",
-    },
-
-    {
-      id: 5,
-      number: "05",
-      title: "Flypack & OB Vans",
-      description:
-        "Scalable flypack systems and OB van solutions engineered for flexible deployment across regional and international productions.",
-      image:
-        "/images/ob-vans.png",
-    },
-
-    {
-      id: 6,
-      number: "06",
-      title: "Broadcast Engineering",
-      description:
-        "Specialized engineering support ensuring seamless technical execution, redundancy planning, and mission-critical broadcast reliability.",
-      image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
-    },
-
-    {
-      id: 7,
-      number: "07",
-      title: "Global Event Production",
-      description:
-        "Integrated event production services combining storytelling, technical precision, and world-class execution across international markets.",
-      image:
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
-    },
-  ];
-
   const handleProgress = (currentSwiper) => {
     const currentIndex = currentSwiper.realIndex ?? 0;
-    const progressStep = services.length > 1 ? currentIndex / (services.length - 1) : 0;
+    const progressStep = servicesData.length > 1 ? currentIndex / (servicesData.length - 1) : 0;
     setProgress(progressStep * 100);
   };
 
@@ -211,7 +140,7 @@ export default function ServiceSection() {
               },
             }}
           >
-            {services.map((service) => (
+            {servicesData.map((service) => (
               <SwiperSlide key={service.id} className="h-full">
                 <article className="service-card rounded-2xl h-full">
                   <div className="service-image-wrap">

@@ -8,9 +8,9 @@ export default function ServicesPage() {
     <>
       <PageHeader
         subtitle="Broadcast Production & Technical Solutions"
-        titleFirst="Services Engineered"
-        titleSecond="for Live Productions"
-        desc="Real Impact delivers broadcast production, technical execution, live streaming, and equipment rental solutions for high-stakes events, large-scale productions, and mission-critical operations."
+        titleFirst="High-Resolution"
+        titleSecond="Broadcast Excellence"
+        desc=""
         video="/videos/Video-2020-02"
       />
       <ServicesList />

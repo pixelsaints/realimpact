@@ -13,35 +13,35 @@ export const nav = [
     submenu: [
       {
         name: "Remote Productions",
-        href: "#"
+        href: "/services/remote-productions"
       },
       {
         name: "RF Solutions",
-        href: "#",
+        href: "/services/rf-solutions",
       },
       {
         name: "4k Solutions",
-        href: "#",
+        href: "/services/4k-solutions",
       },
       {
         name: "Entertainment",
-        href: "#",
+        href: "/services/entertainment",
       },
       {
         name: "Fly Pack",
-        href: "#",
+        href: "/services/fly-pack",
       },
       {
         name: "Sports Production",
-        href: "#"
+        href: "/services/sports-production"
       },
       {
         name: "Specialized Equipment",
-        href: "#"
+        href: "/services/specialized-equipment"
       },
       {
         name: "System Integration",
-        href: "#",
+        href: "/services/system-integration",
       },
     ],
   },

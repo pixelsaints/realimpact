@@ -82,7 +82,7 @@ export default function Header() {
                         {item.name}
                       </span>
                     </TransitionLink>
-                    {/* {item.submenu && (
+                    {item.submenu && (
                       <ul className="sub-menu">
                         {item.submenu.map((sub) => (
                           <li key={sub.name}>
@@ -94,7 +94,7 @@ export default function Header() {
                           </li>
                         ))}
                       </ul>
-                    )} */}
+                    )}
                   </li>
                 ))}
               </ul>
