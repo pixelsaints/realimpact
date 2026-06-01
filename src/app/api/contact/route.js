@@ -40,11 +40,11 @@ export async function POST(request) {
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const to = process.env.CONTACT_TO_EMAIL || "mail@realimpact.tv";
+    const to = process.env.CONTACT_TO_EMAIL || "sarvesh@sgocglobal.com";
     const from =
       process.env.RESEND_FROM_EMAIL || "Real Impact <onboarding@resend.dev>";
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from,
       to,
       replyTo: form.email,
@@ -71,7 +71,15 @@ export async function POST(request) {
       `,
     });
 
-    return NextResponse.json({ ok: true });
+    if (error) {
+      console.error("Resend contact form error:", error);
+      return NextResponse.json(
+        { message: error.message || "Unable to send your enquiry right now." },
+        { status: 502 }
+      );
+    }
+
+    return NextResponse.json({ ok: true, id: data?.id });
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(

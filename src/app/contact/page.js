@@ -14,8 +14,8 @@ export default function ContactPage() {
 
       <section className="contact-section pb-24 lg:pb-32">
         <div className="container">
-          <div className="contact-layout flex flex-col lg:flex-row lg:items-center">
-            <div className="contact-panel lg:w-1/2">
+          <div className="contact-layout flex flex-col lg:flex-row lg:justify-between items-center">
+            <div className="contact-panel lg:w-[40%]">
               <p className="contact-eyebrow">Reach Us Directly</p>
               <p className="contact-copy">
                 Share the production date, city, audience size, required
@@ -37,7 +37,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="w-1/2">
+            <div className="lg:w-[55%]">
               <ContactForm />
             </div>
           </div>
