@@ -58,6 +58,6 @@ export const nav = [
     href: "/gallery"
   }, {
     name: "Contact Us",
-    href: "contact"
+    href: "/contact"
   }
 ];
