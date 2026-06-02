@@ -27,12 +27,8 @@ export default function ContactPage() {
                 <a href="tel:+911141651334">New Delhi - +91 11 41651334</a>
                 <a href="tel:+912240211332">Mumbai - +91 22 40211332</a>
                 <p>
-                  <b>New Delhi</b> - A 2/38, 3rd Floor, Safdarjung Enclave,
-                  New Delhi-110 029, India
-                </p>
-                <p>
-                  <b>Mumbai</b> - C-3, Singh Industrial Estate No-1 Goregaon
-                  (West), Mumbai-400 104, India
+                  Real impact Pvt Ltd, Plot No. 165, 4th Floor, Yoga Niketan Marg, Bangur Nagar, Goregaon West, Mumbai - 400104,Maharashtra.
+                  <br />(Next to Mandanan Building)
                 </p>
               </div>
             </div>

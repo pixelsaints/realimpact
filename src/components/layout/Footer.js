@@ -60,10 +60,9 @@ export default function Footer() {
                 <a href="tel:+912240211332" className="text-white/70 hover:text-white transition pb-3">
                   Mumbai - +91 22 40211332</a>
                 <p className="text-white/70 pb-3">
-                  <b>New Delhi</b> - A 2/38, 3rd Floor,Safdarjung Enclave, New Delhi-110 029, India
+                  Real impact Pvt Ltd, Plot No. 165, 4th Floor, Yoga Niketan Marg, Bangur Nagar, Goregaon West, Mumbai - 400104,Maharashtra.
+                  <br />(Next to Mandanan Building)
                 </p>
-                <p className="text-white/70">
-                  <b>Mumbai</b> - C-3, Singh Industrial Estate No-1 Goregaon (West), Mumbai-400 104, India</p>
               </div>
             </div>
           </div>
