@@ -52,7 +52,7 @@ export default function Cta() {
     <section className="cta-wrap py-24 lg:py-32" ref={ctaRef}>
       <div className="container relative z-10">
         <div className="flex flex-col justify-center items-center lg:w-[60%] mx-auto text-center">
-          <h2 className="title text-white mb-6">Every unforgettable experience starts here</h2>
+          <h2 className="title text-white mb-6 lg:w-[90%]">Every unforgettable experience starts here</h2>
           <p className="mb-8 lg:w-[90%]">Every unforgettable experience begins with strategic creativity, seamless execution, and production expertise designed to deliver impact.</p>
           <div className="btn-wrap">
             <TransitionLink href="/about" className="btn btn-primary">

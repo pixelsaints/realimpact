@@ -36,123 +36,178 @@ const whyUs = [
 ]
 
 export default function WhyUs() {
-  const introRef = useRef(null);
-  const wcRef = useRef(null);
+  const titleRef = useRef(null);
+  const cardRef = useRef(null);
 
   useEffect(() => {
-    const wcBlocks = wcRef.current.querySelectorAll(".wc-content-card");
 
-    const subtitle = new SplitType(introRef.current.querySelector(".subtitle"), { types: "chars", });
-    const title = new SplitType(introRef.current.querySelector(".title"), { types: "lines, chars", lineClass: "line-child" });
-    const titleDescription = new SplitType(introRef.current.querySelector(".title-description"), { types: "lines", lineClass: "line-child" });
+    const subtitle = new SplitType(
+      titleRef.current.querySelector(".subtitle"),
+      { types: "chars" }
+    );
+
+    const title = new SplitType(
+      titleRef.current.querySelector("h3.title"),
+      { types: "words, lines" }
+    );
+
+    const desc = new SplitType(
+      titleRef.current.querySelector("p.desc"),
+      { types: "lines" }
+    );
+
+    const btnWrap =
+      titleRef.current.querySelector(".btn-wrap");
+
+    const cards =
+      cardRef.current.querySelectorAll(".why-card");
 
     const ctx = gsap.context(() => {
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: introRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
+      // Initial image state
+      gsap.set(".why-card-image img", {
+        autoAlpha: 0,
+        scale: 0.5,
       });
 
-      tl.from(subtitle.chars, {
-        ...scaleUp,
-        duration: 0.4,
-        stagger: 0.05,
-      })
-        .from(title.chars, {
-          ...scaleUp,
-          duration: 0.8,
-          stagger: 0.05,
-        }, "-=2").from(titleDescription.lines, {
-          ...fadeInUp,
-          stagger: 0.1,
-        }, "-=1");
+      // Content timeline
+      const tlContent = gsap.timeline({
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 75%",
+          toggleActions: "play none none reverse",
+        }
+      });
 
-      // gsap.from(wcBlocks, {
-      //   scaleY: 0.5,
-      //   transformOrigin: "top center",
-      //   y: 100,
-      //   opacity: 0,
-      //   duration: 0.8,
-      //   // delay: index * 0.2,
-      //   stagger: 0.2,
-      //   ease: "power2.out",
-      //   scrollTrigger: {
-      //     trigger: wcBlocks,
-      //     start: "top 90%",
-      //     toggleActions: "play none none reverse",
-      //   },
-      // })
-
-
-      wcBlocks.forEach((block, index) => {
-        gsap.from(block, {
-          scaleY: 0.5,
-          transformOrigin: "top center",
-          y: 100,
+      tlContent
+        .from(subtitle.chars, {
           opacity: 0,
-          duration: 0.8,
-          delay: index * 0.04,
-          ease: "power2.out",
+          y: 24,
+          scale: 0.92,
+          duration: 0.7,
+          stagger: 0.015,
+          ease: "power3.out"
+        })
+        .from(title.words, {
+          opacity: 0,
+          yPercent: 110,
+          duration: 1,
+          stagger: 0.08,
+          ease: "expo.out"
+        }, "-=0.45")
+        .from(desc.lines, {
+          opacity: 0,
+          yPercent: 110,
+          duration: 1,
+          stagger: 0.08,
+          ease: "expo.out"
+        }, "-=1")
+        .from(btnWrap, {
+          opacity: 0,
+          yPercent: 110,
+          duration: 1,
+          ease: "expo.out"
+        }, "-=0.8");
+
+      // Cards
+      cards.forEach((card) => {
+
+        const img =
+          card.querySelector(".why-card-image img");
+
+        // Scroll animation
+        gsap.from(card, {
+          opacity: 0,
+          yPercent: 35,
+          duration: 1.4,
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: block,
-            start: "top 90%",
+            trigger: card,
+            start: "top 80%",
             toggleActions: "play none none reverse",
           },
-        })
+        });
+
+        const isMobile = window.innerWidth < 768;
+
+        if (isMobile) {
+
+          // Always visible on mobile
+          gsap.set(img, {
+            autoAlpha: 1,
+            scale: 1,
+            x: 0,
+          });
+
+        } else {
+
+          // Desktop initial state
+          gsap.set(img, {
+            autoAlpha: 0,
+            scale: 0.5,
+          });
+
+          // Mouse move
+          const handleMouseMove = (e) => {
+
+            const cursorX =
+              e.clientX / window.innerWidth - 0.5;
+
+            gsap.to(img, {
+              autoAlpha: 1,
+              scale: 1.1,
+              x: cursorX * 100,
+              duration: 0.8,
+              ease: "power3.out",
+            });
+
+          };
+
+          // Mouse leave
+          const handleMouseLeave = () => {
+
+            gsap.to(img, {
+              autoAlpha: 0,
+              scale: 0.5,
+              x: 0,
+              duration: 0.8,
+              ease: "power3.out",
+            });
+
+          };
+
+          card.addEventListener(
+            "mousemove",
+            handleMouseMove
+          );
+
+          card.addEventListener(
+            "mouseleave",
+            handleMouseLeave
+          );
+
+          // Cleanup
+          return () => {
+            card.removeEventListener(
+              "mousemove",
+              handleMouseMove
+            );
+
+            card.removeEventListener(
+              "mouseleave",
+              handleMouseLeave
+            );
+          };
+        }
       });
 
+    });
 
-      return () => ctx.revert();
-    }, wcRef);
+    return () => {
+      ctx.revert();
+    };
 
-    const content = document.querySelector(".wc-content");
-    const blurredBg = document.querySelector(".blurred-bg");
-
-    if (content && blurredBg) {
-      const handleMouseMove = (e) => {
-
-        const rect = content.getBoundingClientRect();
-
-        // Mouse position inside container
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        // Convert to centered movement
-        const moveX = (x - rect.width / 2) * 1;
-        const moveY = (y - rect.height / 2) * 1;
-
-        gsap.to(blurredBg, {
-          x: moveX,
-          y: moveY,
-          opacity: 0.8,
-          duration: 0.8,
-          ease: "power3.out",
-        });
-      };
-
-      const handleMouseLeave = () => {
-        gsap.to(blurredBg, {
-          x: 0,
-          y: 0,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        });
-      };
-
-      content.addEventListener("mousemove", handleMouseMove);
-      content.addEventListener("mouseleave", handleMouseLeave);
-
-      return () => {
-        content.removeEventListener("mousemove", handleMouseMove);
-        content.removeEventListener("mouseleave", handleMouseLeave);
-      };
-    }
-
-  }, [])
+  }, []);
 
 
   return (
@@ -160,35 +215,36 @@ export default function WhyUs() {
       <section className="why-us py-24 lg:py-32 bg-black-900">
         <div className="container">
           <div className="flex flex-col lg:flex-row">
-            <div className="intro w-full lg:w-[70%] mx-auto text-center flex flex-col items-center mb-16" ref={introRef}>
+            <div className="intro w-full lg:w-[70%] mx-auto text-center flex flex-col items-center mb-16" ref={titleRef}>
               <div className="subtitle mb-6">Why Choose Us</div>
               <h2 className="title text-white mb-6">Experiences that leave a lasting impact</h2>
               <p className="title-description">We are committed to delivering exceptional results and exceeding our clients' expectations. Our team of experts is dedicated to providing innovative solutions that drive growth and success for your business.</p>
             </div>
           </div>
 
-          <div className="wc-content flex flex-col" ref={wcRef}>
-            {
-              whyUs.map((item) => {
-                return (
-                  <div key={item.number} className="flex flex-col lg:flex-row lg:items-center lg:justify-between text-white wc-content-card">
-                    <div className="wc-content-number lg:w-[20%] mb-6 lg:mb-0">
-                      <span>
-                        {item.number}
-                      </span>
+          <div className="wc-content flex flex-col gap-8" ref={cardRef}>
+            {whyUs.map((item, index) => {
 
-                      {item.image && <img src={item.image} className='wc-content-image' />}
-                    </div>
-                    <div className="wc-content-title lg:w-[30%] mb-4 lg:mb-0 lg:pl-4">
-                      <h3>{item.title}</h3>
-                    </div>
-                    <div className="wc-content-desc  lg:w-[45%] lg:pr-6">
-                      <p>{item.desc}</p>
-                    </div>
+              return (
+
+                <div
+                  key={index}
+                  className={`why-card ${index === whyUs.length - 1 ? "pb-0" : "pb-6"}`}
+                >
+                  <div className="why-card-title">
+                    <div className="sub-title">{item.number}</div>
+                    <h2>{item.title}</h2>
                   </div>
-                )
-              })
-            }
+                  <div className="why-card-image">
+                    <img src={item.image} alt={item.title} />
+                  </div>
+                  <div className="why-card-content">
+                    <p>{item.desc}</p>
+                  </div>
+                </div>
+              );
+
+            })}
           </div>
         </div>
       </section>

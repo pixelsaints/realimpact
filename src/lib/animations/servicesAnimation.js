@@ -5,19 +5,16 @@ import { scaleUp, fadeInUp } from "./gsapProps";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const animateSection = (
-  sectionRef,
-  // scaleUp,
-  // fadeInUp
-) => {
-  const subtitleEl =
-    sectionRef.current?.querySelector(".subtitle");
+export const animateSection = (sectionRef) => {
+  const section = sectionRef?.current || sectionRef;
 
-  const titleEl =
-    sectionRef.current?.querySelector("h2.title");
+  if (!section) return [];
 
-  const descEl =
-    sectionRef.current?.querySelector("p.description");
+  const subtitleEl = section.querySelector(".subtitle");
+
+  const titleEl = section.querySelector("h2.title");
+
+  const descEl = section.querySelector("p.description");
 
   const subtitle = subtitleEl
     ? new SplitType(subtitleEl, { types: "chars" })
@@ -32,14 +29,15 @@ export const animateSection = (
     : null;
 
   const cards = gsap.utils.toArray(
-    sectionRef.current?.querySelectorAll(".card") || []
+    section.querySelectorAll(".card")
   );
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: sectionRef.current,
-      start: "top 75%",
+      trigger: section,
+      start: "top bottom",
       toggleActions: "play none none reverse",
+      // markers: true,
     },
   });
 
@@ -78,8 +76,18 @@ export const animateSection = (
       duration: 0.8,
       stagger: 0.12,
       ease: "power2.out",
-    });
+    }, "-=1");
   }
 
-  return [subtitle, title, desc].filter(Boolean);
+  requestAnimationFrame(() => ScrollTrigger.refresh());
+
+  return [
+    {
+      revert: () => {
+        tl.scrollTrigger?.kill();
+        tl.revert();
+        [subtitle, title, desc].forEach((instance) => instance?.revert());
+      },
+    },
+  ];
 };

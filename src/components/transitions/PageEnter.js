@@ -17,13 +17,16 @@ export default function PageEnter() {
       ".main-wrapper",
       {
         opacity: 0,
-        y: 100
+        // y: 100
       },
       {
         opacity: 1,
-        y: 0,
+        // y: 0,
         duration: 1,
         ease: "power2.out",
+        onComplete: () => {
+          ScrollTrigger.refresh();
+        },
       }
     );
   }, [pathname]);

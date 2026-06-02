@@ -1,8 +1,7 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
-import OurApproach from "@/app/about/sections/ourApproach";
-import { fadeInUp, scaleUp } from "@/lib/animations/gsapProps";
+import ClientsCarosel from "@/components/ui/clients-carosel";
 import { animateSection } from "@/lib/animations/servicesAnimation";
 import "yet-another-react-lightbox/styles.css";
 
@@ -111,20 +110,20 @@ export default function Sections() {
   }));
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
     const splitInstances = [];
 
     if (introRef.current) {
-      splitInstances.push(...animateSection(introRef));
+      splitInstances.push(...animateSection(introRef.current));
     }
 
     if (whyIntro.current) {
-      splitInstances.push(...animateSection(whyIntro));
+      splitInstances.push(...animateSection(whyIntro.current));
     }
 
     if (galleryRef.current) {
-      splitInstances.push(...animateSection(galleryRef));
+      splitInstances.push(...animateSection(galleryRef.current));
     }
 
     return () => {
@@ -221,6 +220,12 @@ export default function Sections() {
             index={index}
             slides={slides}
           />
+        </div>
+      </section>
+
+      <section className="pb-24 lg:pb-32">
+        <div className="container">
+          <ClientsCarosel />
         </div>
       </section>
     </>

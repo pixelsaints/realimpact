@@ -1,8 +1,9 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import { animateSection } from "@/lib/animations/servicesAnimation";
 import "yet-another-react-lightbox/styles.css";
+import ClientsCarosel from "@/components/ui/clients-carosel";
 
 export default function Sections() {
 
@@ -129,20 +130,20 @@ export default function Sections() {
   }));
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
     const splitInstances = [];
 
     if (introRef.current) {
-      splitInstances.push(...animateSection(introRef));
+      splitInstances.push(...animateSection(introRef.current));
     }
 
     if (whyIntro.current) {
-      splitInstances.push(...animateSection(whyIntro));
+      splitInstances.push(...animateSection(whyIntro.current));
     }
 
     if (galleryRef.current) {
-      splitInstances.push(...animateSection(galleryRef));
+      splitInstances.push(...animateSection(galleryRef.current));
     }
 
     return () => {
@@ -184,10 +185,14 @@ export default function Sections() {
 
       <section className="why-us py-24 lg:py-32 bg-black-800/50">
         <div className="container" ref={whyIntro}>
-          <div className="flex flex-col justify-center text-center items-center pb-24">
-            <div className="subtitle mb-5">Why Choose Us</div>
-            <h2 className="title text-white mb-4 lg:w-[55%]">{whyUsData[0].title}</h2>
-            <p className="description lg:w-[50%] text-center"> {whyUsData[0].desc} </p>
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end pb-24">
+            <div className="lg:w-[45%]">
+              <div className="subtitle mb-5">Why Choose Us</div>
+              <h2 className="title text-white">{whyUsData[0].title}</h2>
+            </div>
+            <div className="lg:w-[50%]">
+              <p className="description">{whyUsData[0].desc}</p>
+            </div>
           </div>
           <div className="grid lg:grid-cols-3 gap-6">
             {
@@ -239,6 +244,12 @@ export default function Sections() {
             index={index}
             slides={slides}
           />
+        </div>
+      </section>
+
+      <section className="pb-24 lg:pb-32">
+        <div className="container">
+          <ClientsCarosel />
         </div>
       </section>
     </>

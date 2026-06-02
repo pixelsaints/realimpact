@@ -1,8 +1,7 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
-import Lightbox from "yet-another-react-lightbox";
+import { useRef, useState, useLayoutEffect } from "react";
 import { animateSection } from "@/lib/animations/servicesAnimation";
-import "yet-another-react-lightbox/styles.css";
+import ClientsCarosel from "@/components/ui/clients-carosel";
 
 export default function Sections() {
 
@@ -148,20 +147,20 @@ export default function Sections() {
   }));
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
     const splitInstances = [];
 
     if (introRef.current) {
-      splitInstances.push(...animateSection(introRef));
+      splitInstances.push(...animateSection(introRef.current));
     }
 
     if (whyIntro.current) {
-      splitInstances.push(...animateSection(whyIntro));
+      splitInstances.push(...animateSection(whyIntro.current));
     }
 
     if (galleryRef.current) {
-      splitInstances.push(...animateSection(galleryRef));
+      splitInstances.push(...animateSection(galleryRef.current));
     }
 
     return () => {
@@ -252,6 +251,12 @@ export default function Sections() {
               ))
             }
           </div>
+        </div>
+      </section>
+
+      <section className="pb-24 lg:pb-32">
+        <div className="container">
+          <ClientsCarosel />
         </div>
       </section>
     </>

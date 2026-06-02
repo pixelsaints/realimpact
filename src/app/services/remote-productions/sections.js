@@ -1,15 +1,9 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
-import OurApproach from "@/app/about/sections/ourApproach";
+import { useRef, useState, useLayoutEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
-import Captions from "yet-another-react-lightbox/plugins/captions";
-import "yet-another-react-lightbox/plugins/captions.css";
-import "yet-another-react-lightbox/styles.css";
+import ClientsCarosel from "@/components/ui/clients-carosel";
 import { animateSection } from "@/lib/animations/servicesAnimation";
-// import { fadeInUp, scaleUp } from "@/lib/animations/gsapProps";
-
-
-// gsap.registerPlugin(ScrollTrigger);
+import "yet-another-react-lightbox/styles.css";
 
 export default function Sections() {
 
@@ -49,7 +43,7 @@ export default function Sections() {
 
   const whyUsData = [
     {
-      title: "Reliable RF Performance for Live Productions",
+      title: "Reliable Performance for Live Productions",
       desc: "Engineered wireless transmission solutions delivering dependable coverage, signal integrity, and operational flexibility for demanding broadcast environments."
     },
     {
@@ -84,28 +78,33 @@ export default function Sections() {
 
   const galleryItems = [
     {
-      imageSrc: "/public/gallery/4k-solutions/1-1-1.png",
-      imageLink: "/public/gallery/4k-solutions/1-1-1.png",
+      imageSrc: "/gallery/remote-production/1.jpg",
+      imageLink: "/gallery/remote-production/1.jpg",
       title: "Broadcast Control Room",
     },
     {
-      imageSrc: "/public/gallery/4k-solutions/1-1-1.png",
-      imageLink: "/public/gallery/4k-solutions/1-1-1.png",
+      imageSrc: "/gallery/remote-production/2.jpeg",
+      imageLink: "/gallery/remote-production/2.jpeg",
       title: "Live Production Equipment",
     },
     {
-      imageSrc: "/public/gallery/4k-solutions/1-1-1.png",
-      imageLink: "/public/gallery/4k-solutions/1-1-1.png",
+      imageSrc: "/gallery/remote-production/3.jpeg",
+      imageLink: "/gallery/remote-production/3.jpeg",
       title: "Wireless Camera Operations",
     },
     {
-      imageSrc: "/public/gallery/4k-solutions/1-1-1.png",
-      imageLink: "/public/gallery/4k-solutions/1-1-1.png",
+      imageSrc: "/gallery/remote-production/4.jpg",
+      imageLink: "/gallery/remote-production/4.jpg",
       title: "Large Venue Coverage",
     },
     {
-      imageSrc: "/public/gallery/4k-solutions/1-1-1.png",
-      imageLink: "/public/gallery/4k-solutions/1-1-1.png",
+      imageSrc: "/gallery/remote-production/5.jpg",
+      imageLink: "/gallery/remote-production/5.jpg",
+      title: "Live Event Broadcasting",
+    },
+    {
+      imageSrc: "/gallery/remote-production/6.png",
+      imageLink: "/gallery/remote-production/6.png",
       title: "Live Event Broadcasting",
     }
   ];
@@ -115,20 +114,20 @@ export default function Sections() {
     title: item.title,
   }));
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
     const splitInstances = [];
 
     if (introRef.current) {
-      splitInstances.push(...animateSection(introRef));
+      splitInstances.push(...animateSection(introRef.current));
     }
 
     if (whyIntro.current) {
-      splitInstances.push(...animateSection(whyIntro));
+      splitInstances.push(...animateSection(whyIntro.current));
     }
 
     if (galleryRef.current) {
-      splitInstances.push(...animateSection(galleryRef));
+      splitInstances.push(...animateSection(galleryRef.current));
     }
 
     return () => {
@@ -172,10 +171,14 @@ export default function Sections() {
 
       <section className="why-us py-24 lg:py-32 bg-black-800/50">
         <div className="container" ref={whyIntro}>
-          <div className="flex flex-col justify-center items-center lg:w-[55%] mx-auto text-center pb-24">
-            <div className="subtitle mb-5">Why Choose Us</div>
-            <h2 className="title text-white mb-4">{whyUsData[0].title}</h2>
-            <p className="description text-center"> {whyUsData[0].desc} </p>
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end pb-24">
+            <div className="lg:w-[45%]">
+              <div className="subtitle mb-5">Why Choose Us</div>
+              <h2 className="title text-white">{whyUsData[0].title}</h2>
+            </div>
+            <div className="lg:w-[50%]">
+              <p className="description mb-4"> {whyUsData[0].desc} </p>
+            </div>
           </div>
           <div className="grid lg:grid-cols-3 gap-6">
             {
@@ -202,7 +205,7 @@ export default function Sections() {
             <h2 className="title text-white mb-4">Our Work in Action</h2>
           </div>
 
-          <div className="columns-2 lg:columns-4 gap-6">
+          <div className="grid grid-cols-3 gap-6">
             {galleryItems.map((item, index) => (
               <button
                 key={index}
@@ -215,7 +218,7 @@ export default function Sections() {
                 <img
                   src={item.imageSrc}
                   alt={item.title}
-                  className="w-full rounded-lg transition-transform duration-500 hover:scale-105"
+                  className="w-full rounded-lg transition-transform duration-500 hover:scale-105 h-56 object-cover object-center"
                 />
               </button>
             ))}
@@ -226,8 +229,13 @@ export default function Sections() {
             close={() => setOpen(false)}
             index={index}
             slides={slides}
-            plugins={[Captions]}
           />
+        </div>
+      </section>
+
+      <section className="pb-24 lg:pb-32">
+        <div className="container">
+          <ClientsCarosel />
         </div>
       </section>
     </>
