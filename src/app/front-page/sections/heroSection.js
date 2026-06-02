@@ -1,93 +1,99 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import FlipText from "@/components/ui/flipText";
 
 export default function HeroSection() {
+  const heroRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const ctx = gsap.context((self) => {
+      const q = self.selector;
+      const hero = heroRef.current;
 
-    const hero = document.querySelector(".hero");
+      if (!hero) return;
 
-    // NORMAL
-    gsap.set(".wrap-heading-3d:not(.alt) .front", {
-      rotationX: 90,
-      yPercent: -100,
-      transformOrigin: "bottom center",
-    });
+      // NORMAL
+      gsap.set(q(".wrap-heading-3d:not(.alt) .front"), {
+        rotationX: 90,
+        yPercent: -100,
+        transformOrigin: "bottom center",
+      });
 
-    gsap.set(".wrap-heading-3d:not(.alt) .back", {
-      rotationX: 0,
-      yPercent: 0,
-      transformOrigin: "bottom center",
-    });
+      gsap.set(q(".wrap-heading-3d:not(.alt) .back"), {
+        rotationX: 0,
+        yPercent: 0,
+        transformOrigin: "bottom center",
+      });
 
-    // ALT (opposite direction)
-    gsap.set(".wrap-heading-3d.alt .front", {
-      rotationX: -90,
-      yPercent: 100,
-      transformOrigin: "top center",
-    });
+      // ALT (opposite direction)
+      gsap.set(q(".wrap-heading-3d.alt .front"), {
+        rotationX: -90,
+        yPercent: 100,
+        transformOrigin: "top center",
+      });
 
-    gsap.set(".wrap-heading-3d.alt .back", {
-      rotationX: 0,
-      yPercent: 0,
-      transformOrigin: "top center",
-    });
+      gsap.set(q(".wrap-heading-3d.alt .back"), {
+        rotationX: 0,
+        yPercent: 0,
+        transformOrigin: "top center",
+      });
 
-    gsap.set(hero, {
-      opacity: 0,
-    })
+      gsap.set(hero, {
+        opacity: 0,
+      })
 
-    const tl = gsap.timeline();
+      const tl = gsap.timeline();
 
-    tl.to(hero, {
-      opacity: 1,
-      ease: "power3.in",
-      duration: 1
-    })
+      tl.to(hero, {
+        opacity: 1,
+        ease: "power3.in",
+        duration: 1
+      })
 
-    // NORMAL
-    tl.to(".wrap-heading-3d:not(.alt) .front", {
-      rotationX: 0,
-      yPercent: 0,
-      duration: 1.4,
-      ease: "back.inOut(1.4)",
-    }, 0).to(".wrap-heading-3d:not(.alt) .back", {
-      rotationX: 90,
-      yPercent: 100,
-      duration: 1.4,
-      ease: "back.inOut(1.4)",
-    }, 0);
+      // NORMAL
+      tl.to(q(".wrap-heading-3d:not(.alt) .front"), {
+        rotationX: 0,
+        yPercent: 0,
+        duration: 1.4,
+        ease: "back.inOut(1.4)",
+      }, 0).to(q(".wrap-heading-3d:not(.alt) .back"), {
+        rotationX: 90,
+        yPercent: 100,
+        duration: 1.4,
+        ease: "back.inOut(1.4)",
+      }, 0);
 
-    // ALT
-    tl.to(".wrap-heading-3d.alt .front", {
-      rotationX: 0,
-      yPercent: 0,
-      duration: 1.4,
-      ease: "back.inOut(1.4)",
-    }, 0).to(".wrap-heading-3d.alt .back", {
-      rotationX: -90,
-      yPercent: -100,
-      duration: 1.4,
-      ease: "back.inOut(1.4)",
-    }, 0);
+      // ALT
+      tl.to(q(".wrap-heading-3d.alt .front"), {
+        rotationX: 0,
+        yPercent: 0,
+        duration: 1.4,
+        ease: "back.inOut(1.4)",
+      }, 0).to(q(".wrap-heading-3d.alt .back"), {
+        rotationX: -90,
+        yPercent: -100,
+        duration: 1.4,
+        ease: "back.inOut(1.4)",
+      }, 0);
 
-    gsap.from(".text-sticker", {
-      y: 80,
-      rotate: 20,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 1.4,
-      ease: "back.out(1.7)",
-    }, 0.5);
+      tl.from(q(".text-sticker"), {
+        y: 80,
+        rotate: 20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 1.4,
+        ease: "back.out(1.7)",
+      }, 0.5);
+    }, heroRef);
 
+    return () => ctx.revert();
   }, []);
 
   return (
     <>
-      <div className="hero flex flex-col items-center justify-center">
+      <div className="hero flex flex-col items-center justify-center" ref={heroRef}>
         <div className="container">
           <div className="hero-title flex flex-col gap-4 lg:gap-6">
             <FlipText>
