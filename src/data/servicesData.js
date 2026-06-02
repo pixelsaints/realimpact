@@ -2,12 +2,12 @@
 export const servicesData = [
   {
     number: "01",
-    title: "Remote Productions",
+    title: "Remote Production",
     description:
       "Scalable remote production workflows enabling seamless live broadcasting, centralized control, and reliable collaboration across multiple event locations.",
     image:
       "images/remote-productions.webp",
-    link: "/services/remote-productions",
+    link: "/services/remote-production",
   },
 
   {
@@ -32,7 +32,7 @@ export const servicesData = [
 
   {
     number: "04",
-    title: "Entertainment",
+    title: "Event Production",
     description:
       "Comprehensive production support for concerts, shows, and entertainment events with dynamic visuals, technical precision, and seamless execution.",
     image:
@@ -55,7 +55,7 @@ export const servicesData = [
     description:
       "End-to-end sports broadcasting solutions delivering dynamic live coverage, multi-camera workflows, instant replays, and immersive audience experiences.",
     image:
-      "/images/sports-production.webp",
+      "/images/sports-production-2.webp",
     link: "/services/sports-production",
   },
 

@@ -140,8 +140,20 @@ export default function ProjectsSection() {
             {/* Map through projectsList and render project cards */}
             {projectsList.slice(0, 6).map((project, index) => (
               <div key={index} className="project-card flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-16">
-                <div className={`image-wrapper lg:w-1/2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <img src={project.image} alt={project.name} className="project-image" />
+                <div className={`relative image-wrapper lg:w-1/2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                  {
+                    project.image &&
+                    <img src={project.image} alt={project.name} className="project-image" />
+                  }
+
+                  {
+                    project.video &&
+                    <video autoPlay muted loop playsInline poster="/images/hero-image-1.webp" className="w-full  object-cover object-center border border-white/30 rounded-lg h-full">
+                      {/* <source src={`${project.video}.webm`} type="video/webm" /> */}
+                      {/* <source src={`${project.video}.mp4`} type="video/mp4" /> */}
+                      <source src={project.video} />
+                    </video>
+                  }
                 </div>
                 <div className={`content-wrapper lg:w-1/2  ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`} >
                   <h3 className="project-name text-white font-serif">{project.name}</h3>

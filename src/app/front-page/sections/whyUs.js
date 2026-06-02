@@ -123,7 +123,7 @@ export default function WhyUs() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
+            start: "top bottom",
             toggleActions: "play none none reverse",
           },
         });
@@ -143,8 +143,8 @@ export default function WhyUs() {
 
           // Desktop initial state
           gsap.set(img, {
-            autoAlpha: 0,
-            scale: 0.5,
+            autoAlpha: 1,
+            scale: 0.8,
           });
 
           // Mouse move
@@ -154,7 +154,6 @@ export default function WhyUs() {
               e.clientX / window.innerWidth - 0.5;
 
             gsap.to(img, {
-              autoAlpha: 1,
               scale: 1.1,
               x: cursorX * 100,
               duration: 0.8,
@@ -167,7 +166,6 @@ export default function WhyUs() {
           const handleMouseLeave = () => {
 
             gsap.to(img, {
-              autoAlpha: 0,
               scale: 0.5,
               x: 0,
               duration: 0.8,

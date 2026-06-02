@@ -5,6 +5,7 @@ import HeroSection from "./sections/heroSection"
 import ProjectsSection from "./sections/projectsSection"
 import ServiceSection from "./sections/serviceSection"
 import WhyUs from "./sections/whyUs"
+import YoutubeSection from "./sections/youtubeSection"
 
 export default function FrontPage() {
 
@@ -12,6 +13,7 @@ export default function FrontPage() {
     <>
       <HeroSection />
       <AboutSection />
+      <YoutubeSection />
       <ServiceSection />
       <ProjectsSection />
       <WhyUs />

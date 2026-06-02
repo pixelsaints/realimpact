@@ -9,19 +9,21 @@ export const projectsList = [
   {
     name: "Championship Sports Broadcast",
     description: "Delivered multi-camera 4K coverage with replay workflows, RF links, and live direction for championship sports audiences.",
-    image: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1600&auto=format&fit=crop",
+    // image: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1600&auto=format&fit=crop",
+    video: "videos/championship-video.mp4",
     link: "/projects/project-single",
     tags: ["4K Broadcast", "Live Sports", "Replay Systems"]
   },
   {
-    name: "Touring Flypack Deployment",
+    name: "Flypack Deployment",
     description: "Built a resilient flypack setup enabling rapid venue deployment, redundant routing, and polished entertainment broadcast output.",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1600&auto=format&fit=crop",
+    // image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1600&auto=format&fit=crop",
+    video: "videos/flypack-deployment.mov",
     link: "/projects/project-single",
     tags: ["Flypack", "Broadcast Engineering", "Entertainment"]
   },
   {
-    name: "Outdoor Festival Transmission",
+    name: "Festive & Events Production",
     description: "Managed wireless camera transmission, comms coordination, and signal monitoring across a complex outdoor festival production weekend.",
     image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
     link: "/projects/project-single",

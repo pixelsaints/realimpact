@@ -12,8 +12,8 @@ export const nav = [
     href: "/services",
     submenu: [
       {
-        name: "Remote Productions",
-        href: "/services/remote-productions"
+        name: "Remote Production",
+        href: "/services/remote-production"
       },
       {
         name: "RF Solutions",
@@ -24,8 +24,8 @@ export const nav = [
         href: "/services/4k-solutions",
       },
       {
-        name: "Entertainment",
-        href: "/services/entertainment",
+        name: "Event Production",
+        href: "/services/event-production",
       },
       {
         name: "Fly Pack",

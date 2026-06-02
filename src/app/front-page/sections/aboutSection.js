@@ -40,7 +40,7 @@ export default function AboutSection() {
       const titleScrub = new SplitType(
         circleRef.current.querySelector(".text-scrub"),
         {
-          types: "chars",
+          types: "lines, chars",
         }
       );
 
@@ -184,7 +184,7 @@ export default function AboutSection() {
         <div className="container relative">
           <div className="flex flex-col w-full lg:w-[90%] justify-center items-center text-center mx-auto">
             <h5 className="subtitle mb-4">About Real Impact</h5>
-            <h2 className="text-scrub font-serif text-[24px] lg:leading-14 lg:text-[40px] text-white mb-8">Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.</h2>
+            <h2 className="text-scrub font-serif text-[24px] lg:leading-14 lg:text-[32px] text-white mb-8">Real Impact is a global leader in broadcast production, specializing in the planning, execution, and delivery of high-impact live events and broadcast operations. Backed by a multidisciplinary team of industry experts, we combine creative vision, technical excellence, and production expertise, supported by a comprehensive broadcast equipment rental division.</h2>
             <p className="text-white/70 text-lg leading-relaxed w-full lg:w-[60%] mx-auto desc mb-8">Real Impact brings together decades of expertise in broadcast engineering, live production, and content execution, creating seamless experiences for sports, entertainment, and global television audiences.</p>
             <TransitionLink href="/about" className="text-pri-400 btn btn-link">
               About Us
