@@ -71,7 +71,7 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
 
 
   return (
-    <div className="page-header min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="page-header flex flex-col items-center justify-center relative overflow-hidden">
       <div className="container relative" ref={heroRef}>
         <div className="w-full flex flex-col item-start justify-start" >
           <div className="intro flex flex-col relative z-20">
@@ -86,11 +86,6 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
                 <span><BsStars /> {subtitle}</span>
               }
             </div>
-
-            {/* {fullTitle && <h1 className="intro-heading">
-            </h1>}
-
-            {titleFirst && <h1 className="intro-heading">{titleFirst} <br /> {titleSecond} </h1>} */}
 
             {titleFirst ? (
               <h1 className="intro-heading">
@@ -109,7 +104,7 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
           </div>
 
           {video &&
-            <div className="video-player lg:absolute lg:right-0 lg:top-[-20%] lg:w-[50%] lg:h-[60vh] rounded-2xl overflow-hidden">
+            <div className="video-player lg:absolute lg:right-0 lg:inset-0 ml-auto my-auto lg:w-[50%] lg:h-[60vh] rounded-2xl overflow-hidden">
               <div className="absolute bg-black/50 w-full h-full inset-0 z-10"></div>
               <video autoPlay muted loop playsInline className="lg:absolute w-full h-full object-cover">
                 <source src={`${video}.webm`} type="video/webm" />

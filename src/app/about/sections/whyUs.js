@@ -143,12 +143,12 @@ export default function WhyUs() {
         // Scroll animation
         gsap.from(card, {
           opacity: 0,
-          yPercent: -35,
+          yPercent: 35,
           duration: 1.4,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
+            start: "top 95%",
             toggleActions: "play none none reverse",
           },
         });

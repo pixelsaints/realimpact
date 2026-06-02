@@ -37,8 +37,7 @@
           position: absolute;
           top: calc(100% + 12px);
           left: 0;
-
-          background: $black-900;
+          background: $black-800;
 
           display: flex;
           flex-direction: column;
@@ -208,6 +207,7 @@
 }
 
 .page-header{
+  min-height: calc(100vh - 110px);
 
   .intro{
     display: block;

@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink";
 import { IoArrowForward } from "react-icons/io5";
-import { scaleUp, fadeInUp } from "@/lib/animations/gsapProps";
 import { servicesData } from "@/data/servicesData";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -103,7 +102,7 @@ export default function ServicesList() {
                     <p className="services-description my-4 overflow-hidden">{service.description}</p>
 
                     {service.link &&
-                      <div className="btn-wrap flex">
+                      <div className="btn-wrap">
                         <TransitionLink href={service.link} className="btn btn-link text-pri-400">
                           Learn More
                           <span className="icon">
