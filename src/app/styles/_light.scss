@@ -1,0 +1,126 @@
+@use "./functions" as *;
+
+.light{
+  background: $white;
+
+  .text-white{
+    color: $black;
+  }
+
+  p{
+    color: $black-700;
+  }
+
+  .subtitle{
+    color: $pri-500;
+  }
+
+  .hero{
+    background: #fff;
+
+    .h1.text-white{
+      color: $black-800;
+    }
+
+    .hero-icons {
+      img {
+        opacity: 0.8;
+      }
+
+      h4{
+        color: $black-600;
+      }
+    }
+  }
+
+  .text-marquee {
+    .running-text {
+      background: $black-100;
+    }
+  }
+
+  .about-sec{
+    background: $white;
+  }
+
+  .projects-section{
+
+    .text-white{
+      color: #fff;
+    }
+
+    p{
+      color: $black-400;
+    }
+  }
+
+  .why-us{
+    background: $black-100;
+
+    .why-card{
+      background: $white;
+
+      .why-card-title{
+        .sub-title{
+          color: $pri-500;
+        }
+
+        h2 {
+          color: $black;
+        }
+      }
+    }
+  }
+
+  .clients-wrap .swiper-slide{
+    background: $white;
+    border-radius: 8px;
+  }
+
+  .clients-section{
+    background: $white;
+  }
+
+  .yt-section{
+    background: $black-800;
+  }
+
+  .testimonial-card{
+    background: $white;
+    border: solid 1px $black-200;
+
+    p{
+      color: $black-800;
+    }
+
+    .testimonial-author{
+
+      h3{
+        color: $black;
+      }
+
+      span{
+        color: $black-500;
+      }
+    }
+  }
+
+  .cta-wrap{
+
+    .text-white{
+      color: #fff;;
+    }
+
+    p{
+      color: $black-400;
+    }
+  }
+
+  .services-controls{
+
+    .services-progress{
+      background: $black-300;
+    }
+  }
+
+}

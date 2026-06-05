@@ -175,7 +175,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className=" bg-[url('/images/bg-about.webp')] bg-center bg-cover">
+    <section className="about-sec bg-[url('/images/bg-about.webp')] bg-center bg-cover">
       <div className="overflow-x-clip z-10 py-4">
         <TextMarquee />
       </div>

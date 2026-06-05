@@ -108,7 +108,7 @@ export default function ClientsSection() {
       <div className="container pb-24">
         <div className="flex flex-col items-center" ref={introRef}>
           <div className="subtitle mb-6">Testimonials</div>
-          <h2 className="title text-white lg:w-[70%] mx-auto text-center">experiences that speak for themselves</h2>
+          <h2 className="title text-white lg:w-[70%] mx-auto text-center">Experiences That Speak for Themselves</h2>
         </div>
       </div>
       <div className="clients-marquee" ref={clientSliderRef}>

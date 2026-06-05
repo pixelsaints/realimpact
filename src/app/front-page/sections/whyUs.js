@@ -40,27 +40,19 @@ export default function WhyUs() {
   const cardRef = useRef(null);
 
   useEffect(() => {
+    if (!titleRef.current) return;
 
-    const subtitle = new SplitType(
-      titleRef.current.querySelector(".subtitle"),
-      { types: "chars" }
-    );
+    const subtitleElement = titleRef.current.querySelector(".subtitle");
+    const titleElement = titleRef.current.querySelector("h2.title");
+    const descElement = titleRef.current.querySelector("p.title-description");
+    const btnWrap = titleRef.current.querySelector(".btn-wrap");
+    const cards = cardRef.current?.querySelectorAll(".why-card") || [];
 
-    const title = new SplitType(
-      titleRef.current.querySelector("h3.title"),
-      { types: "words, lines" }
-    );
+    if (!subtitleElement || !titleElement || !descElement) return;
 
-    const desc = new SplitType(
-      titleRef.current.querySelector("p.desc"),
-      { types: "lines" }
-    );
-
-    const btnWrap =
-      titleRef.current.querySelector(".btn-wrap");
-
-    const cards =
-      cardRef.current.querySelectorAll(".why-card");
+    const subtitle = new SplitType(subtitleElement, { types: "chars" });
+    const title = new SplitType(titleElement, { types: "words, lines" });
+    const desc = new SplitType(descElement, { types: "lines" });
 
     const ctx = gsap.context(() => {
 
@@ -101,13 +93,16 @@ export default function WhyUs() {
           duration: 1,
           stagger: 0.08,
           ease: "expo.out"
-        }, "-=1")
-        .from(btnWrap, {
+        }, "-=1");
+
+      if (btnWrap) {
+        tlContent.from(btnWrap, {
           opacity: 0,
           yPercent: 110,
           duration: 1,
           ease: "expo.out"
         }, "-=0.8");
+      }
 
       // Cards
       cards.forEach((card) => {

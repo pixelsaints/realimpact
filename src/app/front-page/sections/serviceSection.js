@@ -42,12 +42,9 @@ export default function ServiceSection() {
         types: "chars, lines",
         lineClass: "line-child",
       });
-      // const description = new SplitType(servicesRef.current.querySelector(".desc"), {
-      //   types: "lines",
-      //   lineClass: "line-child",
-      // });
 
       const description = servicesRef.current.querySelector(".desc");
+      const button = servicesRef.current.querySelector(".services-description .btn-link");
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -63,12 +60,16 @@ export default function ServiceSection() {
         ...scaleUp
       }, "-=1.6").from(description, {
         ...fadeInUp
-      }, "-=1.4").from(".services-description .btn-link", {
-        y: 30,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power2.out",
-      }, "-=1.6")
+      }, "-=1.4");
+
+      if (button) {
+        tl.from(button, {
+          y: 30,
+          opacity: 0,
+          duration: 1.2,
+          ease: "power2.out",
+        }, "-=1.6");
+      }
 
 
       gsap.from(servicesSliderRef.current, {

@@ -15,14 +15,19 @@ export default function ProjectsSection() {
   const introRef = useRef(null);
 
   useEffect(() => {
+    if (!introRef.current) return;
 
+    const introTitle = introRef.current.querySelector("h2");
+    const introDesc = introRef.current.querySelector(".section-description");
 
-    const title = new SplitType(introRef.current.querySelector("h2"), {
+    if (!introTitle || !introDesc) return;
+
+    const title = new SplitType(introTitle, {
       types: "lines, chars",
       lineClass: "line-child",
     });
 
-    const desc = new SplitType(introRef.current.querySelector(".section-description"), {
+    const desc = new SplitType(introDesc, {
       types: "lines",
       lineClass: "line-child",
     });
@@ -50,6 +55,11 @@ export default function ProjectsSection() {
 
         const title = card.querySelector(".project-name");
         const desc = card.querySelector(".project-description p");
+        const imageWrapper = card.querySelector(".image-wrapper");
+        const image = card.querySelector("img");
+        const tags = card.querySelectorAll(".project-tag");
+
+        if (!title || !desc || !imageWrapper || !image) return;
 
         const titleSplit = new SplitType(title, {
           types: "lines, chars",
@@ -105,10 +115,10 @@ export default function ProjectsSection() {
             stagger: 0.08,
             duration: 1.2,
             ease: "power2.out",
-          }, "-=1.4")
+          }, "-=1.4");
 
-          // Tags
-          .from(card.querySelectorAll(".project-tag"), {
+        if (tags.length) {
+          tl.from(tags, {
             scaleY: 0,
             transformOrigin: "bottom center",
             perspective: 1200,
@@ -117,6 +127,7 @@ export default function ProjectsSection() {
             duration: 1,
             ease: "power2.out",
           }, "-=1.6");
+        }
 
       });
 
