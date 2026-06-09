@@ -82,7 +82,11 @@
   }
 
   .yt-section{
-    background: $black-800;
+    background: $black-100;
+
+    @include lg{
+      padding: 80px 0;
+    }
   }
 
   .testimonial-card{

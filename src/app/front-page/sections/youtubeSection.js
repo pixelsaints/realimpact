@@ -2,7 +2,7 @@
 export default function YoutubeSection() {
   return (
     <section className="relative overflow-hidden yt-section">
-      <div className=" relative w-[90%] lg:w-[80%] lg:h-[80vh] mx-auto">
+      <div className=" relative w-[90%] lg:w-[85%] lg:h-[80vh] mx-auto">
         <video
           autoPlay
           muted
