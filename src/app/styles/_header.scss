@@ -288,6 +288,9 @@
       letter-spacing: 0.08em;
       font-size: 15px;
       transition: all 0.4s ease;
+      outline: none;
+
+      
 
       &:hover {
         color: rgba($white, 1);
@@ -301,5 +304,9 @@
     p {
       font-size: 14px;
     }
+  }
+
+  .contact-address{
+    font-size: 15px;
   }
 }

@@ -59,7 +59,7 @@ export default function Footer() {
                   New Delhi - +91 11 41651334</a>
                 <a href="tel:+912240211332" className="text-white/70 hover:text-white transition pb-3">
                   Mumbai - +91 22 40211332</a>
-                <p className="text-white/70 pb-3">
+                <p className="text-white/70 pb-3 contact-address">
                   Real impact Pvt Ltd, Plot No. 165, 4th Floor, Yoga Niketan Marg, Bangur Nagar, Goregaon West, Mumbai - 400104,Maharashtra.
                   <br />(Next to Mandanan Building)
                 </p>
