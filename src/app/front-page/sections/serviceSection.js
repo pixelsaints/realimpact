@@ -96,7 +96,7 @@ export default function ServiceSection() {
         <div className="container intro-section flex flex-col lg:flex-row lg:justify-between lg:items-center" ref={servicesRef}>
           <div className="flex flex-col lg:w-[40%]">
             <span className="subtitle mb-4">Our Services</span>
-            <h2 className="title font-mono text-white">WHERE VISION MEETS CRAFT</h2>
+            <h2 className="title font-mono text-white">Where Vision Meets Craft</h2>
           </div>
           <div className="services-description mt-6 w-full lg:w-[55%]">
             <div className="desc">
@@ -104,14 +104,6 @@ export default function ServiceSection() {
                 At Real Impact, we specialize in delivering world-class broadcast production services that bring your vision to life. With cutting-edge technology, expert engineering, and a passion for storytelling.
               </p>
               <p className="text-white/70 mb-6">We create unforgettable live experiences for sports, entertainment, and global events.</p>
-
-              {/* <TransitionLink href="/services" className="text-pri-400 btn btn-link">
-                Our Services
-                <span className="icon">
-                  <IoArrowForward className="front" />
-                  <IoArrowForward className="back" />
-                </span>
-              </TransitionLink> */}
             </div>
           </div>
         </div>
