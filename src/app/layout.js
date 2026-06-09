@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import PageEnter from "@/components/transitions/PageEnter";
 
 export const metadata = {
-  metadataBase: new URL("https://realimpacttv.netlify.app/"),
+  metadataBase: new URL("https://nothingmatters.in/"),
 
   title: "Real Impact - Broadcast Equipment Services & Production",
   description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
@@ -14,11 +14,11 @@ export const metadata = {
   openGraph: {
     title: "Real Impact - Broadcast Equipment Services & Production",
     description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
-    url: "https://realimpacttv.netlify.app/",
+    url: "https://nothingmatters.in/",
     siteName: "Real Impact",
     images: [
       {
-        url: "/images/ogg.jpeg",
+        url: "https://nothingmatters.in/images/ogg.jpg",
         width: 1200,
         height: 630,
       },
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Real Impact",
     description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
-    images: ["/images/ogg.jpeg"],
+    images: ["https://nothingmatters.in/images/ogg.jpg"],
   },
 };
 
