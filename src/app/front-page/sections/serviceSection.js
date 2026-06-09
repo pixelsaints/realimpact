@@ -104,14 +104,6 @@ export default function ServiceSection() {
                 At Real Impact, we specialize in delivering world-class broadcast production services that bring your vision to life. With cutting-edge technology, expert engineering, and a passion for storytelling.
               </p>
               <p className="text-white/70 mb-6">We create unforgettable live experiences for sports, entertainment, and global events.</p>
-
-              {/* <TransitionLink href="/services" className="text-pri-400 btn btn-link">
-                Our Services
-                <span className="icon">
-                  <IoArrowForward className="front" />
-                  <IoArrowForward className="back" />
-                </span>
-              </TransitionLink> */}
             </div>
           </div>
         </div>
