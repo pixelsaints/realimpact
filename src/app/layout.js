@@ -18,7 +18,7 @@ export const metadata = {
     siteName: "Real Impact",
     images: [
       {
-        url: "/images/ogg-image.png",
+        url: "/images/ogg.jpeg",
         width: 1200,
         height: 630,
       },
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Real Impact",
     description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
-    images: ["/images/ogg-image.png"],
+    images: ["/images/ogg.jpeg"],
   },
 };
 
