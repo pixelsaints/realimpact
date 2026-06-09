@@ -385,6 +385,10 @@
   backface-visibility: hidden;
   will-change: transform;
 
+  .image-wrapper{
+    overflow: hidden;
+  }
+
   img{
     transform-origin: center center;
     border-radius: 16px;

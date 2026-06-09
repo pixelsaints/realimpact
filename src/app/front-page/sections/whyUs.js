@@ -59,7 +59,7 @@ export default function WhyUs() {
       // Initial image state
       gsap.set(".why-card-image img", {
         autoAlpha: 0,
-        scale: 0.5,
+        scale: 1,
       });
 
       // Content timeline
@@ -161,7 +161,7 @@ export default function WhyUs() {
           const handleMouseLeave = () => {
 
             gsap.to(img, {
-              scale: 0.5,
+              scale: 1,
               x: 0,
               duration: 0.8,
               ease: "power3.out",

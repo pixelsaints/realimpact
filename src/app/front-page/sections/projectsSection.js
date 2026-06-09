@@ -55,11 +55,11 @@ export default function ProjectsSection() {
 
         const title = card.querySelector(".project-name");
         const desc = card.querySelector(".project-description p");
-        const imageWrapper = card.querySelector(".image-wrapper");
-        const image = card.querySelector("img");
+        const imageWrapper = card.querySelector(".project-card .image-wrapper");
         const tags = card.querySelectorAll(".project-tag");
+        const media = card.querySelector("img, video");
 
-        if (!title || !desc || !imageWrapper || !image) return;
+        if (!title || !desc || !imageWrapper || !media) return;
 
         const titleSplit = new SplitType(title, {
           types: "lines, chars",
@@ -71,6 +71,10 @@ export default function ProjectsSection() {
           lineClass: "line-child",
         });
 
+        console.log(imageWrapper);
+
+        console.log(media);
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: card,
@@ -80,7 +84,7 @@ export default function ProjectsSection() {
         });
 
         // Image reveal
-        tl.fromTo(card.querySelector(".image-wrapper"), {
+        tl.fromTo(imageWrapper, {
           x: 100,
           clipPath: "inset(0 100% 0 0)",
         }, {
@@ -91,7 +95,7 @@ export default function ProjectsSection() {
         })
 
           // Image scale
-          .from(card.querySelector("img"), {
+          .from(media, {
             scale: 1.12,
             duration: 1.8,
             ease: "power2.out",
