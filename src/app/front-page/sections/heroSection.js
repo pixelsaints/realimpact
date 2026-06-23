@@ -132,7 +132,7 @@ export default function HeroSection() {
                   <div className="hidden lg:grid grid-cols-2 lg:grid-cols-4 items-center px-4 gap-6 lg:gap-0 mt-6 lg:mt-0">
                     <div className="hero-icons flex flex-row items-center">
                       <img src="/icons/sports-icon.svg" alt="" />
-                      <h4>Live 4k <br /> Broadcast</h4>
+                      <h4>Live 4K <br /> Broadcast</h4>
                     </div>
                     <div className="hero-icons flex flex-row items-center">
                       <img src="/icons/entertainment-icon.svg" alt="" />
@@ -140,7 +140,7 @@ export default function HeroSection() {
                     </div>
                     <div className="hero-icons flex flex-row items-center">
                       <img src="/icons/4k-solutions-icon.svg" alt="" />
-                      <h4>RF & 4k <br /> Solutions</h4>
+                      <h4>RF & 4K <br /> Solutions</h4>
                     </div>
                     <div className="hero-icons flex flex-row items-center">
                       <img src="/icons/fly-pack-icon.svg" alt="" />
@@ -153,7 +153,7 @@ export default function HeroSection() {
             <div className="grid lg:hidden grid-cols-2 lg:grid-cols-4 items-center px-4 gap-6 lg:gap-0 mt-6 lg:mt-0">
               <div className="hero-icons flex flex-row items-center">
                 <img src="/icons/sports-icon.svg" alt="" />
-                <h4>Live 4k <br /> Broadcast</h4>
+                <h4>Live 4K <br /> Broadcast</h4>
               </div>
               <div className="hero-icons flex flex-row items-center">
                 <img src="/icons/entertainment-icon.svg" alt="" />
@@ -161,7 +161,7 @@ export default function HeroSection() {
               </div>
               <div className="hero-icons flex flex-row items-center">
                 <img src="/icons/4k-solutions-icon.svg" alt="" />
-                <h4>RF & 4k <br /> Solutions</h4>
+                <h4>RF & 4K <br /> Solutions</h4>
               </div>
               <div className="hero-icons flex flex-row items-center">
                 <img src="/icons/fly-pack-icon.svg" alt="" />

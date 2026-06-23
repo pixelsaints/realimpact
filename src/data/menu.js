@@ -20,7 +20,7 @@ export const nav = [
         href: "/services/rf-solutions",
       },
       {
-        name: "4k Solutions",
+        name: "4K Solutions",
         href: "/services/4k-solutions",
       },
       {

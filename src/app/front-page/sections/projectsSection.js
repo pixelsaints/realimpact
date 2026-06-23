@@ -62,7 +62,7 @@ export default function ProjectsSection() {
         if (!title || !desc || !imageWrapper || !media) return;
 
         const titleSplit = new SplitType(title, {
-          types: "lines, chars",
+          types: "lines, words",
           lineClass: "line-child",
         });
 
@@ -102,7 +102,7 @@ export default function ProjectsSection() {
           }, "-=1.6")
 
           // Title words
-          .from(titleSplit.chars, {
+          .from(titleSplit.words, {
             scaleY: 0,
             transformOrigin: "bottom center",
             perspective: 1200,
@@ -146,7 +146,7 @@ export default function ProjectsSection() {
       <section className="projects-section lg:pb-32">
         <div className="container">
           <div className="w-full lg:w-[70%] mx-auto flex flex-col items-center justify-center text-center mb-20" ref={introRef}>
-            <h2 className="title text-white font-mono uppercase mb-4">Recent Projects</h2>
+            <h2 className="title text-white font-mono mb-4">Recent Projects</h2>
             <p className="section-description text-gray-300 mb-6">
               Explore a selection of our recent projects showcasing our expertise in broadcast engineering, live production, and media technology solutions.
             </p>
