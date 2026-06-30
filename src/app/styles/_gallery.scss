@@ -67,6 +67,7 @@
   -ms-overflow-style: none;
 
   @include lg{
+    display: flex;
     justify-content: center;
   }
 
