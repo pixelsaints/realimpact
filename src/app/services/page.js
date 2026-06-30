@@ -11,7 +11,8 @@ export default function ServicesPage() {
         titleFirst="High-Resolution"
         titleSecond="Broadcast Excellence"
         desc=""
-        video="/videos/Video-2020-02"
+        posterImage="/images/intro-poster.webp"
+        video="/videos/intro"
       />
       <ServicesList />
       <Cta />

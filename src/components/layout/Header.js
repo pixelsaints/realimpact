@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import TransitionLink from "../transitions/TransitionLink";
 import { nav } from "@/data/menu";
 import { gsap } from "gsap/gsap-core";
+import { IoArrowForward } from "react-icons/io5";
 
 export default function Header() {
   const pathname = usePathname();
@@ -61,16 +62,17 @@ export default function Header() {
     <>
       <header className="site-header">
         <div className="container">
-          <div className="flex flex-row justify-between">
+          <div className="flex flex-row justify-between items-center">
             <TransitionLink href="/">
               <img src="/logo.svg" alt="" />
             </TransitionLink>
 
             <nav className="menu hidden lg:flex">
-              <ul className="flex flex-row">
+              <ul className="flex flex-row items-center">
                 {nav.map((item) => (
                   <li key={item.href} className={item.submenu ? "has-sub" : ""}>
                     <TransitionLink
+                      data-title={item.name}
                       href={item.href}
                       className={`menu-link ${pathname === item.href ? "active" : ""}`}
                       // "menu-link" 
@@ -78,7 +80,7 @@ export default function Header() {
                         setMenuActive(false);
                       }}
                     >
-                      <span data-title={item.name}>
+                      <span>
                         {item.name}
                       </span>
                     </TransitionLink>
@@ -100,11 +102,21 @@ export default function Header() {
               </ul>
             </nav>
 
-            <button className={`hamburger ${menuActive ? "is-active" : ""}`} onClick={() => setMenuActive(!menuActive)}>
-              <span className="line"></span>
-              <span className="line"></span>
-              <span className="line"></span>
-            </button>
+            <div className="flex">
+              <TransitionLink href="/contact" className="btn btn-primary">
+                Let's Talk
+                <span className="icon">
+                  <IoArrowForward className="front" />
+                  <IoArrowForward className="back" />
+                </span>
+              </TransitionLink>
+
+              <button className={`hamburger ${menuActive ? "is-active" : ""}`} onClick={() => setMenuActive(!menuActive)}>
+                <span className="line"></span>
+                <span className="line"></span>
+                <span className="line"></span>
+              </button>
+            </div>
           </div>
         </div>
       </header>

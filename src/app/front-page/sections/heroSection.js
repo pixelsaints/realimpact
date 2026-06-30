@@ -103,9 +103,9 @@ export default function HeroSection() {
                     <div className="h1 text-white">Real</div>
                   </div>
                   <div className="relative w-[45%] hidden lg:flex">
-                    <video autoPlay muted loop playsInline poster="/images/hero-image-1.webp" className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg">
-                      {/* <source src="/videos/video-03.webm" type="video/webm" /> */}
-                      <source src="/videos/video-0001.mp4" type="video/mp4" />
+                    <video autoPlay muted loop playsInline poster="/images/hero-slider-poster-1.webp" className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg">
+                      <source src="/videos/hero-video-01.webm" type="video/webm" />
+                      <source src="/videos/hero-video-01.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
@@ -119,9 +119,9 @@ export default function HeroSection() {
               <div className="flex flex-col lg:flex-row lg:items-center gap-6">
                 <div className="relative lg:w-[35%]">
                   <span className="text-sticker absolute right-[75%] lg:right-[-5%] bottom-[-5%] lg:bottom-auto lg:top-[30%] -rotate-4 bg-amber-300">In</span>
-                  <video autoPlay muted loop playsInline className="w-full lg:h-[14em] object-cover object-center border border-white/30 rounded-lg" poster="/images/hero-image-2.webp">
-                    {/* <source src="/videos/video-04.webm" type="video/webm" /> */}
-                    <source src="/videos/video-0002.mp4" type="video/mp4" />
+                  <video autoPlay muted loop playsInline className="w-full lg:h-[14em] object-cover object-center border border-white/30 rounded-lg" poster="/images/hero-slider-poster-2.webp">
+                    <source src="/videos/hero-video-02.webm" type="video/webm" />
+                    <source src="/videos/hero-video-02.mp4" type="video/mp4" />
                   </video>
                 </div>
                 <div className="relative">

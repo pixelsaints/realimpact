@@ -144,7 +144,7 @@ export default function ServiceSection() {
                   <TransitionLink href={service.link} >
                     <article className="service-card rounded-2xl h-full">
                       <div className="service-image-wrap">
-                        <img src={service.image} alt={service.title} className="h-[16em] object-bottom object-cover w-full" />
+                        <img src={service.image} alt={service.title} className="h-[16em] object-center object-cover w-full" />
                       </div>
                       <div className="service-content">
                         <span className="service-number">{service.number}</span>

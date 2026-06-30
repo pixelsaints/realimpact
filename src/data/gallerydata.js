@@ -3,90 +3,54 @@ export const galleryFilters = [
   "Sports Production",
   "Entertainment",
   "Remote Productions",
-  "RF Solutions",
-  "4K Solutions",
+  // "RF Solutions",
+  // "4K Solutions",
 ];
 
 export const galleryData = [
-  {
-    id: 1,
-    name: "Championship Night Broadcast",
-    services: ["Sports Production", "4K Solutions"],
-    layout: "feature",
-    position: "center",
-    image:
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=85&w=1600&auto=format&fit=crop",
-  },
-  {
-    id: 2,
-    name: "Arena Concert Live Feed",
-    services: ["Entertainment", "Remote Productions"],
-    layout: "tall",
-    position: "center",
-    image:
-      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=85&w=1400&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    name: "Global Launch Control Room",
-    services: ["Remote Productions", "RF Solutions"],
-    layout: "small",
-    position: "center",
-    image:
-      "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=85&w=1400&auto=format&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Stadium Camera Deployment",
-    services: ["Sports Production", "RF Solutions"],
-    layout: "wide",
-    position: "center 35%",
-    image:
-      "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=85&w=1600&auto=format&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Festival Main Stage",
-    services: ["Entertainment", "4K Solutions"],
-    layout: "tall",
-    position: "center",
-    image:
-      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=85&w=1400&auto=format&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Studio Production Week",
-    services: ["4K Solutions", "Remote Productions"],
-    layout: "small",
-    position: "center",
-    image:
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=85&w=1400&auto=format&fit=crop",
-  },
-  {
-    id: 7,
-    name: "Wireless Track Coverage",
-    services: ["RF Solutions", "Sports Production"],
-    layout: "tall",
-    position: "center",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=85&w=1400&auto=format&fit=crop",
-  },
-  {
-    id: 8,
-    name: "Outdoor Awards Transmission",
-    services: ["Entertainment", "RF Solutions"],
-    layout: "wide",
-    position: "center",
-    image:
-      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=85&w=1600&auto=format&fit=crop",
-  },
-  {
-    id: 9,
-    name: "Remote Commentary Hub",
-    services: ["Remote Productions", "Sports Production"],
-    layout: "small",
-    position: "center",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=85&w=1400&auto=format&fit=crop",
-  },
+  // Sports Production
+  { id: 7, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-7.webp" },
+
+  // Entertainment
+  { id: 34, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-6.webp" },
+
+  // Remote Productions
+  { id: 20, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-2.webp" },
+
+  { id: 2, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-2.webp" },
+  { id: 39, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-11.webp" },
+  { id: 24, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-6.webp" },
+  { id: 15, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-15.webp" },
+  { id: 31, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-3.webp" },
+  { id: 19, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-1.webp" },
+  { id: 11, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-11.webp" },
+  { id: 37, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-9.webp" },
+  { id: 26, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-8.webp" },
+  { id: 4, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-4.webp" },
+  { id: 30, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-2.webp" },
+  { id: 23, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-5.webp" },
+  { id: 17, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-17.webp" },
+  { id: 35, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-7.webp" },
+  { id: 21, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-3.webp" },
+  { id: 9, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-9.webp" },
+  { id: 40, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-12.webp" },
+  { id: 27, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-9.webp" },
+  { id: 5, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-5.webp" },
+  { id: 32, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-4.webp" },
+  { id: 28, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-10.webp" },
+  { id: 13, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-13.webp" },
+  { id: 36, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-8.webp" },
+  { id: 25, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-7.webp" },
+  { id: 1, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-1.webp" },
+  { id: 33, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-5.webp" },
+  { id: 22, name: "Championship Night Broadcast", services: ["Remote Productions", "All"], layout: "feature", position: "center", image: "/gallery/remote-production/remote-prod-4.webp" },
+  { id: 14, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-14.webp" },
+  { id: 29, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-1.webp" },
+  { id: 8, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-8.webp" },
+  { id: 38, name: "Championship Night Broadcast", services: ["Entertainment", "All"], layout: "feature", position: "center", image: "/gallery/entertainment/entertainment-10.webp" },
+  { id: 3, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-3.webp" },
+  { id: 10, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-10.webp" },
+  { id: 6, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-6.webp" },
+  { id: 16, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-16.webp" },
+  { id: 12, name: "Championship Night Broadcast", services: ["Sports Production", "All"], layout: "feature", position: "center", image: "/gallery/sports-production/sports-prod-12.webp" }
 ];

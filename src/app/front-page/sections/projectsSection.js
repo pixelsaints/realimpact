@@ -71,10 +71,6 @@ export default function ProjectsSection() {
           lineClass: "line-child",
         });
 
-        console.log(imageWrapper);
-
-        console.log(media);
-
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: card,
@@ -147,9 +143,7 @@ export default function ProjectsSection() {
         <div className="container">
           <div className="w-full lg:w-[70%] mx-auto flex flex-col items-center justify-center text-center mb-20" ref={introRef}>
             <h2 className="title text-white font-mono mb-4">Recent Projects</h2>
-            <p className="section-description text-gray-300 mb-6">
-              Explore a selection of our recent projects showcasing our expertise in broadcast engineering, live production, and media technology solutions.
-            </p>
+            <p className="section-description text-gray-300 mb-6">Explore a selection of our recent projects showcasing our expertise in broadcast engineering, live production, and media technology solutions.</p>
           </div>
           <div className="projects-grid flex flex-col gap-16 lg:gap-20">
             {/* Map through projectsList and render project cards */}
@@ -163,7 +157,7 @@ export default function ProjectsSection() {
 
                   {
                     project.video &&
-                    <video autoPlay muted loop playsInline poster="/images/hero-image-1.webp" className="w-full  object-cover object-center border border-white/30 rounded-lg h-full">
+                    <video autoPlay muted loop playsInline poster={project.poster && project.poster} className="w-full  object-cover object-center border border-white/30 rounded-lg h-full">
                       {/* <source src={`${project.video}.webm`} type="video/webm" /> */}
                       {/* <source src={`${project.video}.mp4`} type="video/mp4" /> */}
                       <source src={project.video} />

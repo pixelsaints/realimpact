@@ -4,19 +4,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink";
-import { getProjectLink, projectsList } from "@/data/projectsList";
+import { projectsList } from "@/data/projectsList";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectsList() {
 
   useEffect(() => {
-
-
-
     const ctx = gsap.context(() => {
-
-
       const cards = document.querySelectorAll(".project-card");
 
       cards.forEach((card) => {
@@ -106,13 +101,21 @@ export default function ProjectsList() {
           <div className="projects-grid flex flex-col gap-16 lg:gap-20">
             {/* Map through projectsList and render project cards */}
             {projectsList.slice(0, 6).map((project, index) => (
-              <div
-                key={index}
-                // href={getProjectLink(project)}
-                className="project-card flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-16"
-              >
-                <div className={`image-wrapper lg:w-1/2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <img src={project.image} alt={project.name} className="project-image" />
+              <div key={index} className="project-card flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-16">
+                <div className={`relative image-wrapper lg:w-1/2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                  {
+                    project.image &&
+                    <img src={project.image} alt={project.name} className="project-image" />
+                  }
+
+                  {
+                    project.video &&
+                    <video autoPlay muted loop playsInline poster={project.poster && project.poster} className="w-full  object-cover object-center border border-white/30 rounded-lg h-full">
+                      {/* <source src={`${project.video}.webm`} type="video/webm" /> */}
+                      {/* <source src={`${project.video}.mp4`} type="video/mp4" /> */}
+                      <source src={project.video} />
+                    </video>
+                  }
                 </div>
                 <div className={`content-wrapper lg:w-1/2  ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`} >
                   <h3 className="project-name text-white font-serif">{project.name}</h3>

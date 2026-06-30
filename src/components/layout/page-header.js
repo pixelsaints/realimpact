@@ -11,7 +11,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, video, fullTitle, backLink }) {
+export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, video, posterImage, fullTitle, backLink }) {
 
   const heroRef = useRef(null);
 
@@ -20,7 +20,8 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
     const subtitle = heroRef.current.querySelector('.intro-subtitle span')
     const title = new SplitType(heroRef.current.querySelector('h1'), { types: "lines, chars", });
     const desc = new SplitType(heroRef.current.querySelector('p'), { types: "lines" });
-    const videoPlayer = heroRef.current.querySelector('.video-player')
+    const videoPlayer = heroRef.current.querySelector('.video-player');
+    const intro = heroRef.current.querySelector('.intro');
 
     const ctx = gsap.context(() => {
 
@@ -62,7 +63,7 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
           stagger: 0.1,
           ease: "back.inOut(1.4)",
           duration: 1,
-        }, "-=1.4")
+        }, "-=1.4");
     })
 
     return () => ctx.revert();
@@ -106,9 +107,8 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
           {video &&
             <div className="video-player lg:absolute lg:right-0 lg:inset-0 ml-auto my-auto lg:w-[50%] lg:h-[60vh] rounded-2xl overflow-hidden">
               <div className="absolute bg-black/50 w-full h-full inset-0 z-10"></div>
-              <video autoPlay muted loop playsInline className="lg:absolute w-full h-full object-cover">
-                <source src={`${video}.webm`} type="video/webm" />
-                <source src={`${video}.mp4`} type="video/mp4" />
+              <video autoPlay muted loop playsInline className="lg:absolute w-full h-full object-cover" poster="/images/sports-production-2.webp">
+                <source src="/videos/intro.webm" type="video/webm" />
               </video>
             </div>
           }

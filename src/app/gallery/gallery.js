@@ -2,12 +2,12 @@
 
 import { useMemo, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
-import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
 
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+// import Captions from "yet-another-react-lightbox/plugins/captions";
+// import Zoom from "yet-another-react-lightbox/plugins/zoom";
+// import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 import { galleryData, galleryFilters } from "@/data/gallerydata";
@@ -39,19 +39,21 @@ export default function GalleryGrid() {
       <div className="container">
 
         {/* FILTERS */}
-        <div className="gallery-toolbar">
-          {galleryFilters.map((filter) => (
-            <button
-              key={filter}
-              className={activeFilter === filter ? "is-active" : ""}
-              onClick={() => {
-                setActiveFilter(filter);
-                setIndex(-1);
-              }}
-            >
-              {filter}
-            </button>
-          ))}
+        <div className="mb-16">
+          <div className="gallery-toolbar">
+            {galleryFilters.map((filter) => (
+              <button
+                key={filter}
+                className={activeFilter === filter ? "is-active" : ""}
+                onClick={() => {
+                  setActiveFilter(filter);
+                  setIndex(-1);
+                }}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* GRID */}
@@ -70,12 +72,12 @@ export default function GalleryGrid() {
                 loading="lazy"
               />
 
-              <div className="gallery-card-overlay">
+              {/* <div className="gallery-card-overlay">
                 <div>
                   <strong>{item.name}</strong>
                   <small>{item.services.join(" / ")}</small>
                 </div>
-              </div>
+              </div> */}
             </button>
           ))}
         </div>
@@ -87,8 +89,7 @@ export default function GalleryGrid() {
         index={index}
         close={() => setIndex(-1)}
         slides={slides}
-        // plugins={[Zoom, Thumbnails]}
-        plugins={[Captions]}
+      // plugins={[Captions]}
       />
     </section>
   );
