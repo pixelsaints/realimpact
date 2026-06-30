@@ -103,13 +103,15 @@ export default function Header() {
             </nav>
 
             <div className="flex">
-              <TransitionLink href="/contact" className="btn btn-primary">
-                Let's Talk
-                <span className="icon">
-                  <IoArrowForward className="front" />
-                  <IoArrowForward className="back" />
-                </span>
-              </TransitionLink>
+              <div className="hidden lg:flex">
+                <TransitionLink href="/contact" className="btn btn-primary">
+                  Let's Talk
+                  <span className="icon">
+                    <IoArrowForward className="front" />
+                    <IoArrowForward className="back" />
+                  </span>
+                </TransitionLink>
+              </div>
 
               <button className={`hamburger ${menuActive ? "is-active" : ""}`} onClick={() => setMenuActive(!menuActive)}>
                 <span className="line"></span>
