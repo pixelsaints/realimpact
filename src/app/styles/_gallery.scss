@@ -57,10 +57,18 @@
 
 .gallery-toolbar{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 24px;
   gap: 16px;
-  overflow-x: scroll;
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  @include lg{
+    justify-content: center;
+  }
 
   button{
     color: $black-300;
