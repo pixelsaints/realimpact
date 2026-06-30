@@ -24,7 +24,7 @@ export default function AboutSection() {
           trigger: circleRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: 40,
+          scrub: 1,
         },
       });
 
@@ -33,7 +33,7 @@ export default function AboutSection() {
         circleRef.current.querySelector(".subtitle"),
         {
           types: "lines, chars",
-          lineClass: "line-child",
+          // lineClass: "line-child",
         }
       );
 
@@ -48,7 +48,7 @@ export default function AboutSection() {
         circleRef.current.querySelector("p.desc"),
         {
           types: "lines",
-          lineClass: "line-child",
+          // lineClass: "line-child",
         }
       );
 
