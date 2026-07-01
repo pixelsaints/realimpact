@@ -8,7 +8,7 @@ export default function index() {
 
   const pageData = {
     pageHeader: {
-      title: "Rugby Premier League",
+      title: "Indian Premier League",
       desc: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
       tags: ["Live Sports", "Multi - Camera", "Broadcast Engineering"],
       // image: "/projects/rugby-premier-league.webp"
