@@ -64,8 +64,8 @@ export default function ProjectsGrid() {
     <>
       <section className="lg:pb-32">
         <div className="w-[85%] mx-auto">
-          <div className="grid grid-cols-3 gap-16 projects-list items-center">
-            <div className="flex flex-col -mt-32">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 projects-list items-center">
+            <div className="flex flex-col lg:-mt-32">
               {projectsList.slice(0, 4).map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
@@ -75,7 +75,7 @@ export default function ProjectsGrid() {
                 <ProjectCard key={index} project={project} />
               ))}
             </div>
-            <div className="flex flex-col -mt-32">
+            <div className="flex flex-col lg:-mt-32">
               {projectsList.slice(9, 13).map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}

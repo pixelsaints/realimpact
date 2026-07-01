@@ -240,7 +240,11 @@
 }
 
 .page-header{
-  min-height: calc(100vh - 70px);
+  min-height: 100vh;
+
+  @include lg{
+    min-height: calc(100vh - 70px);
+  }
 
   .intro{
     display: block;
@@ -261,7 +265,7 @@
     &-heading{
       color: $white;
       line-height: 1.2;
-      font-size: 56px;
+      font-size: 48px;
       margin-bottom: 24px;
       mix-blend-mode: difference;
       font-family: $font-display;

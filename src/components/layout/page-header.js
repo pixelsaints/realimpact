@@ -90,7 +90,7 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
               }
               {
                 subtitle &&
-                <span><BsStars /> {subtitle}</span>
+                <span>{subtitle}</span>
               }
             </div>
 

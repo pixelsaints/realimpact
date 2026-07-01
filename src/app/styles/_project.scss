@@ -3,8 +3,10 @@
 .project{
 
   &-header {
+    height: 100vh;
 
     h1{
+      font-size: 32px;
       font-family: $font-base;
       color: #fff;
 
@@ -18,37 +20,58 @@
       @include truncate(2);
     }
 
-    ul{
-      display: flex;
-      gap: 16px;
-      color: #fff;
+    // ul{
+    //   // display: flex;
+    //   // flex-direction: column;
+    //   // color: #fff;
+    //   // margin-bottom: 32px;
 
-      li{
-        padding: 6px 0;
-        display: flex;
+    //   // @include lg{
+    //   //   flex-direction: row;
+    //   //   gap: 16px;
+    //   //   margin-bottom: 0;
+    //   // }
 
-        &:after{
-          content:"•";
-          display: flex;
-          padding-left: 12px;
-        }
+    //   li{
 
-        &:last-child::after{
-          display: none;
-        }
-      }
-    }
+    //     @include lg{
+    //       padding: 0;
+    //     }
+
+    //     &:after{
+    //       content:"•";
+    //       display: flex;
+    //       padding-left: 12px;
+
+    //       @include lg{
+    //         display: none;
+    //       }
+    //     }
+
+    //     &:last-child::after{
+    //       display: none;
+    //     }
+    //   }
+    // }
   }
 
   &-content{
 
     h2.title{
-      font-size: 32px;
+      font-size: 24px;
       color: #fff;
+
+      @include lg{
+        font-size: 32px;
+      }
     }
 
     h3{
-      font-size: 20px;
+      font-size: 18px;
+
+      @include lg{
+        font-size: 20px;
+      }
     }
 
     hr{

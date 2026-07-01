@@ -118,8 +118,8 @@ export default function ProjectsSection() {
           </div>
 
           <div className="mx-auto">
-            <div className="grid grid-cols-3 gap-16 projects-list items-center">
-              <div className="flex flex-col pt-28">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 projects-list items-center">
+              <div className="flex flex-col lg:pt-28">
                 {projectsList.slice(0, 2).map((project, index) => (
                   <ProjectCard key={index} project={project} />
                 ))}
@@ -129,7 +129,7 @@ export default function ProjectsSection() {
                   <ProjectCard key={index} project={project} />
                 ))}
               </div>
-              <div className="flex flex-col pt-28">
+              <div className="flex flex-col lg:pt-28">
                 {projectsList.slice(4, 6).map((project, index) => (
                   <ProjectCard key={index} project={project} />
                 ))}
