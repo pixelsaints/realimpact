@@ -11,7 +11,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, video, posterImage, fullTitle, backLink, backLinkText, image }) {
+export default function ProjectHeader({ title, desc, backLink, image }) {
 
   const heroRef = useRef(null);
 
@@ -71,7 +71,6 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
     })
 
     return () => ctx.revert();
-
   }, [])
 
 
@@ -83,41 +82,17 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
             <div className="intro-subtitle">
               {backLink &&
                 <TransitionLink href={backLink} className="flex items-center gap-2">
-                  <IoArrowBack />
-
-                  {backLinkText ? backLinkText : "Services"}
+                  <IoArrowBack /> Projects
                 </TransitionLink>
-              }
-              {
-                subtitle &&
-                <span><BsStars /> {subtitle}</span>
               }
             </div>
 
-            {titleFirst ? (
-              <h1 className="intro-heading">
-                {titleFirst} <br /> {titleSecond}
-              </h1>
-            ) : (
-              <h1 className="intro-heading w-[60%]">
-                {fullTitle}
-              </h1>
-            )}
-
-            <h1 className="intro-heading lg:w-[95%]">
+            <h1 className="intro-heading w-[70%]">
+              {title}
             </h1>
 
             {desc && <p className="intro-desc mt-4 lg:w-[60%] mb-8">{desc}</p>}
           </div>
-
-          {video &&
-            <div className="video-player lg:absolute lg:right-0 lg:inset-0 ml-auto my-auto lg:w-[50%] lg:h-[60vh] rounded-2xl overflow-hidden">
-              <div className="absolute bg-black/50 w-full h-full inset-0 z-10"></div>
-              <video autoPlay muted loop playsInline className="lg:absolute w-full h-full object-cover" poster="/images/sports-production-2.webp">
-                <source src="/videos/intro.webm" type="video/webm" />
-              </video>
-            </div>
-          }
 
           {
             image &&

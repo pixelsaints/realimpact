@@ -1108,3 +1108,47 @@
     outline: none;
   }
 }
+
+.projects-list{
+
+  .projects-card{
+    margin-bottom: 40px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    z-index: 10;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    .project{
+
+      &-content{
+        padding: 24px;
+        background: $black-800;
+      }
+
+      &-name{
+        font-size: 22px;
+        @include truncate;
+      }
+
+      &-description{
+        font-size: 14px;
+      }
+
+      &-tags{
+        margin-bottom: 16px;
+
+        .project-tag{
+          background: rgba($white, 0.05);
+          color: rgba($white, 0.6);
+          padding: 4px 12px;
+          font-size: 12px;
+          letter-spacing: 0.04em;
+        }
+      }
+    }
+  }
+}

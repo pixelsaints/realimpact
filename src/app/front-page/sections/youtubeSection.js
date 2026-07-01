@@ -13,15 +13,15 @@ export default function YoutubeSection() {
       const videoContainer = ytSection.current.querySelector('.sticky');
 
       gsap.set(videoContainer, {
-        clipPath: "inset(0% 100% 0% 0%)",
-        x: -300,
+        clipPath: "inset(0 0 100% 0)",
+        // x: -300,
         opacity: 0,
         scale: 1,
         transformOrigin: "center center"
       })
 
       gsap.to(videoContainer, {
-        clipPath: "inset(0% 0% 0% 0%)",
+        clipPath: "inset(0 0 0% 0)",
         x: 0,
         opacity: 1,
         duration: 3,

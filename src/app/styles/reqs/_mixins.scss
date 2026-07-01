@@ -30,6 +30,23 @@
   @return linear-gradient($deg, $color1 0%, $color2 100%);
 }
 
+@mixin truncate($lines: 1) {
+  @if $lines ==1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+  }
+}
+
 // Text Gradient
 
 @mixin textGradient {

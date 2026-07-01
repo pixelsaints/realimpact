@@ -260,13 +260,14 @@
 
     &-heading{
       color: $white;
-      line-height: 1;
+      line-height: 1.2;
       font-size: 56px;
       margin-bottom: 24px;
       mix-blend-mode: difference;
+      font-family: $font-display;
 
       @include lg{
-        font-size: 100px;
+        font-size: 70px;
       }
     }
 

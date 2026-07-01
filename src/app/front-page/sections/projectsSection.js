@@ -7,6 +7,7 @@ import TransitionLink from "@/components/transitions/TransitionLink";
 import { projectsList } from "@/data/projectsList";
 import { IoArrowForward } from "react-icons/io5";
 import { scaleUp, fadeInUp } from "@/lib/animations/gsapProps";
+import ProjectCard from "@/components/layout/projectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,8 +18,10 @@ export default function ProjectsSection() {
   useEffect(() => {
     if (!introRef.current) return;
 
+    const introWapper = introRef.current.querySelector(".w-full");
     const introTitle = introRef.current.querySelector("h2");
     const introDesc = introRef.current.querySelector(".section-description");
+    const cards = document.querySelectorAll(".projects-card");
 
     if (!introTitle || !introDesc) return;
 
@@ -48,87 +51,55 @@ export default function ProjectsSection() {
         ...fadeInUp
       }, "-=1.4");
 
-
-      const cards = document.querySelectorAll(".project-card");
+      gsap.to(introWapper, {
+        opacity: 0.1,
+        filter: "blur(5px)",
+        scrollTrigger: {
+          trigger: cards,
+          start: "top 75%",
+          scrub: true
+        }
+      })
 
       cards.forEach((card) => {
 
-        const title = card.querySelector(".project-name");
-        const desc = card.querySelector(".project-description p");
-        const imageWrapper = card.querySelector(".project-card .image-wrapper");
-        const tags = card.querySelectorAll(".project-tag");
-        const media = card.querySelector("img, video");
-
-        if (!title || !desc || !imageWrapper || !media) return;
-
-        const titleSplit = new SplitType(title, {
-          types: "lines, words",
-          lineClass: "line-child",
-        });
-
-        const descSplit = new SplitType(desc, {
-          types: "lines",
-          lineClass: "line-child",
-        });
+        const content = card.querySelector(".project-content");
+        const imageWrapper = card.querySelector(".image-wrapper");
+        const image = card.querySelector(".project-image");
 
         const tl = gsap.timeline({
+          defaults: {
+            ease: "expo.out",
+          },
           scrollTrigger: {
             trigger: card,
             start: "top 82%",
             toggleActions: "play none none reverse",
-          }
+          },
         });
 
-        // Image reveal
-        tl.fromTo(imageWrapper, {
-          x: 100,
-          clipPath: "inset(0 100% 0 0)",
-        }, {
-          x: 0,
-          clipPath: "inset(0 0% 0 0)",
-          duration: 1.6,
-          ease: "power2.out",
-        })
-
-          // Image scale
-          .from(media, {
-            scale: 1.12,
-            duration: 1.8,
-            ease: "power2.out",
-          }, "-=1.6")
-
-          // Title words
-          .from(titleSplit.words, {
-            scaleY: 0,
-            transformOrigin: "bottom center",
-            perspective: 1200,
+        tl
+          .from(card, {
+            y: 40,
             opacity: 0,
-            stagger: 0.04,
-            duration: 0.4,
-            ease: "power2.out",
-          }, "-=1.2")
-
-          // Description lines
-          .from(descSplit.lines, {
-            y: 24,
-            opacity: 0,
-            stagger: 0.08,
             duration: 1.2,
-            ease: "power2.out",
-          }, "-=1.4");
+          })
 
-        if (tags.length) {
-          tl.from(tags, {
-            scaleY: 0,
-            transformOrigin: "bottom center",
-            perspective: 1200,
+          .from(imageWrapper, {
+            clipPath: "inset(100% 0 0 0)",
+            duration: 1.2,
+          }, "<0.05")
+
+          .from(image, {
+            scale: 1.3,
+            duration: 1.4,
+          }, "<")
+
+          .from(content, {
+            clipPath: "inset(100% 0 0 0)",
             opacity: 0,
-            stagger: 0.1,
-            duration: 1,
-            ease: "power2.out",
-          }, "-=1.6");
-        }
-
+            duration: 1.2,
+          }, "<0.35");
       });
 
     });
@@ -140,44 +111,32 @@ export default function ProjectsSection() {
   return (
     <>
       <section className="projects-section lg:pb-32">
-        <div className="container">
-          <div className="w-full lg:w-[70%] mx-auto flex flex-col items-center justify-center text-center mb-20" ref={introRef}>
+        <div className="container" ref={introRef}>
+          <div className="w-full lg:w-[70%] mx-auto flex flex-col items-center justify-center text-center mb-20 sticky top-50">
             <h2 className="title text-white font-mono mb-4">Recent Projects</h2>
             <p className="section-description text-gray-300 mb-6">Explore a selection of our recent projects showcasing our expertise in broadcast engineering, live production, and media technology solutions.</p>
           </div>
-          <div className="projects-grid flex flex-col gap-16 lg:gap-20">
-            {/* Map through projectsList and render project cards */}
-            {projectsList.slice(0, 6).map((project, index) => (
-              <div key={index} className="project-card flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-16">
-                <div className={`relative image-wrapper lg:w-1/2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  {
-                    project.image &&
-                    <img src={project.image} alt={project.name} className="project-image" />
-                  }
 
-                  {
-                    project.video &&
-                    <video autoPlay muted loop playsInline poster={project.poster && project.poster} className="w-full  object-cover object-center border border-white/30 rounded-lg h-full">
-                      {/* <source src={`${project.video}.webm`} type="video/webm" /> */}
-                      {/* <source src={`${project.video}.mp4`} type="video/mp4" /> */}
-                      <source src={project.video} />
-                    </video>
-                  }
-                </div>
-                <div className={`content-wrapper lg:w-1/2  ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`} >
-                  <h3 className="project-name text-white font-serif">{project.name}</h3>
-                  <div className="project-description text-gray-300 mt-4">
-                    <p className="project-description my-4 line-clamp-3 overflow-hidden">{project.description}</p>
-                    <div className="project-tags flex flex-wrap gap-2 mt-4">
-                      {project.tags.map((tag, tagIndex) => (
-                        <span key={tagIndex} className="project-tag">{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+          <div className="mx-auto">
+            <div className="grid grid-cols-3 gap-16 projects-list items-center">
+              <div className="flex flex-col pt-28">
+                {projectsList.slice(0, 2).map((project, index) => (
+                  <ProjectCard key={index} project={project} />
+                ))}
               </div>
-            ))}
+              <div className="flex flex-col">
+                {projectsList.slice(2, 4).map((project, index) => (
+                  <ProjectCard key={index} project={project} />
+                ))}
+              </div>
+              <div className="flex flex-col pt-28">
+                {projectsList.slice(4, 6).map((project, index) => (
+                  <ProjectCard key={index} project={project} />
+                ))}
+              </div>
+            </div>
           </div>
+
           <div className="text-center flex items-center justify-center mt-20">
             <TransitionLink href="/projects" className="btn btn-link text-pri-400">
               View All Projects
