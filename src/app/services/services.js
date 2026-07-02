@@ -99,19 +99,16 @@ export default function ServicesList() {
                 <div className={`content-wrapper lg:w-1/2  ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`} >
                   <h3 className="services-name text-white font-serif">{service.title}</h3>
                   <div className="services-description text-gray-300 mt-4">
-                    <p className="services-description my-4 overflow-hidden">{service.description}</p>
-
-                    {service.link &&
-                      <div className="btn-wrap">
-                        <TransitionLink href={service.link} className="btn btn-link text-pri-400">
-                          Learn More
-                          <span className="icon">
-                            <IoArrowForward className="front" />
-                            <IoArrowForward className="back" />
-                          </span>
-                        </TransitionLink>
-                      </div>
-                    }
+                    <p className="services-description mb-6 overflow-hidden">{service.description}</p>
+                    <div className="btn-wrap">
+                      <TransitionLink href={service.link} className="btn btn-link text-pri-400">
+                        Learn More
+                        <span className="icon">
+                          <IoArrowForward className="front" />
+                          <IoArrowForward className="back" />
+                        </span>
+                      </TransitionLink>
+                    </div>
                   </div>
                 </div>
               </div>

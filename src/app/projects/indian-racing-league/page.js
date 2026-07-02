@@ -1,84 +1,122 @@
 import Cta from "@/components/layout/cta";
-import PageTemplate from "../components/page-template";
-import RelatedProjects from "../components/related";
+import PageTemplate from "@/components/layout/page-template";
+import ProjectHeader from "@/components/layout/projectHeader";
+import RelatedProjects from "@/components/layout/related";
 
 export default function index() {
 
   const pageData = {
     pageHeader: {
-      title: "Rugby Premier League",
-      desc: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
-      tags: ["Live Sports", "Multi - Camera", "Broadcast Engineering"],
-      // image: "/projects/rugby-premier-league.webp"
-      video: "/videos/flypack-deployment.webm"
+      title: "Indian Racing League",
+      desc: "Delivered high-performance motorsport broadcast production across two seasons with reliable technical execution and seamless live coverage.",
+      tags: ["Motorsport", "Multi-Camera", "Broadcast Engineering"],
+      image: "/images/hero-slider-poster-1.webp"
     },
 
-    overview: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
+    overview:
+      "Supporting the Indian Racing League required precision broadcast workflows, RF reliability, and coordinated live production to capture every race with consistent quality and technical excellence.",
 
-    video: "/videos/intro.webm",
+    video: {
+      src: "/videos/hero-video-01.webm",
+      poster: "/images/hero-slider-poster-1.webp"
+    },
 
     projectFacts: [
-      { title: "Category", detail: "Indian Rugby League" },
-      { title: "Coverage", detail: "Multi Venue" },
-      { title: "Services", detail: "End to End Production" },
+      {
+        title: "Client",
+        detail: "RPPL"
+      },
+      {
+        title: "Category",
+        detail: "Motorsport Broadcast"
+      },
+      {
+        title: "Services",
+        detail: "End-to-End Live Production"
+      },
     ],
 
     challenges: {
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum.",
+      challengesImg: "/projects/indian-racing-league-challenges.webp",
+
+      desc:
+        "High-speed racing environments demanded dependable RF systems, rapid production decisions, and resilient broadcast workflows to deliver uninterrupted live coverage across every circuit while maintaining consistent signal quality, seamless coordination throughout each event.",
+
       list: [
         {
-          title: "Challenge 01",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "High-Speed Action",
+          desc:
+            "Fast-moving race cars required accurate camera tracking and responsive live switching throughout every competitive session consistently."
         },
         {
-          title: "Challenge 02",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "RF Connectivity",
+          desc:
+            "Reliable wireless transmission ensured uninterrupted onboard and trackside camera feeds despite challenging circuit environments throughout."
         },
         {
-          title: "Challenge 03",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Live Race Coordination",
+          desc:
+            "Synchronizing multiple production teams maintained seamless communication and efficient broadcast operations during every race event."
         },
         {
-          title: "Challenge 04",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
-        {
-          title: "Challenge 05",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
+          title: "Dynamic Coverage",
+          desc:
+            "Changing race conditions required adaptable production workflows delivering consistent visual quality across every live broadcast session."
+        }
       ],
-      approach: "Describe how the team handled every challenge with planning, engineering, redundancy, and experienced crews."
+
+      approach:
+        "Detailed production planning, experienced broadcast crews, redundant engineering systems, and continuous technical monitoring ensured reliable live coverage throughout every Indian Racing League event."
     },
 
     solutions: {
-      solutionsImg: "/projects/rugby-premier-league.webp",
-      desc: "Identifying potential constraints or issues early is important. Not only in building the creative but also in planning the production day schedule. The sooner we can identify any caveats that come with the project, the sooner we can start to navigate our way through them. We believe that projects are like a puzzle. You just need to figure out how to put them together.",
+      solutionsImg: "/projects/indian-racing-league-solutions.webp",
+
+      desc: "Combining advanced broadcast technology with experienced production teams enabled dependable motorsport coverage, capturing every race through efficient workflows, resilient technical infrastructure, RF transmission systems, multi-camera production, and real-time coordination. This integrated approach ensured consistent broadcast quality, reliable operations, and seamless live coverage throughout every racing event.",
 
       list: [
         {
-          title: "Deep Storytelling",
-          desc: "Dig into our deep storytelling well of knowledge to find the right mechanism to build up to the one shot. One of the greatest tools in storytelling is the “reveal.” In movies, it's when the audience learns a critical piece of knowledge that makes everything else make"
+          title: "Multi-Camera Coverage",
+          desc:
+            "Specialized camera placements delivered immersive race coverage from multiple perspectives throughout every competitive session consistently."
         },
         {
-          title: "Be Flexible",
-          desc: "The information we were recieiving was constantly changing. One great trait that our customers have come to love is something we learned when we worked in journalism. The story is always changing. Kinda like Buddhism. "
+          title: "RF Camera Systems",
+          desc:
+            "Wireless broadcast systems provided stable transmission for onboard and trackside cameras across demanding racing environments."
         },
         {
-          title: "Use Clever Editing",
-          desc: "Of course in the end we didn't need to use a “stunt double” for the jersey and shoe tying shots. We actually had Rooney. But, had he been unavailable, we would've been able to do it without him. And damn if our post-production team didn't knock it out of the park."
+          title: "Replay Operations",
+          desc:
+            "Instant replay workflows highlighted overtakes, incidents, and decisive race moments with exceptional broadcast clarity throughout."
         },
         {
-          title: "Clear Communication",
-          desc: "During the high stress moments, there was clear expectations set of our team and the client's team. Instructions on where to be and when. Fall back plans in case of last minute changes. We were on call day and night for a short amount of time, and happy to be."
+          title: "Broadcast Engineering",
+          desc:
+            "Redundant technical infrastructure maintained dependable signal routing and uninterrupted live production during every racing event consistently."
         }
       ]
     },
 
     results: [
-      { count: "10", text: "Seasons" },
-      { count: "10", suffix: "M+", text: "Venues" },
-      { count: "100", suffix: "+", text: "Live Matches" },
-      { count: "4", suffix: "+", text: "Venues" },
+      {
+        count: "2",
+        text: "Seasons"
+      },
+      {
+        count: "100",
+        suffix: "%",
+        text: "Live Coverage"
+      },
+      {
+        count: "1",
+        text: "Production Partner"
+      },
+      {
+        count: "24",
+        suffix: "/7",
+        text: "Technical Support"
+      }
     ],
 
     projectGallery: [
@@ -89,18 +127,18 @@ export default function index() {
       "/projects/rpl/image-05.webp",
     ],
 
-    related: ["ipl", "asia-cup", "bangladesh-premier-league"]
-  }
+    related: [
+      "rugby-premier-league",
+      "ipl",
+      "bangladesh-premier-league"
+    ]
+  };
 
   return (
-
     <>
+      <ProjectHeader data={pageData} />
       <PageTemplate data={pageData} />
-
-      <div className="project-related">
-        <RelatedProjects projects={pageData.related} />
-      </div>
-
+      <RelatedProjects projects={pageData.related} />
       <Cta />
     </>
   )

@@ -1,7 +1,6 @@
 import Cta from "@/components/layout/cta";
 import PageHeader from "@/components/layout/page-header";
-import ProjectsGrid from "./projectsGrid";
-import { projectsList } from "@/data/projectsList";
+import ProjectsGrid from "@/components/layout/projectsGrid";
 
 export default function ProjectPage() {
   return (

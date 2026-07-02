@@ -1,84 +1,125 @@
 import Cta from "@/components/layout/cta";
-import PageTemplate from "../components/page-template";
-import RelatedProjects from "../components/related";
+import PageTemplate from "@/components/layout/page-template";
+import ProjectHeader from "@/components/layout/projectHeader";
+import RelatedProjects from "@/components/layout/related";
 
 export default function index() {
 
   const pageData = {
     pageHeader: {
-      title: "Rugby Premier League",
-      desc: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
-      tags: ["Live Sports", "Multi - Camera", "Broadcast Engineering"],
-      // image: "/projects/rugby-premier-league.webp"
-      video: "/videos/flypack-deployment.webm"
+      title: "Ambani Wedding",
+      desc: "Delivered premium multi-camera broadcast production with flawless technical execution for India's most prestigious private wedding celebration.",
+      tags: ["Live Events", "Multi-Camera", "Broadcast Engineering"],
+      image: "/projects/ambani-wedding-cover.webp"
     },
 
-    overview: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
+    overview:
+      "The Ambani Wedding demanded exceptional production standards, cinematic storytelling, and flawless technical execution across multiple celebrations. Our team delivered premium live production support through multi-camera workflows, RF systems, live switching, broadcast engineering, and coordinated technical operations, ensuring every ceremony was captured with precision, elegance, and uncompromising production quality.",
 
-    video: "/videos/intro.webm",
+    video: {
+      src: "/videos/rugby-pl.webm",
+      poster: "/images/"
+    },
 
     projectFacts: [
-      { title: "Category", detail: "Indian Rugby League" },
-      { title: "Coverage", detail: "Multi Venue" },
-      { title: "Services", detail: "End to End Production" },
+      {
+        title: "Client",
+        detail: "Private Event"
+      },
+      {
+        title: "Category",
+        detail: "Luxury Event Production"
+      },
+      {
+        title: "Services",
+        detail: "End-to-End Live Production"
+      },
     ],
 
     challenges: {
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum.",
+      challengesImg: "/projects/ambani-wedding-challenges.webp",
+
+      desc:
+        "Capturing a world-class private celebration required cinematic production quality, discreet technical operations, synchronized multi-camera coverage, dependable engineering infrastructure, and seamless coordination between production, lighting, audio, stage management, and event teams while maintaining uninterrupted coverage throughout every ceremony and celebration.",
+
       list: [
         {
-          title: "Challenge 01",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Complex Event Schedule",
+          desc:
+            "Multiple ceremonies required seamless production planning and dependable technical readiness throughout every celebration."
         },
         {
-          title: "Challenge 02",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Cinematic Coverage",
+          desc:
+            "Premium camera systems captured intimate moments with elegant visuals while maintaining unobtrusive event coverage throughout."
         },
         {
-          title: "Challenge 03",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Technical Coordination",
+          desc:
+            "Production, lighting, audio, and engineering teams collaborated seamlessly for flawless event execution throughout every ceremony."
         },
         {
-          title: "Challenge 04",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
-        {
-          title: "Challenge 05",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
+          title: "Broadcast Reliability",
+          desc:
+            "Resilient production systems ensured uninterrupted coverage despite complex event logistics and evolving production requirements."
+        }
       ],
-      approach: "Describe how the team handled every challenge with planning, engineering, redundancy, and experienced crews."
+
+      approach:
+        "Through meticulous planning, experienced production professionals, resilient engineering systems, and synchronized technical workflows, we delivered premium event coverage while maintaining exceptional production quality, seamless coordination, and dependable operations across every ceremony, performance, and celebration."
     },
 
     solutions: {
-      solutionsImg: "/projects/rugby-premier-league.webp",
-      desc: "Identifying potential constraints or issues early is important. Not only in building the creative but also in planning the production day schedule. The sooner we can identify any caveats that come with the project, the sooner we can start to navigate our way through them. We believe that projects are like a puzzle. You just need to figure out how to put them together.",
+      solutionsImg: "/projects/ambani-wedding-solutions.webp",
+
+      desc:
+        "Combining cinematic production techniques with advanced broadcast technology enabled elegant event coverage through multi-camera workflows, RF connectivity, live switching, engineering support, and coordinated technical operations. This integrated approach ensured premium visual storytelling, operational efficiency, and flawless execution throughout the entire celebration.",
 
       list: [
         {
-          title: "Deep Storytelling",
-          desc: "Dig into our deep storytelling well of knowledge to find the right mechanism to build up to the one shot. One of the greatest tools in storytelling is the “reveal.” In movies, it's when the audience learns a critical piece of knowledge that makes everything else make"
+          title: "Multi-Camera Production",
+          desc:
+            "Specialized camera systems captured ceremonies from multiple perspectives with premium cinematic quality throughout every celebration."
         },
         {
-          title: "Be Flexible",
-          desc: "The information we were recieiving was constantly changing. One great trait that our customers have come to love is something we learned when we worked in journalism. The story is always changing. Kinda like Buddhism. "
+          title: "Live Switching",
+          desc:
+            "Experienced vision mixing delivered seamless transitions between ceremonies, performances, and special moments throughout the event."
         },
         {
-          title: "Use Clever Editing",
-          desc: "Of course in the end we didn't need to use a “stunt double” for the jersey and shoe tying shots. We actually had Rooney. But, had he been unavailable, we would've been able to do it without him. And damn if our post-production team didn't knock it out of the park."
+          title: "Broadcast Engineering",
+          desc:
+            "Reliable engineering infrastructure maintained uninterrupted production workflows and dependable technical performance throughout celebrations."
         },
         {
-          title: "Clear Communication",
-          desc: "During the high stress moments, there was clear expectations set of our team and the client's team. Instructions on where to be and when. Fall back plans in case of last minute changes. We were on call day and night for a short amount of time, and happy to be."
+          title: "Production Management",
+          desc:
+            "Dedicated technical teams coordinated event operations, communications, and production workflows with exceptional precision throughout."
         }
       ]
     },
 
     results: [
-      { count: "10", text: "Seasons" },
-      { count: "10", suffix: "M+", text: "Venues" },
-      { count: "100", suffix: "+", text: "Live Matches" },
-      { count: "4", suffix: "+", text: "Venues" },
+      {
+        count: "50",
+        suffix: "+",
+        text: "Production Crew"
+      },
+      {
+        count: "15",
+        suffix: "+",
+        text: "Camera Systems"
+      },
+      {
+        count: "100",
+        suffix: "+",
+        text: "Production Hours"
+      },
+      {
+        count: "100",
+        suffix: "%",
+        text: "Event Coverage"
+      }
     ],
 
     projectGallery: [
@@ -89,18 +130,18 @@ export default function index() {
       "/projects/rpl/image-05.webp",
     ],
 
-    related: ["ipl", "asia-cup", "bangladesh-premier-league"]
+    related: [
+      "iifa-awards",
+      "cricket-production",
+      "ipl"
+    ]
   }
 
   return (
-
     <>
+      <ProjectHeader data={pageData} />
       <PageTemplate data={pageData} />
-
-      <div className="project-related">
-        <RelatedProjects projects={pageData.related} />
-      </div>
-
+      <RelatedProjects projects={pageData.related} />
       <Cta />
     </>
   )

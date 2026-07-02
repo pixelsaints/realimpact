@@ -35,7 +35,6 @@ export default function OurStory() {
             trigger: sectionRef.current,
             start: "top 55%",
             toggleActions: "play none none reverse",
-            // markers: true
           }
         }
       )
@@ -99,8 +98,8 @@ export default function OurStory() {
     <>
       <section className="py-24 lg:py-32 overflow-hidden">
         <div className="container flex flex-col lg:flex-row lg:justify-between lg:items-center" ref={sectionRef}>
-          <div className="lg:w-[45%] image-left mb-12">
-            <img src="/images/55.jpg" alt="" className="w-full object-cover object-center h-[24em] lg:h-auto" />
+          <div className="lg:w-[45%] image-left mb-12 lg:mb-0">
+            <img src="/images/ourstory.webp" alt="" className="w-full object-cover object-center h-[24em] lg:h-auto" />
           </div>
           <div className="lg:w-[50%]" ref={contentRef}>
             <div className="subtitle mb-4">Our Story</div>
@@ -120,7 +119,7 @@ export default function OurStory() {
                 <div className="lg:w-[80%]">
                   Trusted by broadcasters and event organizers for scalable production, seamless execution, and integrated broadcast technology solutions.
                 </div>
-                <img src="/images/about-image-2.webp" alt="" className="lg:w-[30%] h-[12em] lg:h-[6em] object-cover object-center" />
+                <img src="/images/experienced-teams.webp" alt="" className="lg:w-[30%] h-[12em] lg:h-[6em] object-cover object-center" />
               </li>
             </ul>
           </div>

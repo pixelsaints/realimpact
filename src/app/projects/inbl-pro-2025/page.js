@@ -1,84 +1,124 @@
 import Cta from "@/components/layout/cta";
-import PageTemplate from "../components/page-template";
-import RelatedProjects from "../components/related";
+import PageTemplate from "@/components/layout/page-template";
+import ProjectHeader from "@/components/layout/projectHeader";
+import RelatedProjects from "@/components/layout/related";
 
 export default function index() {
 
   const pageData = {
     pageHeader: {
-      title: "Rugby Premier League",
-      desc: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
-      tags: ["Live Sports", "Multi - Camera", "Broadcast Engineering"],
-      // image: "/projects/rugby-premier-league.webp"
-      video: "/videos/flypack-deployment.webm"
+      title: "INBL Pro 2025",
+      desc: "Delivered professional basketball broadcast production with multi-camera workflows, replay integration, live graphics, and technical excellence.",
+      tags: ["Basketball", "Multi-Camera", "Live Broadcast"],
+      image: "/projects/inbl-pro-2025-cover.webp"
     },
 
-    overview: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
+    overview:
+      "INBL Pro 2025 demanded fast-paced basketball coverage supported by reliable broadcast workflows and experienced production teams. We delivered end-to-end live production with multi-camera operations, replay integration, live graphics, RF systems, and coordinated technical execution, ensuring consistent broadcast quality throughout every game of the tournament.",
 
-    video: "/videos/intro.webm",
+    video: {
+      src: "/videos/rugby-pl.webm",
+      poster: "/images/"
+    },
 
     projectFacts: [
-      { title: "Category", detail: "Indian Rugby League" },
-      { title: "Coverage", detail: "Multi Venue" },
-      { title: "Services", detail: "End to End Production" },
+      {
+        title: "Client",
+        detail: "INBL Pro"
+      },
+      {
+        title: "Category",
+        detail: "Basketball Broadcast Production"
+      },
+      {
+        title: "Services",
+        detail: "End-to-End Live Production"
+      },
     ],
 
     challenges: {
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum.",
+      challengesImg: "/projects/inbl-pro-2025-challenges.webp",
+
+      desc:
+        "Broadcasting professional basketball required rapid camera transitions, synchronized replay workflows, dependable graphics integration, and resilient production systems capable of maintaining uninterrupted live coverage, fast decision-making, and consistent broadcast quality throughout every match while supporting dynamic game action seamlessly.",
+
       list: [
         {
-          title: "Challenge 01",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Fast Game Pace",
+          desc:
+            "Rapid gameplay required responsive camera coordination and seamless vision mixing throughout every match consistently."
         },
         {
-          title: "Challenge 02",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Replay Accuracy",
+          desc:
+            "Instant replay operations highlighted decisive moments while maintaining precise synchronization with live match coverage throughout."
         },
         {
-          title: "Challenge 03",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Graphics Integration",
+          desc:
+            "Live score graphics required accurate updates and seamless integration throughout every broadcast without operational interruptions."
         },
         {
-          title: "Challenge 04",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
-        {
-          title: "Challenge 05",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
+          title: "Production Coordination",
+          desc:
+            "Coordinated technical teams ensured efficient communication and dependable workflows during every live basketball production event."
+        }
       ],
-      approach: "Describe how the team handled every challenge with planning, engineering, redundancy, and experienced crews."
+
+      approach:
+        "Our experienced production crews combined meticulous planning, resilient engineering systems, standardized workflows, and real-time coordination to deliver dependable basketball broadcasts with consistent visual quality, seamless replay integration, and uninterrupted live coverage across every INBL Pro 2025 fixture."
     },
 
     solutions: {
-      solutionsImg: "/projects/rugby-premier-league.webp",
-      desc: "Identifying potential constraints or issues early is important. Not only in building the creative but also in planning the production day schedule. The sooner we can identify any caveats that come with the project, the sooner we can start to navigate our way through them. We believe that projects are like a puzzle. You just need to figure out how to put them together.",
+      solutionsImg: "/projects/inbl-pro-2025-solutions.webp",
+
+      desc:
+        "Integrating advanced broadcast technology with experienced production professionals enabled efficient basketball coverage through multi-camera workflows, replay systems, live graphics, RF connectivity, and coordinated engineering support. This unified production approach delivered reliable broadcasts, operational efficiency, and exceptional viewing experiences throughout the tournament.",
 
       list: [
         {
-          title: "Deep Storytelling",
-          desc: "Dig into our deep storytelling well of knowledge to find the right mechanism to build up to the one shot. One of the greatest tools in storytelling is the “reveal.” In movies, it's when the audience learns a critical piece of knowledge that makes everything else make"
+          title: "Multi-Camera Coverage",
+          desc:
+            "Professional camera setups captured dynamic basketball action from multiple perspectives with consistent broadcast-quality visuals throughout."
         },
         {
-          title: "Be Flexible",
-          desc: "The information we were recieiving was constantly changing. One great trait that our customers have come to love is something we learned when we worked in journalism. The story is always changing. Kinda like Buddhism. "
+          title: "Replay Systems",
+          desc:
+            "Integrated replay workflows showcased crucial game moments with accurate playback and seamless broadcast synchronization every match."
         },
         {
-          title: "Use Clever Editing",
-          desc: "Of course in the end we didn't need to use a “stunt double” for the jersey and shoe tying shots. We actually had Rooney. But, had he been unavailable, we would've been able to do it without him. And damn if our post-production team didn't knock it out of the park."
+          title: "Live Graphics",
+          desc:
+            "Real-time graphics delivered accurate scores, statistics, and game information throughout every live basketball broadcast consistently."
         },
         {
-          title: "Clear Communication",
-          desc: "During the high stress moments, there was clear expectations set of our team and the client's team. Instructions on where to be and when. Fall back plans in case of last minute changes. We were on call day and night for a short amount of time, and happy to be."
+          title: "Technical Engineering",
+          desc:
+            "Resilient engineering infrastructure maintained dependable broadcast operations and uninterrupted signal distribution throughout tournament coverage."
         }
       ]
     },
 
     results: [
-      { count: "10", text: "Seasons" },
-      { count: "10", suffix: "M+", text: "Venues" },
-      { count: "100", suffix: "+", text: "Live Matches" },
-      { count: "4", suffix: "+", text: "Venues" },
+      {
+        count: "50",
+        suffix: "+",
+        text: "Matches"
+      },
+      {
+        count: "300",
+        suffix: "+",
+        text: "Production Hours"
+      },
+      {
+        count: "100",
+        suffix: "%",
+        text: "Live Coverage"
+      },
+      {
+        count: "1",
+        text: "Season"
+      }
     ],
 
     projectGallery: [
@@ -89,18 +129,18 @@ export default function index() {
       "/projects/rpl/image-05.webp",
     ],
 
-    related: ["ipl", "asia-cup", "bangladesh-premier-league"]
+    related: [
+      "indian-racing-league",
+      "rugby-premier-league",
+      "ipl"
+    ]
   }
 
   return (
-
     <>
+      <ProjectHeader data={pageData} />
       <PageTemplate data={pageData} />
-
-      <div className="project-related">
-        <RelatedProjects projects={pageData.related} />
-      </div>
-
+      <RelatedProjects projects={pageData.related} />
       <Cta />
     </>
   )

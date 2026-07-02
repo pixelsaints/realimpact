@@ -1,6 +1,6 @@
 import Cta from "@/components/layout/cta";
-import PageTemplate from "../components/page-template";
-import RelatedProjects from "../components/related";
+import PageTemplate from "@/components/layout/page-template";
+import RelatedProjects from "@/components/layout/related";
 
 export default function index() {
 

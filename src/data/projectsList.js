@@ -62,13 +62,13 @@ export const projectsList = [
     link: "/projects/bengal-pro-t20",
     tags: ["Cricket", "Regional League", "Live Production"],
   },
-  {
-    name: "Vidarbha Premier League",
-    description: "Executed reliable live cricket broadcasts with multi-camera production, replay systems, and technical operations throughout the tournament.",
-    image: "/projects/vpl.webp",
-    link: "/projects/vidarbha-premier-league",
-    tags: ["Cricket", "Regional League", "Broadcast"],
-  },
+  // {
+  //   name: "Vidarbha Premier League",
+  //   description: "Executed reliable live cricket broadcasts with multi-camera production, replay systems, and technical operations throughout the tournament.",
+  //   image: "/projects/vpl.webp",
+  //   link: "/projects/vidarbha-premier-league",
+  //   tags: ["Cricket", "Regional League", "Broadcast"],
+  // },
   {
     name: "UP T20 League",
     description: "Provided broadcast production and technical support for Uttar Pradesh's premier T20 competition with consistent live event delivery.",

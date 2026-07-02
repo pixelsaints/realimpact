@@ -1,84 +1,114 @@
 import Cta from "@/components/layout/cta";
-import PageTemplate from "../components/page-template";
-import RelatedProjects from "../components/related";
+import PageTemplate from "@/components/layout/page-template";
+import ProjectHeader from "@/components/layout/projectHeader";
+import RelatedProjects from "@/components/layout/related";
 
 export default function index() {
 
   const pageData = {
     pageHeader: {
-      title: "Rugby Premier League",
-      desc: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
-      tags: ["Live Sports", "Multi - Camera", "Broadcast Engineering"],
-      // image: "/projects/rugby-premier-league.webp"
-      video: "/videos/flypack-deployment.webm"
+      title: "Bangladesh Premier League",
+      desc: "Delivered premium live cricket broadcast production across ten seasons with reliable multi-camera workflows and technical excellence.",
+      tags: ["Live Cricket", "Multi-Camera", "Broadcast Engineering"],
+      image: "/projects/bangladesh-premier-league.webp"
     },
 
-    overview: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
+    overview:
+      "Over ten seasons of the Bangladesh Premier League, our team delivered dependable broadcast production for one of South Asia's premier T20 cricket tournaments. From multi-camera coverage and replay operations to RF systems and technical coordination, we ensured consistent live broadcasts that captured every moment with precision, reliability, and exceptional production quality.",
 
-    video: "/videos/intro.webm",
+    video: {
+      src: "/videos/rugby-pl.webm",
+      poster: "/images/"
+    },
 
     projectFacts: [
-      { title: "Category", detail: "Indian Rugby League" },
-      { title: "Coverage", detail: "Multi Venue" },
-      { title: "Services", detail: "End to End Production" },
+      { title: "Client", detail: "Bangladesh Premier League" },
+      { title: "Category", detail: "T20 Cricket Broadcast" },
+      { title: "Services", detail: "End-to-End Live Production" },
     ],
 
     challenges: {
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum.",
+      challengesImg: "/images/hero-slider-poster-2.webp",
+
+      desc:
+        "Delivering ten seasons of live T20 cricket demanded scalable production workflows, technical consistency, and reliable broadcast infrastructure across multiple venues and changing tournament requirements.",
+
       list: [
         {
-          title: "Challenge 01",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Multi-Venue Operations",
+          desc:
+            "Coordinating production teams across tournament venues required efficient logistics, planning, and seamless technical deployment throughout."
         },
         {
-          title: "Challenge 02",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Broadcast Quality",
+          desc:
+            "Maintaining consistent production standards across every fixture required standardized workflows and experienced broadcast professionals throughout."
         },
         {
-          title: "Challenge 03",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "High Match Frequency",
+          desc:
+            "Closely scheduled fixtures demanded rapid equipment turnaround, technical testing, and dependable production readiness before every broadcast."
         },
         {
-          title: "Challenge 04",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
-        {
-          title: "Challenge 05",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
+          title: "Signal Reliability",
+          desc:
+            "Reliable RF connectivity and transmission systems ensured uninterrupted live coverage despite complex stadium broadcast environments throughout."
+        }
       ],
-      approach: "Describe how the team handled every challenge with planning, engineering, redundancy, and experienced crews."
+
+      approach:
+        "Through meticulous planning, experienced engineering teams, standardized workflows, and resilient technical infrastructure, we consistently delivered high-quality live broadcasts across ten Bangladesh Premier League seasons."
     },
 
     solutions: {
-      solutionsImg: "/projects/rugby-premier-league.webp",
-      desc: "Identifying potential constraints or issues early is important. Not only in building the creative but also in planning the production day schedule. The sooner we can identify any caveats that come with the project, the sooner we can start to navigate our way through them. We believe that projects are like a puzzle. You just need to figure out how to put them together.",
+      solutionsImg: "/images/4k-boradcast-solutions.webp",
+
+      desc:
+        "Our production strategy combined experienced personnel, advanced broadcast technology, and proven engineering workflows to deliver dependable multi-season coverage while maintaining exceptional production standards throughout every tournament.",
 
       list: [
         {
-          title: "Deep Storytelling",
-          desc: "Dig into our deep storytelling well of knowledge to find the right mechanism to build up to the one shot. One of the greatest tools in storytelling is the “reveal.” In movies, it's when the audience learns a critical piece of knowledge that makes everything else make"
+          title: "Multi-Camera Coverage",
+          desc:
+            "Strategically positioned cameras delivered immersive match coverage, capturing every angle with consistent broadcast-quality visuals throughout."
         },
         {
-          title: "Be Flexible",
-          desc: "The information we were recieiving was constantly changing. One great trait that our customers have come to love is something we learned when we worked in journalism. The story is always changing. Kinda like Buddhism. "
+          title: "Replay Operations",
+          desc:
+            "Integrated replay systems highlighted crucial match moments with accurate, timely playback for broadcasters and audiences alike."
         },
         {
-          title: "Use Clever Editing",
-          desc: "Of course in the end we didn't need to use a “stunt double” for the jersey and shoe tying shots. We actually had Rooney. But, had he been unavailable, we would've been able to do it without him. And damn if our post-production team didn't knock it out of the park."
+          title: "Broadcast Engineering",
+          desc:
+            "Redundant signal routing and technical monitoring ensured uninterrupted production throughout every Bangladesh Premier League fixture consistently."
         },
         {
-          title: "Clear Communication",
-          desc: "During the high stress moments, there was clear expectations set of our team and the client's team. Instructions on where to be and when. Fall back plans in case of last minute changes. We were on call day and night for a short amount of time, and happy to be."
+          title: "Production Coordination",
+          desc:
+            "Dedicated production teams synchronized operations, communications, and technical workflows for efficient live tournament execution every match."
         }
       ]
     },
 
     results: [
-      { count: "10", text: "Seasons" },
-      { count: "10", suffix: "M+", text: "Venues" },
-      { count: "100", suffix: "+", text: "Live Matches" },
-      { count: "4", suffix: "+", text: "Venues" },
+      {
+        count: "10",
+        text: "Seasons"
+      },
+      {
+        count: "100",
+        suffix: "%",
+        text: "Live Coverage"
+      },
+      {
+        count: "24",
+        suffix: "/7",
+        text: "Technical Support"
+      },
+      {
+        count: "04",
+        text: "Production Partners"
+      }
     ],
 
     projectGallery: [
@@ -89,18 +119,18 @@ export default function index() {
       "/projects/rpl/image-05.webp",
     ],
 
-    related: ["ipl", "asia-cup", "bangladesh-premier-league"]
-  }
+    related: [
+      "ipl",
+      "asia-cup",
+      "rugby-premier-league"
+    ]
+  };
 
   return (
-
     <>
+      <ProjectHeader data={pageData} />
       <PageTemplate data={pageData} />
-
-      <div className="project-related">
-        <RelatedProjects projects={pageData.related} />
-      </div>
-
+      <RelatedProjects projects={pageData.related} />
       <Cta />
     </>
   )

@@ -1,84 +1,125 @@
 import Cta from "@/components/layout/cta";
-import PageTemplate from "../components/page-template";
-import RelatedProjects from "../components/related";
+import PageTemplate from "@/components/layout/page-template";
+import ProjectHeader from "@/components/layout/projectHeader";
+import RelatedProjects from "@/components/layout/related";
 
 export default function index() {
 
   const pageData = {
     pageHeader: {
-      title: "Rugby Premier League",
-      desc: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
-      tags: ["Live Sports", "Multi - Camera", "Broadcast Engineering"],
-      // image: "/projects/rugby-premier-league.webp"
-      video: "/videos/flypack-deployment.webm"
+      title: "Cricket Production for Various Boards",
+      desc: "Delivered dependable cricket broadcast production across domestic and international tournaments with scalable technical expertise and operational excellence.",
+      tags: ["Cricket", "Live Broadcast", "Production Engineering"],
+      image: "/projects/cricket-production.webp"
     },
 
-    overview: "For ten consecutive seasons, our team delivered comprehensive broadcast production services for the Bangladesh Premier League, supporting live coverage across multiple venues with world - class technical infrastructure and experienced production crews.",
+    overview:
+      "Delivered comprehensive broadcast production solutions for domestic and international cricket boards, supporting diverse tournaments across multiple countries. Our experienced teams managed multi-camera workflows, RF systems, replay operations, broadcast engineering, and technical coordination to ensure reliable live coverage, consistent production quality, and seamless execution throughout every event.",
 
-    video: "/videos/intro.webm",
+    video: {
+      src: "/videos/rugby-pl.webm",
+      poster: "/images/"
+    },
 
     projectFacts: [
-      { title: "Category", detail: "Indian Rugby League" },
-      { title: "Coverage", detail: "Multi Venue" },
-      { title: "Services", detail: "End to End Production" },
+      {
+        title: "Client",
+        detail: "Multiple Cricket Boards"
+      },
+      {
+        title: "Category",
+        detail: "Cricket Broadcast Production"
+      },
+      {
+        title: "Services",
+        detail: "End-to-End Live Production"
+      },
     ],
 
     challenges: {
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum.",
+      challengesImg: "/projects/cricket-production-challenges.webp",
+
+      desc:
+        "Supporting multiple cricket boards required adaptable production workflows, standardized technical processes, dependable broadcast infrastructure, and experienced crews capable of delivering consistent live coverage across varying tournament formats, venues, operational requirements, and international production standards while maintaining broadcast excellence.",
+
       list: [
         {
-          title: "Challenge 01",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Diverse Tournament Formats",
+          desc:
+            "Different tournament structures required flexible production workflows while maintaining consistent broadcast quality across every competition."
         },
         {
-          title: "Challenge 02",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Multi-Venue Coordination",
+          desc:
+            "Simultaneous venue operations demanded efficient logistics, communication, and technical coordination between experienced production teams throughout."
         },
         {
-          title: "Challenge 03",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
+          title: "Broadcast Standardization",
+          desc:
+            "Maintaining consistent production standards required unified engineering workflows, equipment, and experienced technical personnel throughout."
         },
         {
-          title: "Challenge 04",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
-        {
-          title: "Challenge 05",
-          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam architecto inventore ut eum sed nesciunt eligendi, molestiae error ipsa voluptatibus cum eos impedit dolorum."
-        },
+          title: "Operational Scalability",
+          desc:
+            "Rapidly scaling production resources ensured dependable broadcast delivery across domestic and international cricket tournaments consistently."
+        }
       ],
-      approach: "Describe how the team handled every challenge with planning, engineering, redundancy, and experienced crews."
+
+      approach:
+        "Our experienced production teams implemented standardized workflows, resilient engineering systems, and meticulous planning to deliver reliable broadcast solutions across multiple cricket boards, adapting seamlessly to varying tournament formats, venue requirements, and production scales while maintaining exceptional technical quality."
     },
 
     solutions: {
-      solutionsImg: "/projects/rugby-premier-league.webp",
-      desc: "Identifying potential constraints or issues early is important. Not only in building the creative but also in planning the production day schedule. The sooner we can identify any caveats that come with the project, the sooner we can start to navigate our way through them. We believe that projects are like a puzzle. You just need to figure out how to put them together.",
+      solutionsImg: "/projects/cricket-production-solutions.webp",
+
+      desc:
+        "Combining experienced broadcast professionals with advanced production technology enabled scalable cricket coverage across multiple boards. Integrated engineering, RF systems, replay operations, and coordinated technical workflows ensured reliable live broadcasts, operational efficiency, and consistently high production standards for every tournament and venue.",
 
       list: [
         {
-          title: "Deep Storytelling",
-          desc: "Dig into our deep storytelling well of knowledge to find the right mechanism to build up to the one shot. One of the greatest tools in storytelling is the “reveal.” In movies, it's when the audience learns a critical piece of knowledge that makes everything else make"
+          title: "Scalable Production",
+          desc:
+            "Flexible broadcast infrastructure adapted efficiently to tournaments of varying sizes across domestic and international cricket events."
         },
         {
-          title: "Be Flexible",
-          desc: "The information we were recieiving was constantly changing. One great trait that our customers have come to love is something we learned when we worked in journalism. The story is always changing. Kinda like Buddhism. "
+          title: "Engineering Excellence",
+          desc:
+            "Resilient technical systems ensured dependable signal routing and uninterrupted broadcast operations throughout every production schedule."
         },
         {
-          title: "Use Clever Editing",
-          desc: "Of course in the end we didn't need to use a “stunt double” for the jersey and shoe tying shots. We actually had Rooney. But, had he been unavailable, we would've been able to do it without him. And damn if our post-production team didn't knock it out of the park."
+          title: "Multi-Camera Coverage",
+          desc:
+            "Professional camera workflows captured comprehensive match coverage with broadcast-quality visuals from every critical perspective consistently."
         },
         {
-          title: "Clear Communication",
-          desc: "During the high stress moments, there was clear expectations set of our team and the client's team. Instructions on where to be and when. Fall back plans in case of last minute changes. We were on call day and night for a short amount of time, and happy to be."
+          title: "Technical Coordination",
+          desc:
+            "Dedicated production teams synchronized engineering, communications, and operations for efficient live tournament execution every match."
         }
       ]
     },
 
     results: [
-      { count: "10", text: "Seasons" },
-      { count: "10", suffix: "M+", text: "Venues" },
-      { count: "100", suffix: "+", text: "Live Matches" },
-      { count: "4", suffix: "+", text: "Venues" },
+      {
+        count: "10",
+        suffix: "+",
+        text: "Board Associations"
+      },
+      {
+        count: "5",
+        suffix: "+",
+        text: "Countries"
+      },
+      {
+        count: "1000",
+        suffix: "+",
+        text: "Production Hours"
+      },
+      {
+        count: "100",
+        suffix: "+",
+        text: "Live Matches"
+      }
     ],
 
     projectGallery: [
@@ -89,18 +130,18 @@ export default function index() {
       "/projects/rpl/image-05.webp",
     ],
 
-    related: ["ipl", "asia-cup", "bangladesh-premier-league"]
+    related: [
+      "ipl",
+      "bangladesh-premier-league",
+      "asia-cup"
+    ]
   }
 
   return (
-
     <>
+      <ProjectHeader data={pageData} />
       <PageTemplate data={pageData} />
-
-      <div className="project-related">
-        <RelatedProjects projects={pageData.related} />
-      </div>
-
+      <RelatedProjects projects={pageData.related} />
       <Cta />
     </>
   )

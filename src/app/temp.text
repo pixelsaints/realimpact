@@ -1,0 +1,133 @@
+const pageData = {
+
+  pageHeader: {
+
+    title: "",
+
+    desc: "", // in 16 words about the project
+
+    tags: ["Live Sports", "Multi - Camera", "Broadcast Engineering"], //max of 3 tags
+
+    image: "/projects/rugby-premier-league.webp"  // keep this the same
+
+  },
+
+
+
+  overview: "", // in must 48 words
+
+
+
+  video: { // keep this same
+
+    src: "/videos/rugby-pl.webm",
+
+    poster: "/images/"
+
+  },
+
+
+
+  projectFacts: [
+
+    { title: "Client", detail: "Bangladesh Primere League" },
+
+    { title: "Category", detail: "Sports Production" },
+
+    { title: "Services", detail: "End to End Production" },
+
+  ], // change this according to project title
+
+
+
+  challenges: {
+
+    challengesImg: "/projects/rugby-premier-league.webp", // change file name to project-url-challenges.webp
+
+    desc: "", // in must 48 words
+
+    list: [ // max of 4 challenges, title and description for each in 16 words
+
+      {
+
+        title: "",
+
+        desc: ""
+
+      }
+
+    ],
+
+    approach: "Describe how the team handled every challenge with planning, engineering, redundancy, and experienced crews."
+
+  },
+
+
+
+  solutions: {
+
+    solutionsImg: "/projects/rugby-premier-league.webp", // change file name to project-url-solutions.webp
+
+    desc: "", // in must 48 words
+
+
+
+    list: [ // max of 4 solution, title and description for each in 16 words
+
+      {
+
+        title: "",
+
+        desc: ""
+
+      }
+
+    ]
+
+  },
+
+
+
+  results: [ // something related to the project not more than 4
+
+    { count: "10", text: "Seasons" },
+
+    { count: "10", suffix: "M+", text: "Venues" },
+
+    { count: "100", suffix: "+", text: "Live Matches" },
+
+    { count: "4", suffix: "+", text: "Venues" },
+
+  ],
+
+
+
+  projectGallery: [ // keep this the same
+
+    "/projects/rpl/image-01.webp",
+
+    "/projects/rpl/image-02.webp",
+
+    "/projects/rpl/image-03.webp",
+
+    "/projects/rpl/image-04.webp",
+
+    "/projects/rpl/image-05.webp",
+
+  ],
+
+
+
+  related: ["ipl", "asia-cup", "bangladesh-premier-league"] // will change this my self
+
+}
+
+
+
+url: cricket - production
+
+Tilte: Cricket Production for Various Boards
+
+Short Intro About project: Delivered broadcast solutions for domestic and international cricket boards, ensuring reliable production across diverse tournaments and venues.
+
+Additional info: Stats can be number of countries, board associations, hours of production etc
