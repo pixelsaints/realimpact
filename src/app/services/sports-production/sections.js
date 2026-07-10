@@ -212,42 +212,7 @@ export default function Sections() {
         </div>
       </section>
 
-      <section className="gallery py-24 lg:py-32">
-        <div className="container" ref={galleryRef}>
-          <div className="flex flex-col justify-center items-center text-center pb-24 lg:w-[70%] mx-auto">
-            <div className="subtitle mb-5">Gallery</div>
-            <h2 className="title text-white mb-4">Our Work in Action</h2>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryItems.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setIndex(index);
-                  setOpen(true);
-                }}
-                className="mb-6 block w-full break-inside-avoid overflow-hidden rounded-lg card gallery-link"
-              >
-                <img
-                  src={item.imageSrc}
-                  alt={item.title}
-                  className="w-full rounded-lg transition-transform duration-500 hover:scale-105 h-48 object-cover object-center"
-                />
-              </button>
-            ))}
-          </div>
-
-          <Lightbox
-            open={open}
-            close={() => setOpen(false)}
-            index={index}
-            slides={slides}
-          />
-        </div>
-      </section>
-
-      <section className="pb-24 lg:pb-32">
+      <section className="py-24 lg:py-32">
         <div className="container">
           <ClientsCarosel />
         </div>

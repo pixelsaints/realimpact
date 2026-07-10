@@ -11,6 +11,7 @@ export default function SpecializedEquipment() {
         titleSecond="Broadcast Services"
         desc="Comprehensive sports broadcasting solutions delivering multi-camera coverage, instant replay, graphics integration, live streaming, and reliable technical execution for every event."
         video="/videos/video-04"
+        pageName="Sports Production"
       />
       <Sections />
 

@@ -12,6 +12,7 @@ export default function Entertainment() {
         titleSecond="Meets Technology"
         desc="Delivering broadcast production, technical infrastructure, live streaming, and event support solutions for concerts, festivals, award shows, and entertainment events."
         video="/videos/video-04"
+        pageName="Event Production"
       />
       <Sections />
 

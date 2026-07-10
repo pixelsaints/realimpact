@@ -11,6 +11,7 @@ export default function SystemIntegration() {
         titleSecond="Integration Services"
         desc="Designing, deploying, and integrating broadcast infrastructure that connects technology, workflows, and operations into efficient, scalable production environments."
         video="/videos/video-04"
+        pageName="System Integration"
       />
       <Sections />
       <Cta />

@@ -14,7 +14,7 @@
   }
 
   nav.menu {
-    ul {
+    & > ul {
       li {
         position: relative;
         padding: 0 16px;
@@ -95,6 +95,10 @@
           li {
             padding: 0 20px;
             white-space: nowrap;
+
+            &:last-child{
+              display: block;
+            }
           }
         }
 

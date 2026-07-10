@@ -12,6 +12,7 @@ export default function fourkSolutions() {
         titleSecond="Broadcast Excellence"
         desc="Delivering end-to-end 4K production workflows, advanced camera systems, signal processing, recording, and transmission solutions for modern broadcast environments."
         video="/videos/video-03"
+        pageName="4K Solutions"
       />
       <Sections />
 

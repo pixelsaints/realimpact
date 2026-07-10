@@ -11,7 +11,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, video, posterImage, fullTitle, backLink, backLinkText, image }) {
+export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, video, posterImage, fullTitle, backLink, backLinkText, image, pageName }) {
 
   const heroRef = useRef(null);
 
@@ -80,13 +80,16 @@ export default function PageHeader({ subtitle, titleFirst, titleSecond, desc, vi
       <div className="container relative" ref={heroRef}>
         <div className="w-full flex flex-col item-start justify-start" >
           <div className="intro flex flex-col relative z-20">
-            <div className="intro-subtitle">
+            <div className="intro-subtitle flex flex-row gap-2">
               {backLink &&
-                <TransitionLink href={backLink} className="flex items-center gap-2">
-                  <IoArrowBack />
+                <>
+                  <TransitionLink href={backLink} className="flex items-center gap-2">
+                    {backLinkText ? backLinkText : "Services"}
+                  </TransitionLink>
+                  <span className="text-white/50 font-light">/</span>
+                  <span className="text-white/50 font-light">{pageName}</span>
+                </>
 
-                  {backLinkText ? backLinkText : "Services"}
-                </TransitionLink>
               }
               {
                 subtitle &&

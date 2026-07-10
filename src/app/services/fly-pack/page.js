@@ -11,6 +11,7 @@ export default function FlyPack() {
         titleSecond=" Systems"
         desc="Portable broadcast production solutions delivering professional multi-camera workflows, switching, recording, graphics, and streaming capabilities for events and remote productions."
         video="/videos/video-04"
+        pageName="Fly Pack"
       />
       <Sections />
 

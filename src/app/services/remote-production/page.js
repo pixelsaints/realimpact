@@ -13,6 +13,7 @@ export default function ServicesPage() {
         titleSecond="Broadcast Workflows"
         desc="Delivering efficient, scalable, and cost-effective remote production solutions that connect venues, crews, and control rooms through reliable broadcast infrastructure and real-time collaboration."
         video="/videos/Video-2020-02"
+        pageName="Remote Production"
       />
       <Sections />
       <Cta />

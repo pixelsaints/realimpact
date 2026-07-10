@@ -12,6 +12,7 @@ export default function SportsProduction() {
         titleSecond="Equipment Solutions"
         desc="Advanced broadcast equipment solutions supporting complex production requirements with reliable technology, expert integration, and operational flexibility across diverse environments."
         video="/videos/video-04"
+        pageName="Specialized Equipment"
       />
       <Sections />
 
