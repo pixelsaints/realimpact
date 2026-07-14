@@ -4,7 +4,7 @@ import ClientsSection from "@/app/front-page/sections/clientsSection"
 import HeroSection from "./sections/heroSection"
 import ProjectsSection from "@/app/front-page/sections/projectsSection"
 import ServiceSection from "@/app/front-page/sections/serviceSection"
-import WhyUs from "@/app/front-page/sections/whyUs"
+// import WhyUs from "@/app/about/sections/whyUs"
 import YoutubeSection from "@/app/front-page/sections/youtubeSection"
 
 export default function FrontPage() {
@@ -16,7 +16,7 @@ export default function FrontPage() {
       <YoutubeSection />
       <ServiceSection />
       <ProjectsSection />
-      <WhyUs />
+      {/* <WhyUs /> */}
       <ClientsSection />
       <Cta />
     </div>
