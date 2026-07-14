@@ -342,4 +342,11 @@
   .contact-address {
     font-size: 15px;
   }
+
+  .social-links .btn-link {
+    svg {
+      max-width: 18px;
+      height: auto;
+    }
+  }
 }

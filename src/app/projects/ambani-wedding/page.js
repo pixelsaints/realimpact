@@ -131,9 +131,9 @@ export default function index() {
     ],
 
     related: [
-      "iifa-awards",
+      "bangladesh-premier-league",
       "cricket-production",
-      "ipl"
+      "indian-racing-league"
     ]
   }
 

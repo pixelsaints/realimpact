@@ -6,7 +6,7 @@ export default function ProjectCard({ project }) {
     <div className="flex flex-col projects-card">
       <div className="relative image-wrapper">
         <TransitionLink href={project.link}>
-          <img src={project.image} alt={project.name} className="project-image" />
+          <img src={project.image} alt={project.name} className="project-image h-60 w-full object-cover object-center" />
         </TransitionLink>
       </div>
       <div className="project-content">

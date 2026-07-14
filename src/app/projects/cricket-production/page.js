@@ -17,8 +17,8 @@ export default function index() {
       "Delivered comprehensive broadcast production solutions for domestic and international cricket boards, supporting diverse tournaments across multiple countries. Our experienced teams managed multi-camera workflows, RF systems, replay operations, broadcast engineering, and technical coordination to ensure reliable live coverage, consistent production quality, and seamless execution throughout every event.",
 
     video: {
-      src: "/videos/rugby-pl.webm",
-      poster: "/images/"
+      src: "/videos/intro.webm",
+      poster: "/images/intro-poster.webp"
     },
 
     projectFacts: [
@@ -131,9 +131,9 @@ export default function index() {
     ],
 
     related: [
-      "ipl",
-      "bangladesh-premier-league",
-      "asia-cup"
+      "up-t20-league",
+      "bengal-pro-t20",
+      "asia-cup-mens"
     ]
   }
 

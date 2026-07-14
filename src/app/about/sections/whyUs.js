@@ -143,11 +143,11 @@ export default function WhyUs() {
         gsap.from(card, {
           opacity: 0,
           yPercent: 35,
-          duration: 1.4,
+          duration: 0.8,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 95%",
+            start: "top 75%",
             toggleActions: "play none none reverse",
           },
         });
@@ -239,7 +239,7 @@ export default function WhyUs() {
             </div>
           </div>
 
-          <div className="why-cards  flex flex-col gap-6" ref={cardRef}>
+          <div className="why-cards  flex flex-col gap-0" ref={cardRef}>
             {whyUs.map((item, index) => {
 
               return (

@@ -8,13 +8,17 @@ export default function TransitionLink({
   href,
   children,
   onClick,
+  target,
   ...props
 }) {
   const router = useRouter();
   const pathname = usePathname();
 
   const handleClick = (e) => {
+    // Let the browser handle external links, new tabs, downloads, etc.
     if (
+      target === "_blank" ||
+      props.download ||
       e.metaKey ||
       e.ctrlKey ||
       e.shiftKey ||
@@ -24,15 +28,22 @@ export default function TransitionLink({
       return;
     }
 
+    // Skip transition if already on the same page
+    if (href === pathname) {
+      e.preventDefault();
+      return;
+    }
+
+    // Prevent multiple clicks during animation
+    if (gsap.isTweening(".main-wrapper")) {
+      e.preventDefault();
+      return;
+    }
+
     e.preventDefault();
 
-    if (href === pathname) return;
-    if (gsap.isTweening(".page-mask")) return;
-
-    // run custom click logic first
-    if (onClick) {
-      onClick(e);
-    }
+    // Execute custom click handler if provided
+    onClick?.(e);
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -40,23 +51,29 @@ export default function TransitionLink({
       },
     });
 
-    // tl.to(".page-mask", {
-    //   scaleY: 1,
-    //   transformOrigin: "bottom",
-    //   duration: 0.8,
-    //   ease: "power4.inOut",
-    // });
-
     tl.to(".main-wrapper", {
       opacity: 0,
       y: 20,
       duration: 0.35,
       ease: "power2.out",
     });
+
+    // Alternative page mask transition
+    // tl.to(".page-mask", {
+    //   scaleY: 1,
+    //   transformOrigin: "bottom",
+    //   duration: 0.8,
+    //   ease: "power4.inOut",
+    // });
   };
 
   return (
-    <Link href={href} onClick={handleClick} {...props} >
+    <Link
+      href={href}
+      target={target}
+      onClick={handleClick}
+      {...props}
+    >
       {children}
     </Link>
   );

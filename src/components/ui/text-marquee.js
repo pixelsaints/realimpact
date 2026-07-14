@@ -29,21 +29,23 @@ export default function TextMarquee() {
   }, []);
 
   return (
-    <section className="text-marquee">
-      <div ref={marqueeRef} className="flex w-max items-center running-text">
-        {[...marqueeItems, ...marqueeItems].map((item, index) => (
-          <div
-            key={index}
-            className="flex items-center shrink-0"
-          >
-            <h3 className="px-8 text-white">
-              {item}
-            </h3>
-            <div className="h-3 w-3 rounded-full bg-pri-300 shrink-0" />
-          </div>
-        ))}
-      </div>
-      <div className="running-bg"></div>
-    </section>
+    <div className="overflow-x-clip z-10 py-4">
+      <section className="text-marquee">
+        <div ref={marqueeRef} className="flex w-max items-center running-text">
+          {[...marqueeItems, ...marqueeItems].map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center shrink-0"
+            >
+              <h3 className="px-8 text-white">
+                {item}
+              </h3>
+              <div className="h-3 w-3 rounded-full bg-pri-300 shrink-0" />
+            </div>
+          ))}
+        </div>
+        <div className="running-bg"></div>
+      </section>
+    </div>
   );
 }
