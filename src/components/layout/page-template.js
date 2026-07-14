@@ -127,10 +127,20 @@ export default function PageTemplate({ data }) {
               <div className="video-wrapper relative">
                 <div className="bg bg-left"></div>
                 <div className="bg bg-right"></div>
-                <div className="wrap w-full lg:h-[80vh] overflow-hidden">
-                  <video autoPlay muted loop playsInline poster={data.video.poster} className="lg:absolute h-full w-full object-center object-cover">
-                    <source src={data.video.src} />
-                  </video>
+                <div className="wrap w-full lg:h-[80vh] relative overflow-hidden">
+                  {
+                    data.video.src &&
+                    <video autoPlay muted loop playsInline poster={data.video.poster} className="lg:absolute h-full w-full object-center object-cover">
+                      <source src={data.video.src} />
+                    </video>
+                  }
+
+                  {
+                    data.video.url &&
+                    <iframe width="560" height="315" src={data.video.url} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="lg:absolute h-full w-full object-center object-cover"></iframe>
+                  }
+
+
                 </div>
               </div>
             </div>
