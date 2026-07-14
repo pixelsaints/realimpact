@@ -5,6 +5,18 @@
 		}
 	],
 	"settings": {
-		  "editor.inlineSuggest.enabled": false
+		"editor.inlineSuggest.enabled": false,
+		"[scss]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[css]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[sass]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"editor.formatOnSave": true,
+		"prettier.printWidth": 120,
+		"prettier.singleQuote": true
 	}
 }
