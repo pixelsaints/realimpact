@@ -1,5 +1,8 @@
 import TransitionLink from "@/components/transitions/TransitionLink";
 import { nav } from "@/data/menu";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa6";
+
+
 
 export default function Footer() {
   return (
@@ -70,8 +73,33 @@ export default function Footer() {
           </div>
 
           {/* 4. Bottom Bar */}
-          <div className="flex flex-col lg:flex-row justify-center pb-6 text-white/60 border-t border-t-black-700 pt-4 mt-6 copy">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between pb-6 text-white/60 border-t border-t-black-700 pt-4 mt-6 copy">
             <p>© 2026 Real Impact. All rights reserved.</p>
+
+            <nav className="social-links flex flex-row gap-4">
+              <TransitionLink href="https://www.facebook.com/profile.php?id=61558479681056" target="_blank" className="btn btn-link">
+                <span className="icon">
+                  <FaFacebookF className="front" />
+                  <FaFacebookF className="back" />
+                </span>
+              </TransitionLink>
+
+              <TransitionLink href="https://www.instagram.com/realimpact.tv/?hl=en" target="_blank" className="btn btn-link">
+                <span className="icon">
+                  <FaInstagram className="front" />
+                  <FaInstagram className="back" />
+                </span>
+              </TransitionLink>
+
+              <TransitionLink href="https://www.youtube.com/channel/UCfeuK8QHRw7VFsTF-jZa1uw" target="_blank" className="btn btn-link">
+                <span className="icon">
+                  <FaYoutube className="front" />
+                  <FaYoutube className="back" />
+                </span>
+              </TransitionLink>
+
+
+            </nav>
           </div>
         </div>
       </footer>

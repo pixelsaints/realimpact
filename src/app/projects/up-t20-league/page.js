@@ -132,8 +132,8 @@ export default function index() {
 
     related: [
       "bengal-pro-t20",
-      "cricket-production",
-      "ipl"
+      "chhattisgarh-premier-league",
+      "indian-racing-league"
     ]
   }
 

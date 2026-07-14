@@ -23,7 +23,7 @@ export default function RelatedProjects({ projects }) {
             </span>
           </TransitionLink>
         </div>
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
           {relatedProjects.map((project) => (
             <ProjectCard key={project.link} project={project} />
           ))}
