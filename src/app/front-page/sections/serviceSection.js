@@ -19,6 +19,7 @@ export default function ServiceSection() {
 
   const servicesRef = useRef(null);
   const servicesSliderRef = useRef(null);
+  const servicesCards = useRef(null);
 
   const handleProgress = (currentSwiper) => {
     const currentIndex = currentSwiper.realIndex ?? 0;
@@ -44,7 +45,7 @@ export default function ServiceSection() {
       });
 
       const description = servicesRef.current.querySelector(".desc");
-      const button = servicesRef.current.querySelector(".services-description .btn-link");
+      const button = servicesRef.current.querySelector(".services-description .link");
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -58,17 +59,14 @@ export default function ServiceSection() {
         ...scaleUp
       }).from(titleSplit.chars, {
         ...scaleUp
-      }, "-=1.6").from(description, {
+      }, "-=1.5").from(description, {
         ...fadeInUp
-      }, "-=1.4");
+      }, "-=0.4");
 
       if (button) {
         tl.from(button, {
-          y: 30,
-          opacity: 0,
-          duration: 1.2,
-          ease: "power2.out",
-        }, "-=1.6");
+          ...fadeInUp
+        }, "-=0.2");
       }
 
 
@@ -84,6 +82,29 @@ export default function ServiceSection() {
         },
       })
 
+      const serviceItems = servicesCards.current.querySelectorAll('.service-item');
+
+      serviceItems.forEach(item => {
+
+        gsap.set(item, {
+          transformOrigin: 'bottom center',
+          perspective: 1000,
+          opacity: 0,
+          y: 100
+        })
+
+        gsap.to(item, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        })
+      });
+
     }, servicesRef);
 
     return () => ctx.revert();
@@ -93,23 +114,32 @@ export default function ServiceSection() {
     <>
       <section className="services-section py-24 lg:py-32">
 
-        <div className="container intro-section flex flex-col lg:flex-row lg:justify-between lg:items-center" ref={servicesRef}>
-          <div className="flex flex-col lg:w-[40%]">
+        <div className="container  intro-section flex flex-col lg:flex-row lg:justify-between lg:items-center" ref={servicesRef}>
+          <div className="flex flex-col lg:w-[35%]">
             <span className="subtitle mb-4">Our Services</span>
             <h2 className="title font-mono text-white">Where Vision Meets Craft</h2>
           </div>
           <div className="services-description mt-6 w-full lg:w-[55%]">
             <div className="desc">
-              <p className="text-white/70 mb-4">
-                At Real Impact, we specialize in delivering world-class broadcast production services that bring your vision to life. With cutting-edge technology, expert engineering, and a passion for storytelling.
+              <p className="text-white/70 mb-6">
+                At Real Impact, we specialize in delivering world-class broadcast production services that bring your vision to life. With cutting-edge technology, expert engineering, and a passion for storytelling. We create unforgettable live experiences for sports, entertainment, and global events.
               </p>
-              <p className="text-white/70 mb-6">We create unforgettable live experiences for sports, entertainment, and global events.</p>
+
+              <div className="link">
+                <TransitionLink href="/services" className="btn btn-link text-pri-400">
+                  Learn More
+                  <span className="icon">
+                    <IoArrowForward className="front" />
+                    <IoArrowForward className="back" />
+                  </span>
+                </TransitionLink>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="lg:w-[90%] mx-auto">
-          <div className="services-slider-wrap pt-10" ref={servicesSliderRef}>
+          <div className="services-slider-wrap pt-10 flex lg:hidden" ref={servicesSliderRef}>
             <Swiper
               className="services-slider"
               slidesPerView={1}
@@ -184,6 +214,40 @@ export default function ServiceSection() {
           </div>
         </div>
 
+        <div className="container mt-24 service-cards hidden lg:flex flex-col gap-10 " ref={servicesCards}>
+          {servicesData.slice(0, 4).map((service, index) => {
+            const isOdd = index % 2 !== 0;
+            const isLast = index === servicesData.length - 1;
+
+            return (
+              <article
+                key={service.number}
+                className={`service-item flex flex-col items-stretch lg:flex-row bg-black-800 ${isOdd ? "lg:flex-row-reverse odd" : ""}`}
+              >
+                <div className="lg:w-1/2">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-[20em] w-full object-cover object-center"
+                  />
+                </div>
+
+                <div className="px-4 lg:px-8 lg:w-1/2 service-item-content flex items-start justify-center flex-col">
+                  <span className="service-number">{service.number}</span>
+                  <div className="text-4xl text-white mb-4">{service.title}</div>
+                  <p className="mb-4">{service.description}</p>
+                  <TransitionLink href={service.link} className="btn btn-link text-pri-400">
+                    Learn More
+                    <span className="icon">
+                      <IoArrowForward className="front" />
+                      <IoArrowForward className="back" />
+                    </span>
+                  </TransitionLink>
+                </div>
+              </article>
+            );
+          })}
+        </div>
 
       </section>
     </>

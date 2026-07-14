@@ -5,7 +5,8 @@ import gsap from "gsap";
 import FlipText from "@/components/ui/flipText";
 
 export default function HeroSection() {
-  const heroRef = useRef(null);
+  const heroRef = useRef(null),
+    heroContent = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
@@ -86,6 +87,7 @@ export default function HeroSection() {
         duration: 1.4,
         ease: "back.out(1.7)",
       }, 0.5);
+
     }, heroRef);
 
     return () => ctx.revert();
@@ -93,17 +95,17 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className="hero flex flex-col items-center justify-center" ref={heroRef}>
-        <div className="container">
-          <div className="hero-title flex flex-col gap-4 lg:gap-6">
+      <div className="hero flex flex-col items-start justify-center" ref={heroRef}>
+        <div className="container" ref={heroContent}>
+          <div className="hero-title lg:gap-6">
             <FlipText>
-              <div className="flex lg:flex-row lg:items-center justify-center lg:gap-6 gap-4">
+              <div className="flex lg:flex-row lg:items-center justify-center lg:gap-6 gap-4 mb-4">
                 <div className="flex flex-row items-center gap-4">
                   <div className="relative w-fit">
                     <div className="h1 text-white">Real</div>
                   </div>
                   <div className="relative w-[45%] hidden lg:flex">
-                    <video autoPlay muted loop playsInline poster="/images/hero-slider-poster-1.webp" className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg">
+                    <video autoPlay muted loop playsInline poster="/images/hero-slider-poster-1.webp" className="w-full lg:h-[12em] object-cover object-center border border-white/30 rounded-lg video-main">
                       <source src="/videos/hero-video-01.webm" type="video/webm" />
                       <source src="/videos/hero-video-01.mp4" type="video/mp4" />
                     </video>

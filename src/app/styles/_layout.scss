@@ -9,10 +9,10 @@
   opacity: 0;
   position: relative;
   z-index: 2;
-  height: 100vh;
+  min-height: 100vh;
 
   @include lg{
-    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
   }
 
   .h1{
@@ -1009,7 +1009,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: rgba($black-800, 0.5);
+  // background: rgba($black-800, 0.5);
+  background-image: linear-gradient(to top, $black-800, rgba($black-800, 0.5));
   padding: 16px;
   overflow: hidden;
 
@@ -1019,6 +1020,11 @@
     justify-content: space-between;
     gap: 24px;
     padding: 32px 24px;
+  }
+
+  img {
+    opacity: 1;
+    filter: grayscale(1);
   }
 
   &-title{
@@ -1054,6 +1060,7 @@
 
   &-image{
     margin: 24px 0;
+    display: block;
     
     @include lg{
       width: 25%;
@@ -1067,6 +1074,13 @@
     @include lg{
       width: 50%;
     }
+  }
+
+  &:hover{
+    img{
+      filter: grayscale(0);
+    }
+
   }
 }
 
@@ -1126,7 +1140,8 @@
 
       &-content{
         padding: 24px;
-        background: $black-800;
+        background-image: linear-gradient(to top, rgba($black-700, 1), rgba($black-700, 0.4));
+        backdrop-filter: blur(10px);
       }
 
       &-name{
@@ -1152,3 +1167,16 @@
     }
   }
 }
+
+.service-item{
+
+  .service-item-content{
+    background: linear-gradient( 45deg, $black-700, rgba($black-800, 0) 40% );
+  }
+
+  &.odd .service-item-content{
+    background: linear-gradient( -45deg, $black-700, rgba($black-800, 0) 40%);
+  }
+}
+
+

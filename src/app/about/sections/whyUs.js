@@ -137,8 +137,7 @@ export default function WhyUs() {
       // Cards
       cards.forEach((card) => {
 
-        const img =
-          card.querySelector(".why-card-image img");
+        const img = card.querySelector(".why-card-image img");
 
         // Scroll animation
         gsap.from(card, {
@@ -168,15 +167,13 @@ export default function WhyUs() {
 
           // Desktop initial state
           gsap.set(img, {
-            autoAlpha: 0,
-            scale: 0.5,
+            autoAlpha: 0.4,
+            scale: 0.7,
           });
 
           // Mouse move
           const handleMouseMove = (e) => {
-
-            const cursorX =
-              e.clientX / window.innerWidth - 0.5;
+            const cursorX = e.clientX / window.innerWidth - 0.5;
 
             gsap.to(img, {
               autoAlpha: 1,
@@ -185,45 +182,26 @@ export default function WhyUs() {
               duration: 0.8,
               ease: "power3.out",
             });
-
           };
 
           // Mouse leave
           const handleMouseLeave = () => {
-
             gsap.to(img, {
-              autoAlpha: 0,
-              scale: 0.5,
+              autoAlpha: 0.4,
+              scale: 0.7,
               x: 0,
               duration: 0.8,
               ease: "power3.out",
             });
-
           };
 
-          card.addEventListener(
-            "mousemove",
-            handleMouseMove
-          );
-
-          card.addEventListener(
-            "mouseleave",
-            handleMouseLeave
-          );
+          card.addEventListener("mousemove", handleMouseMove);
+          card.addEventListener("mouseleave", handleMouseLeave);
 
           // Cleanup
           return () => {
-
-            card.removeEventListener(
-              "mousemove",
-              handleMouseMove
-            );
-
-            card.removeEventListener(
-              "mouseleave",
-              handleMouseLeave
-            );
-
+            card.removeEventListener("mousemove", handleMouseMove);
+            card.removeEventListener("mouseleave", handleMouseLeave);
           };
 
         }

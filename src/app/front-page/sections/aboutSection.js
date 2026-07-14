@@ -66,17 +66,19 @@ export default function AboutSection() {
 
       // Title Scrub
       gsap.set(titleScrub.chars, {
-        opacity: 0.15,
+        opacity: 0.2,
+        scale: 0.75
       });
 
       gsap.to(titleScrub.chars, {
         opacity: 1,
+        scale: 1,
         stagger: 0.03,
         ease: "power3.out",
 
         scrollTrigger: {
           trigger: ".text-scrub",
-          start: "top 85%",
+          start: "35% 85%",
           end: "top 35%",
           scrub: 0.5,
         },
@@ -99,7 +101,7 @@ export default function AboutSection() {
         opacity: 0,
         duration: 0.9,
         ease: "power2.out",
-        stagger: 0.08,
+        // stagger: 0.08,
 
         scrollTrigger: {
           trigger: "p.desc",

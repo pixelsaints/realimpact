@@ -12,11 +12,10 @@ export default function FrontPage() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
       <YoutubeSection />
+      <AboutSection />
       <ServiceSection />
       <ProjectsSection />
-      {/* <WhyUs /> */}
       <WhyUs />
       <ClientsSection />
       <Cta />

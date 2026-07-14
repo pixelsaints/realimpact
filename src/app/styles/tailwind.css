@@ -2,7 +2,7 @@
 
 :root {
   --font-heading:
-    "Stack Sans Notch",
+    "Stack Sans Text",
     sans-serif;
 
   --font-body:
@@ -50,7 +50,7 @@ body {
     sans-serif;
 
   --font-serif:
-    "Stack Sans Notch",
+    "Stack Sans Text",
     sans-serif;
 
   --font-mono:

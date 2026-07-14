@@ -53,7 +53,6 @@ export default function ProjectsSection() {
 
       gsap.to(introWapper, {
         opacity: 0.1,
-        filter: "blur(5px)",
         scrollTrigger: {
           trigger: cards,
           start: "top 75%",
