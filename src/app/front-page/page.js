@@ -13,9 +13,7 @@ export default function FrontPage() {
   return (
     <>
       <HeroSection />
-      <div className="overflow-x-clip z-10 py-4">
-        <TextMarquee />
-      </div>
+      <TextMarquee />
       <YoutubeSection />
       <AboutSection />
       <ServiceSection />
