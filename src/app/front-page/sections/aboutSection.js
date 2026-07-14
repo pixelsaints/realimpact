@@ -178,9 +178,6 @@ export default function AboutSection() {
 
   return (
     <section className="about-sec bg-[url('/images/bg-about.webp')] bg-center bg-cover">
-      <div className="overflow-x-clip z-10 py-4">
-        <TextMarquee />
-      </div>
       <div className="py-24 lg:py-36 min-h-[80vh] flex flex-col items-center justify-center relative" ref={circleRef}>
         <img src="/svg/circle.svg" alt="about real impact" className="circle-rotate absolute inset-0 m-auto w-[70%] max-w-[50em] opacity-10 h-auto object-contain" />
         <div className="container relative">
