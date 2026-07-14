@@ -6,11 +6,7 @@ import ProjectsSection from "./sections/projectsSection"
 import ServiceSection from "./sections/serviceSection"
 import WhyUs from "@/app/about/sections/whyUs"
 import YoutubeSection from "./sections/youtubeSection"
-<<<<<<< HEAD
 import TextMarquee from "@/components/ui/text-marquee"
-=======
-import TextMarquee from "@/components/ui/text-marquee";
->>>>>>> main
 
 export default function FrontPage() {
 
