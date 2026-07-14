@@ -28,10 +28,10 @@ export const projectsList = [
     tags: ["Motorsport", "RF Systems", "2 Seasons"],
   },
   {
-    name: "Indian Premier League (IPL)",
-    description: "Supported high-profile IPL broadcasts across six seasons, delivering dependable live production for one of the world's largest cricket tournaments.",
-    image: "/projects/indian-premier-league.webp",
-    link: "/projects/ipl",
+    name: "Asian Cup 2025 Mens",
+    description: "Delivered international men's cricket broadcast production with resilient workflows, engineering expertise, and seamless multi-venue tournament coverage.",
+    image: "/projects/asia-cup-2025-men-cover.webp",
+    link: "/projects/asia-cup-mens",
     tags: ["Cricket", "Live Broadcast", "6 Seasons"],
   },
   {

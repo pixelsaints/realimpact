@@ -1,6 +1,5 @@
 "use client";
 import { useRef, useEffect } from "react";
-import TextMarquee from "@/components/ui/text-marquee";
 import gsap from "@/lib/gsap";
 import SplitType from "split-type";
 import TransitionLink from "@/components/transitions/TransitionLink";
@@ -183,8 +182,8 @@ export default function AboutSection() {
         <div className="container relative">
           <div className="flex flex-col w-full lg:w-[90%] justify-center lg:items-center lg:text-center mx-auto">
             <h5 className="subtitle mb-4">About Real Impact</h5>
-            <h2 className="text-scrub text-[20px] lg:leading-12 lg:text-[32px] text-white mb-8">Real Impact is a global leader in broadcast production, specializing in the planning, execution, and delivery of high-impact live events and broadcast operations. Backed by a multidisciplinary team of industry experts, we combine creative vision, technical excellence, and production expertise, supported by a comprehensive broadcast equipment rental division.</h2>
-            <p className="text-white/70 text-lg leading-relaxed w-full lg:w-[80%] mx-auto desc mb-8">Real Impact brings together decades of expertise in broadcast engineering, live production, and content execution, creating seamless experiences for sports, entertainment, and global television audiences.</p>
+            <h2 className="text-scrub text-[20px] lg:leading-12 lg:text-[32px] text-white mb-4">Real Impact is a global leader in broadcast production, specializing in the planning, execution, and delivery of high-impact live events and broadcast operations. Backed by a multidisciplinary team of industry experts, we combine creative vision, technical excellence, and production expertise, supported by a comprehensive broadcast equipment rental division.</h2>
+            <p className="text-white/70 text-lg leading-relaxed w-full lg:w-[80%] mx-auto desc mb-6">Real Impact brings together decades of expertise in broadcast engineering, live production, and content execution, creating seamless experiences for sports, entertainment, and global television audiences.</p>
             <TransitionLink href="/about" className="text-pri-400 btn btn-link">
               About Us
               <span className="icon">

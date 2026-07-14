@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
       <footer className="footer">
-        <div className="container py-10">
+        <div className="container pt-10">
           {/* 1. Brand Statement */}
           <div className="footer__top w-full flex flex-col lg:flex-row lg:items-center lg:justify-between">
             <div className="logo">
@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
 
             <div className="lg:w-[28%]">
-              <h4>Products</h4>
+              <h4>Services</h4>
               <ul className="grid grid-cols-1 divide-y divide-white/10 gap-1 space-y-2">
                 {nav
                   .find((item) => item.name === "Our Services")?.submenu?.map((sub) => (
@@ -53,16 +53,18 @@ export default function Footer() {
             <div className="lg:w-[28%]">
               <h4 className="mb-4">Contact</h4>
               <div className="flex flex-col divide-y divide-white/10 gap-1 space-y-2">
+                <div className="flex flex-col gap-2 text-[16px] mb-2">
+                  <span className="text-white">Real Impact Private Limited</span>
+                  <span className="text-white/70 mb-2 leading-7">Plot No. 165, 4th Floor, Yoga Niketan Marg, Bangur Nagar, Goregaon West, Mumbai - 400104,Maharashtra. India</span>
+                  <span className="text-white/70 pb-4">GST No. 27AAECR6354B1ZI</span>
+                </div>
                 <a href="mailto:mail@realimpact.tv" className="text-white/70 hover:text-white transition pb-2">
                   mail@realimpact.tv</a>
                 <a href="tel:+911141651334" className="text-white/70 hover:text-white transition pb-2">
                   New Delhi - +91 11 41651334</a>
                 <a href="tel:+912240211332" className="text-white/70 hover:text-white transition pb-2">
                   Mumbai - +91 22 40211332</a>
-                <p className="text-white/70 pb-3 contact-address">
-                  Real impact Pvt Ltd, Plot No. 165, 4th Floor, Yoga Niketan Marg, Bangur Nagar, Goregaon West, Mumbai - 400104,Maharashtra.
-                  <br />(Next to Mandanan Building)
-                </p>
+
               </div>
             </div>
           </div>

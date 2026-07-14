@@ -1,6 +1,6 @@
-@use "./functions" as *;
+@use './functions' as *;
 
-.site-header{
+.site-header {
   padding: 16px 0;
   background: rgba($black-900, 0.7);
   backdrop-filter: blur(16px);
@@ -8,7 +8,7 @@
   z-index: 100;
   top: 0;
 
-  .container{
+  .container {
     position: relative;
     z-index: 101;
   }
@@ -19,9 +19,8 @@
         position: relative;
         padding: 0 16px;
 
-        &:last-child{
-          
-          @include lg{
+        &:last-child {
+          @include lg {
             display: none;
           }
         }
@@ -39,8 +38,8 @@
           height: fit-content;
           padding: 8px 0;
 
-          &::after{
-            content:"";
+          &::after {
+            content: '';
             position: absolute;
             width: 100%;
             height: 1px;
@@ -52,17 +51,18 @@
             transform-origin: right center;
           }
 
-          &:hover, &.active{
+          &:hover,
+          &.active {
             color: $pri-300;
             opacity: 1;
 
-            &::after{
+            &::after {
               transform: scaleX(1);
               transform-origin: left center;
             }
           }
 
-          span{
+          span {
             display: flex;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -96,7 +96,7 @@
             padding: 0 20px;
             white-space: nowrap;
 
-            &:last-child{
+            &:last-child {
               display: block;
             }
           }
@@ -104,7 +104,7 @@
 
         /* Invisible hover bridge */
         &.has-sub::after {
-          content: "";
+          content: '';
           position: absolute;
           left: 0;
           top: 100%;
@@ -117,8 +117,8 @@
           visibility: visible;
           pointer-events: auto;
           transform: translateY(0);
-          
-          a::after{
+
+          a::after {
             display: none;
           }
         }
@@ -137,7 +137,7 @@
     }
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -164,7 +164,6 @@
     }
 
     &.is-active {
-
       .line {
         width: 24px;
 
@@ -183,8 +182,6 @@
       }
     }
 
-
-
     &:hover {
       cursor: pointer;
     }
@@ -192,7 +189,6 @@
 }
 
 .mobile-menu {
-
   &-wrapper {
     display: flex;
     flex-direction: column;
@@ -214,7 +210,7 @@
       pointer-events: auto;
     }
 
-    @include lg{
+    @include lg {
       display: none;
     }
   }
@@ -243,30 +239,30 @@
   }
 }
 
-.page-header{
+.page-header {
   min-height: 100vh;
 
-  @include lg{
+  @include lg {
     min-height: calc(100vh - 70px);
   }
 
-  .intro{
+  .intro {
     display: block;
     position: relative;
 
-    &-subtitle{
+    &-subtitle {
       color: $pri-400;
       margin-bottom: 24px;
       overflow: hidden;
 
-      span{
+      span {
         display: flex;
         align-items: center;
         gap: 8px;
       }
     }
 
-    &-heading{
+    &-heading {
       color: $white;
       line-height: 1.2;
       font-size: 48px;
@@ -274,24 +270,23 @@
       mix-blend-mode: difference;
       font-family: $font-display;
 
-      @include lg{
+      @include lg {
         font-size: 70px;
       }
     }
 
-    &-desc{
+    &-desc {
       color: #fff;
     }
-
-
   }
 
-  .video-player{
+  .video-player {
     clip-path: inset(0 100% 0 0);
   }
 }
 
 .footer {
+  background: rgba($black, 0.3);
 
   .footer__top {
     padding: 40px 0;
@@ -302,14 +297,13 @@
       width: 140px;
       height: auto;
 
-      @include lg{
+      @include lg {
         width: 200px;
       }
     }
   }
 
   .footer-links {
-
     h4 {
       font-size: 20px;
       margin-bottom: 20px;
@@ -332,8 +326,6 @@
       transition: all 0.4s ease;
       outline: none;
 
-      
-
       &:hover {
         color: rgba($white, 1);
         opacity: 1;
@@ -342,13 +334,12 @@
   }
 
   .copy {
-
     p {
       font-size: 14px;
     }
   }
 
-  .contact-address{
+  .contact-address {
     font-size: 15px;
   }
 }

@@ -1171,6 +1171,11 @@
 }
 
 .service-item {
+  .service-number {
+    margin-bottom: 16px;
+    color: $pri-400;
+  }
+
   .service-item-content {
     background: linear-gradient(45deg, $black-700, rgba($black-800, 0) 40%);
   }

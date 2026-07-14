@@ -121,8 +121,8 @@ export default function ServiceSection() {
           </div>
           <div className="services-description mt-6 w-full lg:w-[55%]">
             <div className="desc">
-              <p className="text-white/70 mb-6">
-                At Real Impact, we specialize in delivering world-class broadcast production services that bring your vision to life. With cutting-edge technology, expert engineering, and a passion for storytelling. We create unforgettable live experiences for sports, entertainment, and global events.
+              <p className="text-white/70 mb-4">
+                At Real Impact, we specialize in delivering world-class broadcast production services that bring your vision to life. With cutting-edge technology, expert engineering, and a passion for storytelling.
               </p>
 
               <div className="link">
