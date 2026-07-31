@@ -54,6 +54,10 @@ export const nav = [
     href: "/projects"
   },
   {
+    name: "Our Team",
+    href: "/our-team"
+  },
+  {
     name: "Gallery",
     href: "/gallery"
   }, {
