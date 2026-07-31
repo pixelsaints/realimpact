@@ -55,6 +55,7 @@
     z-index: 1;
     font-weight: 600;
     transition: transform 0.8s ease-in-out;
+    color: $black;
 
     &::before {
       content: '';

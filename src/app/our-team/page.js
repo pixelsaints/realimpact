@@ -9,7 +9,7 @@ export default function OurTeam() {
         subtitle="Our Team"
         titleFirst="Team of engineers"
         titleSecond=" & innovators"
-        desc="We work together to deliver exceptional broadcast solutions that create powerful experiences and lasting impact."
+        desc="We work together to deliver exceptional broadcast solutions, creating powerful experiences, meaningful connections, and lasting impact for audiences around world."
         video="/videos/video-2020"
       />
 
