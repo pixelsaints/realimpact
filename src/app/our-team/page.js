@@ -7,8 +7,8 @@ export default function OurTeam() {
 
       <PageHeader
         subtitle="Our Team"
-        titleFirst="Team of engineers"
-        titleSecond=" & innovators"
+        titleFirst="A Team of Innovation"
+        titleSecond="and Expertise"
         desc="We work together to deliver exceptional broadcast solutions, creating powerful experiences, meaningful connections, and lasting impact for audiences around world."
         video="/videos/video-2020"
       />
