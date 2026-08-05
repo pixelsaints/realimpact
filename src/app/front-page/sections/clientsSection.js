@@ -105,36 +105,7 @@ export default function ClientsSection() {
 
   return (
     <section className="clients-section py-32 bg-black-800/50">
-      <div className="container pb-24">
-        <div className="flex flex-col items-center" ref={introRef}>
-          <div className="subtitle mb-6">Testimonials</div>
-          <h2 className="title text-white lg:w-[70%] mx-auto text-center">Experiences That Speak for Themselves</h2>
-        </div>
-      </div>
-      <div className="clients-marquee" ref={clientSliderRef}>
-        <div className="clients-marquee-row">
-          <Swiper className="clients-slider" {...swiperSettings}>
-            {firstRow.map(renderTestimonialSlide)}
-          </Swiper>
-        </div>
-
-        <div className="clients-marquee-row clients-marquee-row-reverse">
-          <Swiper
-            className="clients-slider"
-            {...swiperSettings}
-            autoplay={{
-              ...swiperSettings.autoplay,
-              reverseDirection: true,
-            }}
-          >
-            {secondRow.map(renderTestimonialSlide)}
-          </Swiper>
-        </div>
-      </div>
-
-      <div className="pt-24 lg:pt-32">
-        <ClientsCarosel />
-      </div>
+      <ClientsCarosel />
     </section>
   )
 }
