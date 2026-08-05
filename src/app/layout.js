@@ -1,27 +1,28 @@
 import "./styles/tailwind.css";
 import "./styles/style.scss";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageEnter from "@/components/transitions/PageEnter";
 
 export const metadata = {
-  metadataBase: new URL("https://nothingmatters.in/"),
+  metadataBase: new URL("https://realimpact.tv/"),
 
-  title: "Real Impact - Broadcast Equipment Services & Production",
-  description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
+  title: "Real Impact | End-to-End Broadcast & Production Solutions",
+  description: "Real Impact is a globally trusted broadcast and live production company, recognised for delivering exceptional productions where precision, creativity and technical excellence matter most. We work alongside broadcasters, sporting organisations, brands and event producers to create live experiences that engage audiences and set new standards for production excellence.",
   icons: "/favicon.png",
 
   openGraph: {
-    title: "Real Impact - Broadcast Equipment Services & Production",
-    description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
-    url: "https://nothingmatters.in/",
+    title: "Real Impact | End-to-End Broadcast & Production Solutions",
+    description: "Real Impact is a globally trusted broadcast and live production company, recognised for delivering exceptional productions where precision, creativity and technical excellence matter most. We work alongside broadcasters, sporting organisations, brands and event producers to create live experiences that engage audiences and set new standards for production excellence.",
+    url: "https://realimpact.tv/",
     siteName: "Real Impact",
     images: [
       {
-        url: "/images/ogg-image.jpg",
+        url: "/images/ogg-image.png",
         width: 1200,
         height: 630,
-        alt: "Real Impact Broadcast Production",
+        alt: "End-to-End Broadcast & Production Solutions",
         type: "image/jpeg",
       },
     ],
@@ -30,9 +31,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Real Impact",
-    description: "Real Impact is India's Broadcast Equipment Rental and Production company, managed by a team of professionals who have considerable experience in producing world-class events, with acknowledged acumen in the creative, technical, and production departments.",
-    images: ["/images/ogg-image.jpg"],
+    title: "Real Impact | End-to-End Broadcast & Production Solutions",
+    description: "Real Impact is a globally trusted broadcast and live production company, recognised for delivering exceptional productions where precision, creativity and technical excellence matter most. We work alongside broadcasters, sporting organisations, brands and event producers to create live experiences that engage audiences and set new standards for production excellence.",
+    images: ["/images/ogg-image.png"],
   },
 };
 
@@ -51,6 +52,10 @@ export default function RootLayout({ children }) {
           {children}
         </div>
         <Footer />
+
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );
