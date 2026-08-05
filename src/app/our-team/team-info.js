@@ -176,7 +176,7 @@ export default function TeamInfo() {
             <img
               src={member.image}
               alt={member.name}
-              className={` w-full rounded-xl object-cover object-top cursor-pointer ${index === 0 ? "h-100 lg:h-[45vh]" : "mb-4 h-75"}`}
+              className={` w-full rounded-xl object-cover object-top cursor-pointer ${index === 0 ? "h-100 lg:h-[60vh]" : "mb-4 h-70"}`}
               onClick={() => openMember(member)}
             />
 
@@ -192,7 +192,7 @@ export default function TeamInfo() {
               {member.shortBio.map((paragraph, paragraphIndex) => (
                 <p
                   key={paragraphIndex}
-                  className="mb-4 last:mb-0"
+                  className="mb-5"
                 >
                   {paragraph}
                 </p>
@@ -201,7 +201,7 @@ export default function TeamInfo() {
               <button
                 type="button"
                 onClick={() => openMember(member)}
-                className="btn btn-link mt-auto mb-2 self-start text-pri-400 cursor-pointer"
+                className="btn btn-link mb-2 self-start text-pri-400 cursor-pointer"
                 aria-label={`Learn more about ${member.name}`}
               >
                 Learn More
