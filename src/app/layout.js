@@ -19,7 +19,7 @@ export const metadata = {
     siteName: "Real Impact",
     images: [
       {
-        url: "/images/ogg-image.jpg",
+        url: "https://realimpact.tv/images/ogg-image.jpg",
         width: 1200,
         height: 630,
         alt: "End-to-End Broadcast & Production Solutions",
@@ -33,7 +33,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Real Impact | End-to-End Broadcast & Production Solutions",
     description: "Real Impact is a globally trusted broadcast and live production company, recognised for delivering exceptional productions where precision, creativity and technical excellence matter most. We work alongside broadcasters, sporting organisations, brands and event producers to create live experiences that engage audiences and set new standards for production excellence.",
-    images: ["/images/ogg-image.jpg"],
+    images: ["https://realimpact.tv/images/ogg-image.jpg"],
   },
 };
 
