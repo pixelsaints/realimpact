@@ -28,7 +28,7 @@ export const projectsList = [
     tags: ["Motorsport", "RF Systems", "2 Seasons"],
   },
   {
-    name: "Asian Cup 2025 Mens",
+    name: "Asia Cup 2025 Mens",
     description: "Delivered international men's cricket broadcast production with resilient workflows, engineering expertise, and seamless multi-venue tournament coverage.",
     image: "/projects/asia-cup-2025-men-cover.webp",
     link: "/projects/asia-cup-mens",
