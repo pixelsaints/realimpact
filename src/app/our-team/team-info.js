@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { IoArrowForward, IoCloseOutline } from "react-icons/io5";
 
@@ -38,7 +38,9 @@ const teamData = [
 
       `At Real Impact, Divya plays an important role in supporting high-value productions and international projects that require careful financial planning, advanced technology, workforce coordination and precise resource management. Her structured and analytical approach helps ensure that the company's expansion is supported by responsible decision-making and sound financial discipline.`,
 
-      `She has contributed to Real Impact's work with prominent organisations across sports, entertainment and broadcast media, including Viacom18, BCCI, Sony Pictures Networks, Endemol, Abu Dhabi Media and the Bangladesh Cricket Board. Her strategic oversight has also supported landmark assignments such as the company's broadcast operations for Dubai Expo 2020, where Real Impact delivered over 1,200 hours of 4K live content across multiple venues and channels`,
+      `She has contributed to Real Impact's work with prominent organisations across sports, entertainment and broadcast media. Her strategic oversight has also supported landmark assignments such as the company's broadcast operations for Dubai Expo 2020, where Real Impact delivered over 1,200 hours of 4K live content across multiple venues and channels`,
+
+      `Divya holds a Bachelor of Commerce (Honours) degree from the University of Delhi and an MBA in Finance from SP Jain Institute of Global Management, Dubai. She has also completed all levels of the Chartered Accountancy curriculum. Her combination of financial expertise, strategic foresight and operational understanding continues to strengthen Real Impact’s position as a dependable and future-ready organisation.`
     ]
   },
   {
@@ -84,15 +86,34 @@ export default function TeamInfo() {
 
   const overlayRef = useRef(null);
   const drawerRef = useRef(null);
+  const timelineRef = useRef(null);
+  const selectedMemberIdRef = useRef(null);
 
   const openMember = (member) => {
+    timelineRef.current?.kill();
     setSelectedMember(member);
   };
 
-  const closeMember = () => {
+  const closeMember = useCallback(() => {
+    if (!selectedMember) return;
+
+    timelineRef.current?.kill();
+
+    if (!overlayRef.current || !drawerRef.current) {
+      setSelectedMember(null);
+      return;
+    }
+
+    const closingMemberId = selectedMember.id;
     const timeline = gsap.timeline({
-      onComplete: () => setSelectedMember(null)
+      onComplete: () => {
+        if (selectedMemberIdRef.current === closingMemberId) {
+          setSelectedMember(null);
+        }
+      }
     });
+
+    timelineRef.current = timeline;
 
     timeline
       .to(drawerRef.current, {
@@ -109,40 +130,49 @@ export default function TeamInfo() {
         },
         0.15
       );
-  };
+  }, [selectedMember]);
 
   useLayoutEffect(() => {
     if (!selectedMember) return;
+    if (!overlayRef.current || !drawerRef.current) return;
 
-    const context = gsap.context(() => {
-      gsap.set(overlayRef.current, {
-        autoAlpha: 0
-      });
+    selectedMemberIdRef.current = selectedMember.id;
+    timelineRef.current?.kill();
 
-      gsap.set(drawerRef.current, {
-        xPercent: 100
-      });
-
-      const timeline = gsap.timeline();
-
-      timeline
-        .to(overlayRef.current, {
-          autoAlpha: 1,
-          duration: 0.35,
-          ease: "power2.out"
-        })
-        .to(
-          drawerRef.current,
-          {
-            xPercent: 0,
-            duration: 0.8,
-            ease: "power4.inOut"
-          },
-          0
-        );
+    gsap.set(overlayRef.current, {
+      autoAlpha: 0
     });
 
-    return () => context.revert();
+    gsap.set(drawerRef.current, {
+      xPercent: 100
+    });
+
+    const timeline = gsap.timeline();
+    timelineRef.current = timeline;
+
+    timeline
+      .to(overlayRef.current, {
+        autoAlpha: 1,
+        duration: 0.35,
+        ease: "power2.out"
+      })
+      .to(
+        drawerRef.current,
+        {
+          xPercent: 0,
+          duration: 0.8,
+          ease: "power4.inOut"
+        },
+        0
+      );
+
+    return () => {
+      timeline.kill();
+
+      if (timelineRef.current === timeline) {
+        timelineRef.current = null;
+      }
+    };
   }, [selectedMember]);
 
   useEffect(() => {
@@ -162,7 +192,7 @@ export default function TeamInfo() {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleEscape);
     };
-  }, [selectedMember]);
+  }, [closeMember, selectedMember]);
 
   return (
     <div className="container mx-auto pb-24">
