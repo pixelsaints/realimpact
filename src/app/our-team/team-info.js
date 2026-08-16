@@ -47,7 +47,7 @@ const teamData = [
     id: "sandeep-gupta",
     name: "Sandeep Gupta",
     position: "Chief Financial Officer",
-    image: "/team/sandeep-gupta.avif",
+    image: "/team/sandeep-gupta-1.avif",
     shortBio: [
       "Sandeep Gupta plays a key role in strengthening the company's financial management, regulatory compliance and long-term business planning."
     ],
