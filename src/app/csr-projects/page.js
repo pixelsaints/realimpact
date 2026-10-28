@@ -9,27 +9,22 @@ import Cta from "@/components/layout/cta";
 
 const csrData = [
   {
-    image: "/images/1-promoting-gender-equality.avif",
     title: "Promoting Gender Equality and Reducing Social Inequalities ",
     description: "Our efforts focus on mitigating systemic discrimination faced by marginalized communities due to their gender identity and sexual orientation across families, educational institutions, and workplaces, while incorporating a queer perspective into gender-based violence prevention, livelihoods, education, and health. This is achieved by conducting specialized training programs, capacity-building workshops, and networking initiatives centered on issues of gender and sexuality."
   },
   {
-    image: "/images/2-child-youth-development.avif",
     title: "Child & Youth Development and Education & Social Support",
     description: "Executing comprehensive child and youth development programs alongside targeted education and social support initiatives designed to uplift underprivileged children and youth, foster early growth, and provide foundational learning and welfare assistance."
   },
   {
-    image: "/images/4-environmental-conservation.avif",
     title: "Promoting Healthcare, Education, and Environmental Sustainability",
     description: "Executing diverse grassroots interventions that drive community welfare, including organizing regular blood donation camps and distributing free medicines to underprivileged populations. This pillar also encompasses providing supplemental tuition and educational support for disadvantaged children, alongside extensive tree plantation drives dedicated to ensuring environmental sustainability, ecological balance, and long-term conservation of natural resources."
   },
   {
-    image: "/images/3-community-skill-development.avif",
     title: "Community Rehabilitation, Skill Development, and Livelihood Enhancement",
     description: "The Company aims at fostering grassroots socio-economic independence. This includes holistic community rehabilitation programs alongside targeted job placements and specialized vocational training initiatives such as cutting, tailoring, and dress-making classes. Additionally, we promote women empowerment and financial inclusion through the formation and nurturing of Swayam Sahayata Samuh (Self-Help Groups)."
   },
   {
-    image: "/images/5-medical-clinic-community-india.avif",
     title: "Promoting Healthcare, Cancer Care, and Treatment Support",
     description: "Acting as a catalyst for sustainable positive change through partnerships with innovative charitable organizations, the company invests in foundations providing comprehensive cancer support. This includes funding treatment costs, advanced diagnostics, and patient travel logistics, alongside organizing cancer detection workshops, free specialist clinics, and social worker coordination for hospital navigation. Furthermore, the investments facilitate partial support for organizing cancer detection training workshops for healthcare workers in community hospitals, public awareness camps, and visiting free cancer clinics featuring cancer specialists"
   }
