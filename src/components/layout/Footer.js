@@ -84,7 +84,7 @@ export default function Footer() {
                 </span>
               </TransitionLink>
 
-              <TransitionLink href="https://www.instagram.com/realimpact.tv/?hl=en" target="_blank" className="btn btn-link">
+              <TransitionLink href="https://www.instagram.com/realimpact_tv" target="_blank" className="btn btn-link">
                 <span className="icon">
                   <FaInstagram className="front" />
                   <FaInstagram className="back" />
