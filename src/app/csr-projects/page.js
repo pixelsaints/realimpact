@@ -2,7 +2,6 @@
 
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import { introScaleUp } from "@/lib/animations/gsapProps";
 import Cta from "@/components/layout/cta";
@@ -102,14 +101,6 @@ export default function csrProjects() {
                 key={index}
                 className={`flex flex-col items-center lg:justify-between lg:flex-row ${isLast ? "pb-16" : "border-b border-black-700 mb-16 pb-16"}`}
               >
-                {/* <div className="lg:w-[25%] rounded-xl overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full object-cover object-center h-75"
-                  />
-                </div> */}
-
                 <div className="flex items-start justify-center flex-col">
                   <div className="text-2xl lg:text-3xl text-white mb-6 leading-10 lg:leading-[1.3]">{project.title}</div>
                   <p className=" text-white/60">{project.description}</p>
