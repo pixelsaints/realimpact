@@ -69,36 +69,40 @@ export default function Header() {
 
             <nav className="menu hidden lg:flex">
               <ul className="flex flex-row items-center">
-                {nav.map((item) => (
-                  <li key={item.href} className={item.submenu ? "has-sub" : ""}>
-                    <TransitionLink
-                      data-title={item.name}
-                      href={item.href}
-                      className={`menu-link ${pathname === item.href ? "active" : ""}`}
-                      // "menu-link" 
-                      onClick={() => {
-                        setMenuActive(false);
-                      }}
-                    >
-                      <span>
-                        {item.name}
-                      </span>
-                    </TransitionLink>
-                    {item.submenu && (
-                      <ul className="sub-menu">
-                        {item.submenu.map((sub) => (
-                          <li key={sub.name}>
-                            <TransitionLink href={sub.href} className="menu-link">
-                              <span data-title={sub.name} className="">
-                                {sub.name}
-                              </span>
-                            </TransitionLink>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
+                {
+                  nav
+                    .filter((item) => item.name.trim() !== "CSR Projects")
+                    .map((item) => (
+                      <li key={item.href} className={item.submenu ? "has-sub" : ""}>
+                        <TransitionLink
+                          data-title={item.name}
+                          href={item.href}
+                          className={`menu-link ${pathname === item.href ? "active" : ""}`}
+                          // "menu-link" 
+                          onClick={() => {
+                            setMenuActive(false);
+                          }}
+                        >
+                          <span>
+                            {item.name}
+                          </span>
+                        </TransitionLink>
+                        {item.submenu && (
+                          <ul className="sub-menu">
+                            {item.submenu.map((sub) => (
+                              <li key={sub.name}>
+                                <TransitionLink href={sub.href} className="menu-link">
+                                  <span data-title={sub.name} className="">
+                                    {sub.name}
+                                  </span>
+                                </TransitionLink>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))
+                }
               </ul>
             </nav>
 
@@ -125,15 +129,17 @@ export default function Header() {
       <div ref={menuRef} className={`mobile-menu-wrapper ${menuActive ? 'is-active' : ''}`}>
         <div className="mobile-menu-content">
           <ul className="mobile-menu flex flex-col">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <TransitionLink href={item.href} className="menu-link">
-                  <span data-title={item.name}>
-                    {item.name}
-                  </span>
-                </TransitionLink>
-              </li>
-            ))}
+            {nav
+              .filter((item) => item.name.trim() !== "CSR Projects")
+              .map((item) => (
+                <li key={item.href}>
+                  <TransitionLink href={item.href} className="menu-link">
+                    <span data-title={item.name}>
+                      {item.name}
+                    </span>
+                  </TransitionLink>
+                </li>
+              ))}
           </ul>
         </div>
       </div>
