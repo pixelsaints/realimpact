@@ -133,7 +133,7 @@ export default function csrProjects() {
               </div>
 
               <div className="commitee-member flex flex-col lg:flex-row gap-8 lg:w-1/2 lg:items-center">
-                <img className="lg:w-56 h-80 rounded-lg object-cover object-center" src="/team/divya-sabharwal.avif" alt="" />
+                <img className="lg:w-56 h-80 rounded-lg object-cover object-top" src="/team/divya-sabharwal.avif" alt="" />
                 <div>
                   <h4 className="text-white flex flex-col mb-6">
                     <span className="name text-2xl mb-1 tracking-wide">Divya Sabharwal</span>
